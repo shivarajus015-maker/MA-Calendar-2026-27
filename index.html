@@ -1,0 +1,2076 @@
+<!DOCTYPE html>
+<html lang="kn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ಸಚೇತನ - ಶಾಲಾ ಪ್ರಾರ್ಥನಾ ಅವಧಿ ಚಟುವಟಿಕೆಗಳ ಕ್ಯಾಲೆಂಡರ್ 2026-27</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Kannada:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+  <style>
+    :root {
+      --teal-900: #134e4a;
+      --teal-800: #115e59;
+      --teal-700: #0f766e;
+      --teal-600: #0d9488;
+      --teal-500: #14b8a6;
+      --teal-100: #ccfbf1;
+      --teal-50: #f0fdfa;
+      --blue-600: #0284c7;
+      --blue-100: #e0f2fe;
+      --blue-50: #f0f9ff;
+      --yellow-500: #eab308;
+      --yellow-400: #facc15;
+      --yellow-200: #fef08a;
+      --yellow-100: #fef9c3;
+      --yellow-50: #fefce8;
+      --amber-600: #d97706;
+      --slate-900: #0f172a;
+      --slate-700: #334155;
+      --slate-600: #475569;
+      --slate-500: #64748b;
+      --slate-200: #e2e8f0;
+      --slate-100: #f1f5f9;
+      --white: #ffffff;
+      --shadow-sm: 0 2px 8px rgba(15, 118, 110, 0.08);
+      --shadow-md: 0 8px 24px rgba(15, 118, 110, 0.12);
+      --shadow-lg: 0 18px 40px rgba(15, 118, 110, 0.18);
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --radius-sm: 10px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Noto Sans Kannada', sans-serif;
+      background: linear-gradient(180deg, #f0fdfa 0%, #f0f9ff 45%, #fefce8 100%);
+      color: var(--slate-900);
+      min-height: 100vh;
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    /* Subtle Book Grid Pattern */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image: radial-gradient(rgba(13, 148, 136, 0.07) 1px, transparent 1px);
+      background-size: 24px 24px;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    /* Header / Navbar */
+    .topbar {
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 2px solid var(--teal-100);
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .topbar-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-logo {
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--teal-600), var(--blue-600));
+      display: grid;
+      place-items: center;
+      color: var(--white);
+      box-shadow: 0 4px 12px rgba(13, 148, 136, 0.3);
+      flex-shrink: 0;
+    }
+
+    .brand-text h1 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--teal-900);
+      line-height: 1.25;
+    }
+
+    .brand-text p {
+      font-size: 0.78rem;
+      color: var(--slate-600);
+      font-weight: 500;
+    }
+
+    .topbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .pill-btn {
+      border: 1.5px solid var(--teal-200, #99f6e4);
+      background: var(--teal-50);
+      color: var(--teal-800);
+      padding: 7px 14px;
+      border-radius: 999px;
+      font-family: inherit;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.25s ease;
+    }
+
+    .pill-btn:hover {
+      background: var(--teal-600);
+      color: var(--white);
+      border-color: var(--teal-600);
+      transform: translateY(-1px);
+    }
+
+    .readonly-badge {
+      background: var(--yellow-100);
+      color: var(--amber-600);
+      border: 1.5px solid var(--yellow-200);
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 24px 20px 80px;
+    }
+
+    /* Today's Activity Hero Section */
+    .hero-card {
+      position: relative;
+      background: linear-gradient(135deg, #0f766e 0%, #0d9488 48%, #0284c7 100%);
+      border-radius: 26px;
+      padding: 30px;
+      color: var(--white);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+      margin-bottom: 28px;
+      border: 2px solid rgba(255, 255, 255, 0.25);
+    }
+
+    .hero-card::before,
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero-card::before {
+      width: 280px;
+      height: 280px;
+      top: -90px;
+      right: -60px;
+      background: radial-gradient(circle, rgba(250, 204, 21, 0.28), transparent 70%);
+    }
+
+    .hero-card::after {
+      width: 220px;
+      height: 220px;
+      bottom: -80px;
+      left: -50px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.16), transparent 70%);
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1.5fr 0.85fr;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .hero-top-badges {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .hero-badge {
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(6px);
+      padding: 5px 13px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .hero-greeting {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--yellow-100);
+      color: var(--teal-900);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+    }
+
+    .hero-title {
+      font-size: 1.85rem;
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 8px;
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+    }
+
+    .hero-sub {
+      font-size: 0.98rem;
+      opacity: 0.95;
+      margin-bottom: 16px;
+      max-width: 700px;
+    }
+
+    .hero-parent-box {
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 14px;
+      padding: 12px 16px;
+      margin-bottom: 18px;
+      font-size: 0.88rem;
+    }
+
+    .hero-parent-box strong {
+      color: var(--yellow-200);
+      display: block;
+      margin-bottom: 2px;
+      font-size: 0.82rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .btn-primary-yellow {
+      background: linear-gradient(135deg, #fde047, #facc15);
+      color: var(--teal-900);
+      border: none;
+      padding: 11px 22px;
+      border-radius: 12px;
+      font-family: inherit;
+      font-size: 0.94rem;
+      font-weight: 800;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .btn-primary-yellow:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.24);
+    }
+
+    .hero-illustration {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .floating-svg {
+      width: 210px;
+      max-width: 100%;
+      animation: floatGentle 4.2s ease-in-out infinite;
+      filter: drop-shadow(0 14px 20px rgba(0, 0, 0, 0.2));
+    }
+
+    @keyframes floatGentle {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-10px) rotate(1.2deg); }
+    }
+
+    .hero-date-pill {
+      margin-top: 10px;
+      background: rgba(15, 23, 42, 0.25);
+      padding: 5px 14px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+
+    /* Filter & Search Panel */
+    .filter-panel {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 20px 22px;
+      box-shadow: var(--shadow-md);
+      border: 1.5px solid var(--teal-100);
+      margin-bottom: 24px;
+    }
+
+    .filter-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .filter-header h2 {
+      font-size: 1.12rem;
+      font-weight: 800;
+      color: var(--teal-900);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .filter-controls {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(150px, 1fr));
+      gap: 12px;
+    }
+
+    .field-group {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .field-group label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--teal-800);
+    }
+
+    .field-input {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid var(--slate-200);
+      background: var(--slate-100);
+      font-family: inherit;
+      font-size: 0.88rem;
+      color: var(--slate-900);
+      transition: all 0.2s ease;
+    }
+
+    .field-input:focus {
+      outline: none;
+      border-color: var(--teal-500);
+      background: var(--white);
+      box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.16);
+    }
+
+    .filter-footer {
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px dashed var(--slate-200);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .stats-summary {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      font-size: 0.85rem;
+      color: var(--slate-700);
+      font-weight: 600;
+    }
+
+    .count-chip {
+      background: var(--teal-50);
+      color: var(--teal-800);
+      border: 1px solid var(--teal-100);
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-weight: 700;
+    }
+
+    .btn-reset {
+      background: var(--blue-50);
+      color: var(--blue-600);
+      border: 1.5px solid var(--blue-100);
+      padding: 7px 14px;
+      border-radius: 10px;
+      font-family: inherit;
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .btn-reset:hover {
+      background: var(--blue-600);
+      color: var(--white);
+    }
+
+    /* Visual Chart Strip */
+    .chart-panel {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 18px 22px;
+      box-shadow: var(--shadow-sm);
+      border: 1.5px solid var(--blue-100);
+      margin-bottom: 24px;
+    }
+
+    .chart-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+    }
+
+    .chart-header h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--teal-900);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .chart-body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 16px;
+      align-items: center;
+    }
+
+    .chart-body.collapsed {
+      display: none;
+    }
+
+    .chart-box {
+      position: relative;
+      height: 210px;
+      background: var(--slate-100);
+      border-radius: var(--radius-md);
+      padding: 12px;
+    }
+
+    /* Book View Grid */
+    .book-section-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .book-section-title h2 {
+      font-size: 1.28rem;
+      font-weight: 800;
+      color: var(--teal-900);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(335px, 1fr));
+      gap: 20px;
+      transition: opacity 0.28s ease, transform 0.28s ease;
+    }
+
+    .cards-grid.fading {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+
+    /* Book Page Card */
+    .activity-card {
+      background: var(--white);
+      border-radius: 18px;
+      border: 1.5px solid var(--slate-200);
+      border-left: 6px solid var(--teal-500);
+      box-shadow: var(--shadow-sm);
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 12px;
+      position: relative;
+      transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.28s ease, border-color 0.28s ease;
+      animation: cardFadeIn 0.38s ease both;
+    }
+
+    @keyframes cardFadeIn {
+      from { opacity: 0; transform: translateY(12px) scale(0.985); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    .activity-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--teal-500);
+    }
+
+    .activity-card.is-today {
+      border-left-color: var(--yellow-500);
+      background: linear-gradient(180deg, #fefce8 0%, #ffffff 30%);
+      box-shadow: 0 10px 26px rgba(234, 179, 8, 0.16);
+    }
+
+    .activity-card.is-holiday {
+      border-left-color: var(--blue-600);
+      background: linear-gradient(180deg, #f0f9ff 0%, #ffffff 40%);
+    }
+
+    .card-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .date-badge {
+      background: var(--teal-50);
+      color: var(--teal-800);
+      border: 1px solid var(--teal-100);
+      padding: 4px 10px;
+      border-radius: 8px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .grade-tag {
+      background: var(--yellow-100);
+      color: var(--amber-600);
+      border: 1px solid var(--yellow-200);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.76rem;
+      font-weight: 800;
+    }
+
+    .card-meta-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .subject-label {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--blue-600);
+      background: var(--blue-50);
+      padding: 3px 10px;
+      border-radius: 6px;
+    }
+
+    .type-pill {
+      font-size: 0.74rem;
+      font-weight: 700;
+      color: var(--teal-700);
+      background: var(--teal-100);
+      padding: 3px 10px;
+      border-radius: 999px;
+    }
+
+    .card-title {
+      font-size: 1.06rem;
+      font-weight: 800;
+      color: var(--slate-900);
+      line-height: 1.4;
+    }
+
+    .card-desc {
+      font-size: 0.88rem;
+      color: var(--slate-600);
+      line-height: 1.6;
+    }
+
+    /* Accordion */
+    .accordion {
+      border-top: 1px dashed var(--slate-200);
+      padding-top: 10px;
+    }
+
+    .accordion-trigger {
+      width: 100%;
+      background: var(--yellow-50);
+      border: 1px solid var(--yellow-200);
+      color: var(--teal-900);
+      padding: 8px 12px;
+      border-radius: 10px;
+      font-family: inherit;
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: background 0.2s ease;
+    }
+
+    .accordion-trigger:hover {
+      background: var(--yellow-100);
+    }
+
+    .accordion-chevron {
+      transition: transform 0.28s ease;
+      font-size: 0.9rem;
+    }
+
+    .accordion.open .accordion-chevron {
+      transform: rotate(180deg);
+    }
+
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+      background: #fffdf2;
+      border-radius: 0 0 10px 10px;
+      font-size: 0.82rem;
+      color: var(--slate-700);
+    }
+
+    .accordion.open .accordion-content {
+      max-height: 360px;
+      padding: 10px 12px;
+      border: 1px solid var(--yellow-200);
+      border-top: none;
+    }
+
+    .prep-list {
+      padding-left: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    /* Rating & Card Footer */
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding-top: 8px;
+      border-top: 1px solid var(--slate-100);
+      flex-wrap: wrap;
+    }
+
+    .star-rating {
+      display: inline-flex;
+      align-items: center;
+      gap: 2px;
+    }
+
+    .star-btn {
+      background: none;
+      border: none;
+      font-size: 1.2rem;
+      cursor: pointer;
+      color: #cbd5e1;
+      transition: transform 0.18s ease, color 0.18s ease;
+      padding: 0 1px;
+      line-height: 1;
+    }
+
+    .star-btn:hover,
+    .star-btn.active {
+      color: var(--yellow-500);
+      transform: scale(1.18);
+    }
+
+    .rating-text {
+      font-size: 0.74rem;
+      color: var(--slate-500);
+      margin-left: 5px;
+      font-weight: 600;
+    }
+
+    .detail-link-btn {
+      background: var(--teal-50);
+      color: var(--teal-700);
+      border: 1px solid var(--teal-100);
+      padding: 5px 11px;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 0.78rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .detail-link-btn:hover {
+      background: var(--teal-600);
+      color: var(--white);
+    }
+
+    /* Empty State */
+    .empty-state {
+      text-align: center;
+      padding: 50px 20px;
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      border: 2px dashed var(--teal-100);
+      grid-column: 1 / -1;
+    }
+
+    .empty-state h3 {
+      font-size: 1.2rem;
+      color: var(--teal-900);
+      margin-bottom: 6px;
+    }
+
+    .empty-state p {
+      color: var(--slate-500);
+      font-size: 0.92rem;
+      margin-bottom: 14px;
+    }
+
+    /* Floating Overall Feedback Button */
+    .floating-feedback-btn {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 45;
+      background: linear-gradient(135deg, var(--teal-700), var(--blue-600));
+      color: var(--white);
+      border: 2px solid rgba(255, 255, 255, 0.5);
+      padding: 13px 20px;
+      border-radius: 999px;
+      font-family: inherit;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 10px 26px rgba(15, 118, 110, 0.35);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .floating-feedback-btn:hover {
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 14px 30px rgba(15, 118, 110, 0.45);
+    }
+
+    /* Modals */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.55);
+      backdrop-filter: blur(4px);
+      z-index: 60;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+    }
+
+    .modal-backdrop.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-box {
+      background: var(--white);
+      border-radius: 22px;
+      max-width: 680px;
+      width: 100%;
+      max-height: 88vh;
+      overflow-y: auto;
+      padding: 26px;
+      box-shadow: 0 24px 60px rgba(15, 23, 42, 0.28);
+      transform: translateY(16px) scale(0.97);
+      transition: transform 0.28s ease;
+      position: relative;
+      border-top: 6px solid var(--teal-600);
+    }
+
+    .modal-backdrop.open .modal-box {
+      transform: translateY(0) scale(1);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      border: none;
+      background: var(--slate-100);
+      color: var(--slate-700);
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      transition: background 0.2s ease;
+    }
+
+    .modal-close:hover {
+      background: #fee2e2;
+      color: #b91c1c;
+    }
+
+    .modal-section {
+      background: var(--slate-100);
+      border-radius: 12px;
+      padding: 14px;
+      margin-top: 14px;
+    }
+
+    .modal-section.yellow {
+      background: var(--yellow-50);
+      border: 1px solid var(--yellow-200);
+    }
+
+    .modal-section.blue {
+      background: var(--blue-50);
+      border: 1px solid var(--blue-100);
+    }
+
+    .modal-section h4 {
+      font-size: 0.9rem;
+      color: var(--teal-900);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .life-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .life-step {
+      background: var(--white);
+      border: 1px solid var(--teal-100);
+      border-radius: 10px;
+      padding: 8px;
+      text-align: center;
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: var(--teal-800);
+    }
+
+    /* Thank You Animation */
+    .thank-you-box {
+      text-align: center;
+      padding: 24px 12px;
+      display: none;
+      animation: popIn 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .thank-you-box.show {
+      display: block;
+    }
+
+    @keyframes popIn {
+      0% { opacity: 0; transform: scale(0.8); }
+      70% { transform: scale(1.05); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    .check-circle {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--teal-500), var(--teal-700));
+      color: var(--white);
+      font-size: 2rem;
+      display: grid;
+      place-items: center;
+      margin: 0 auto 14px;
+      box-shadow: 0 10px 24px rgba(13, 148, 136, 0.3);
+      animation: bounceCheck 0.8s ease;
+    }
+
+    @keyframes bounceCheck {
+      0%, 100% { transform: scale(1); }
+      40% { transform: scale(1.18); }
+      70% { transform: scale(0.95); }
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 24px 16px;
+      color: var(--slate-600);
+      font-size: 0.84rem;
+      border-top: 1px solid var(--teal-100);
+      background: rgba(255, 255, 255, 0.75);
+    }
+
+    /* Responsive Breakpoints */
+    @media (max-width: 960px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-illustration {
+        order: -1;
+      }
+      .floating-svg {
+        width: 150px;
+      }
+      .filter-controls {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .chart-body {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero-card {
+        padding: 20px;
+        border-radius: 20px;
+      }
+      .hero-title {
+        font-size: 1.38rem;
+      }
+      .filter-controls {
+        grid-template-columns: 1fr;
+      }
+      .cards-grid {
+        grid-template-columns: 1fr;
+      }
+      .life-steps {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .floating-feedback-btn {
+        right: 14px;
+        bottom: 14px;
+        padding: 11px 16px;
+        font-size: 0.82rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <div class="brand-logo" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <h1>ಸಚೇತನ • ಶಾಲಾ ಪ್ರಾರ್ಥನಾ ಅವಧಿ ಕ್ಯಾಲೆಂಡರ್ 2026-27</h1>
+          <p>ಹಿರಿಯ ಪ್ರಾಥಮಿಕ ಶಾಲೆಗಳಿಗಾಗಿ (4 ರಿಂದ 8ನೇ ತರಗತಿ) • ಉತ್ತಮ ಕಲಿಕೆ - ಉಜ್ವಲ ಭವಿಷ್ಯ</p>
+        </div>
+      </div>
+      <div class="topbar-actions">
+        <span class="readonly-badge">🔒 ಓದಲು ಮಾತ್ರ (Read-Only)</span>
+        <button class="pill-btn" onclick="openInfoModal('guide')">📘 ಮಾರ್ಗದರ್ಶಿ & ಕೌಶಲ್ಯಗಳು</button>
+        <button class="pill-btn" onclick="openInfoModal('alternatives')">✨ ಪರ್ಯಾಯ ಚಟುವಟಿಕೆಗಳು</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- 1. Today's Activity Hero Section -->
+    <section class="hero-card" id="heroSection" aria-label="ಇಂದಿನ ಚಟುವಟಿಕೆ">
+      <div class="hero-grid">
+        <div>
+          <div class="hero-greeting">
+            <span>🌞</span>
+            <span>ಶುಭವಾಗಲಿ, ಇಂದಿನ ದಿನವನ್ನು ಆನಂದಿಸಿ!</span>
+          </div>
+          <div class="hero-top-badges">
+            <span class="hero-badge" id="heroDateBadge">📅 ಇಂದಿನ ದಿನಾಂಕ</span>
+            <span class="hero-badge" id="heroGradeBadge">🎓 ತರಗತಿ</span>
+            <span class="hero-badge" id="heroTypeBadge">🏷️ ಪ್ರಕಾರ</span>
+          </div>
+          <h2 class="hero-title" id="heroTitle">ಇಂದಿನ ಚಟುವಟಿಕೆ ಲೋಡ್ ಆಗುತ್ತಿದೆ...</h2>
+          <p class="hero-sub" id="heroDesc"></p>
+          <div class="hero-parent-box" id="heroParentBox">
+            <strong>🏡 ಪೋಷಕರ ಚಟುವಟಿಕೆ:</strong>
+            <span id="heroParentText"></span>
+          </div>
+          <div class="hero-actions">
+            <button class="btn-primary-yellow" id="heroDetailBtn">
+              <span>📖</span>
+              <span>ಇಂದಿನ ಚಟುವಟಿಕೆ ವಿವರ</span>
+            </button>
+            <button class="pill-btn" style="background: rgba(255,255,255,0.18); color: #fff; border-color: rgba(255,255,255,0.4);" onclick="jumpToTodayInGrid()">
+              <span>⬇️</span>
+              <span>ಕ್ಯಾಲೆಂಡರ್‌ನಲ್ಲಿ ನೋಡಿ</span>
+            </button>
+          </div>
+        </div>
+        <div class="hero-illustration">
+          <!-- Subtle 2D Educational Book & Sun Illustration -->
+          <svg class="floating-svg" viewBox="0 0 220 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="165" cy="46" r="24" fill="#FDE047"/>
+            <circle cx="165" cy="46" r="32" stroke="#FEF08A" stroke-width="3" stroke-dasharray="6 6"/>
+            <rect x="28" y="64" width="164" height="106" rx="16" fill="#FFFFFF" fill-opacity="0.95"/>
+            <path d="M110 64V170" stroke="#99F6E4" stroke-width="3"/>
+            <rect x="42" y="82" width="54" height="10" rx="5" fill="#0D9488"/>
+            <rect x="42" y="100" width="48" height="7" rx="3.5" fill="#94A3B8" fill-opacity="0.5"/>
+            <rect x="42" y="114" width="52" height="7" rx="3.5" fill="#94A3B8" fill-opacity="0.5"/>
+            <rect x="42" y="128" width="40" height="7" rx="3.5" fill="#94A3B8" fill-opacity="0.5"/>
+            <circle cx="150" cy="108" r="22" fill="#E0F2FE"/>
+            <path d="M142 108L148 114L160 101" stroke="#0284C7" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="126" y="140" width="48" height="10" rx="5" fill="#FACC15"/>
+            <path d="M36 174C60 184 90 184 110 174C130 184 160 184 184 174" stroke="#CCFBF1" stroke-width="4" stroke-linecap="round"/>
+          </svg>
+          <span class="hero-date-pill" id="heroClockPill">ಇಂದಿನ ಪ್ರಾರ್ಥನಾ ಅವಧಿ</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Interactive Search & Filter System -->
+    <section class="filter-panel" aria-label="ಹುಡುಕಾಟ ಮತ್ತು ಫಿಲ್ಟರ್">
+      <div class="filter-header">
+        <h2>🔍 ಚಟುವಟಿಕೆಗಳನ್ನು ಹುಡುಕಿ ಮತ್ತು ಫಿಲ್ಟರ್ ಮಾಡಿ</h2>
+        <button class="btn-reset" onclick="resetFilters()">🔄 ಎಲ್ಲಾ ಫಿಲ್ಟರ್ ತೆರವುಗೊಳಿಸಿ</button>
+      </div>
+      <div class="filter-controls">
+        <div class="field-group">
+          <label for="filterDate">📅 ದಿನಾಂಕದ ಹುಡುಕಾಟ</label>
+          <input type="date" id="filterDate" class="field-input" min="2026-06-01" max="2027-03-31" />
+        </div>
+        <div class="field-group">
+          <label for="filterMonth">🗓️ ತಿಂಗಳು (ಜೂನ್ - ಮಾರ್ಚ್)</label>
+          <select id="filterMonth" class="field-input">
+            <option value="">ಎಲ್ಲಾ ತಿಂಗಳುಗಳು</option>
+            <option value="2026-06">ಜೂನ್ 2026</option>
+            <option value="2026-07">ಜುಲೈ 2026</option>
+            <option value="2026-08">ಆಗಸ್ಟ್ 2026</option>
+            <option value="2026-09">ಸೆಪ್ಟೆಂಬರ್ 2026</option>
+            <option value="2026-10">ಅಕ್ಟೋಬರ್ 2026</option>
+            <option value="2026-11">ನವೆಂಬರ್ 2026</option>
+            <option value="2026-12">ಡಿಸೆಂಬರ್ 2026</option>
+            <option value="2027-01">ಜನವರಿ 2027</option>
+            <option value="2027-02">ಫೆಬ್ರವರಿ 2027</option>
+            <option value="2027-03">ಮಾರ್ಚ್ 2027</option>
+          </select>
+        </div>
+        <div class="field-group">
+          <label for="filterGrade">🎓 ತರಗತಿ</label>
+          <select id="filterGrade" class="field-input">
+            <option value="">ಎಲ್ಲಾ ತರಗತಿಗಳು</option>
+            <option value="4">4ನೇ ತರಗತಿ</option>
+            <option value="5">5ನೇ ತರಗತಿ</option>
+            <option value="6">6ನೇ ತರಗತಿ</option>
+            <option value="7/8">7/8ನೇ ತರಗತಿ</option>
+          </select>
+        </div>
+        <div class="field-group">
+          <label for="filterType">🎭 ಚಟುವಟಿಕೆಯ ಪ್ರಕಾರ</label>
+          <select id="filterType" class="field-input">
+            <option value="">ಎಲ್ಲಾ ಪ್ರಕಾರಗಳು</option>
+          </select>
+        </div>
+        <div class="field-group">
+          <label for="filterKeyword">🔎 ವಿಷಯ / ಪದ ಹುಡುಕಾಟ</label>
+          <input type="text" id="filterKeyword" class="field-input" placeholder="ಉದಾ: ಪರಿಸರ, ಗಣಿತ, ಕಥೆ..." />
+        </div>
+      </div>
+      <div class="filter-footer">
+        <div class="stats-summary">
+          <span class="count-chip" id="resultCountChip">ಒಟ್ಟು ಚಟುವಟಿಕೆಗಳು: 0</span>
+          <span id="activeFilterSummary">ಎಲ್ಲಾ ತಿಂಗಳುಗಳು ಪ್ರದರ್ಶಿಸಲಾಗುತ್ತಿದೆ</span>
+        </div>
+        <button class="pill-btn" onclick="focusTodayMonth()">📍 ಇಂದಿನ ತಿಂಗಳು ತೋರಿಸಿ</button>
+      </div>
+    </section>
+
+    <!-- Visual Analytics Panel (Chart.js) -->
+    <section class="chart-panel">
+      <div class="chart-header" onclick="toggleCharts()">
+        <h3>📊 ಚಟುವಟಿಕೆಗಳ ದೃಶ್ಯ ವಿಶ್ಲೇಷಣೆ (ತರಗತಿ & ಪ್ರಕಾರವಾರು)</h3>
+        <span id="chartToggleLabel" style="font-size:0.82rem; font-weight:700; color:var(--teal-700);">ತೋರಿಸಿ / ಮರೆಮಾಡಿ ▼</span>
+      </div>
+      <div class="chart-body" id="chartBody">
+        <div class="chart-box">
+          <canvas id="gradeChart"></canvas>
+        </div>
+        <div class="chart-box">
+          <canvas id="typeChart"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Activity Cards Grid (The "Book" view) -->
+    <section aria-label="ಚಟುವಟಿಕೆ ಕಾರ್ಡ್‌ಗಳ ಪುಸ್ತಕ ನೋಟ">
+      <div class="book-section-title">
+        <h2>📚 ಪ್ರಾರ್ಥನಾ ಅವಧಿ ಚಟುವಟಿಕೆಗಳ ಪುಸ್ತಕ ನೋಟ</h2>
+        <span style="font-size:0.84rem; color:var(--slate-600); font-weight:600;">ಶಿಕ್ಷಕರ ಅನುಕೂಲಕ್ಕಾಗಿ ತಯಾರಿ ಸಲಹೆಗಳು ಮತ್ತು 5-ನಕ್ಷತ್ರ ಮೌಲ್ಯಮಾಪನ ಸಹಿತ</span>
+      </div>
+      <div class="cards-grid" id="cardsGrid"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>ಸಚೇತನ - ಶಾಲಾ ಪ್ರಾರ್ಥನಾ ಅವಧಿ ಚಟುವಟಿಕೆಗಳ ಕ್ಯಾಲೆಂಡರ್ 2026-27</strong> • ಸಮಗ್ರ ಶಿಕ್ಷಣ ಕರ್ನಾಟಕ, DSERT ಹಾಗೂ ಮಂತ್ರ ಫಾರ್ ಚೇಂಜ್ ಸಹಯೋಗದ ಆಧಾರಿತ ಸಂವಾದಾತ್ಮಕ ಕ್ಯಾಲೆಂಡರ್.</p>
+  </footer>
+
+  <!-- 4. Floating Overall Feedback Button -->
+  <button class="floating-feedback-btn" onclick="openFeedbackModal()">
+    <span>💬</span>
+    <span>ಸಮಗ್ರ ಪ್ರತಿಕ್ರಿಯೆ</span>
+  </button>
+
+  <!-- Activity Details Modal -->
+  <div class="modal-backdrop" id="detailModal" role="dialog" aria-modal="true">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal('detailModal')" aria-label="ಮುಚ್ಚಿ">✕</button>
+      <div id="detailModalContent"></div>
+    </div>
+  </div>
+
+  <!-- Overall Feedback Modal -->
+  <div class="modal-backdrop" id="feedbackModal" role="dialog" aria-modal="true">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal('feedbackModal')" aria-label="ಮುಚ್ಚಿ">✕</button>
+      <div id="feedbackFormWrap">
+        <h3 style="color:var(--teal-900); font-size:1.25rem; margin-bottom:6px;">💬 ಸಮಗ್ರ ಪ್ರತಿಕ್ರಿಯೆ ನೀಡಿ</h3>
+        <p style="font-size:0.88rem; color:var(--slate-600); margin-bottom:14px;">ಈ ಪ್ರಾರ್ಥನಾ ಅವಧಿ ಚಟುವಟಿಕೆಗಳ ಕ್ಯಾಲೆಂಡರ್ ಕುರಿತು ನಿಮ್ಮ ಅನುಭವ ಮತ್ತು ಸಲಹೆಗಳನ್ನು ಹಂಚಿಕೊಳ್ಳಿ.</p>
+        <form id="overallFeedbackForm" onsubmit="submitOverallFeedback(event)" style="display:flex; flex-direction:column; gap:12px;">
+          <div class="field-group">
+            <label for="fbName">ಹೆಸರು (ಶಿಕ್ಷಕರು / ಮುಖ್ಯ ಶಿಕ್ಷಕರು / ವಿದ್ಯಾರ್ಥಿ)</label>
+            <input id="fbName" type="text" class="field-input" required placeholder="ನಿಮ್ಮ ಹೆಸರು ನಮೂದಿಸಿ" />
+          </div>
+          <div class="field-group">
+            <label for="fbSchool">ಶಾಲೆಯ ಹೆಸರು / ಊರು (ಐಚ್ಛಿಕ)</label>
+            <input id="fbSchool" type="text" class="field-input" placeholder="ಉದಾ: ಸ.ಹಿ.ಪ್ರಾ. ಶಾಲೆ" />
+          </div>
+          <div class="field-group">
+            <label for="fbMessage">ನಿಮ್ಮ ಪ್ರತಿಕ್ರಿಯೆ / ಸಲಹೆ</label>
+            <textarea id="fbMessage" rows="4" class="field-input" required placeholder="ಚಟುವಟಿಕೆಗಳು ಹೇಗೆ ನಡೆದವು? ನಿಮ್ಮ ಅನಿಸಿಕೆ ಬರೆಯಿರಿ..."></textarea>
+          </div>
+          <button type="submit" class="btn-primary-yellow" style="justify-content:center;">📨 ಪ್ರತಿಕ್ರಿಯೆ ಸಲ್ಲಿಸಿ</button>
+        </form>
+      </div>
+      <div class="thank-you-box" id="feedbackThankYou">
+        <div class="check-circle">✓</div>
+        <h3 style="color:var(--teal-900); font-size:1.35rem; margin-bottom:6px;">ಧನ್ಯವಾದಗಳು! 🎉</h3>
+        <p style="color:var(--slate-600); font-size:0.94rem; margin-bottom:16px;">ನಿಮ್ಮ ಅಮೂಲ್ಯವಾದ ಪ್ರತಿಕ್ರಿಯೆಯನ್ನು ಸ್ವೀಕರಿಸಲಾಗಿದೆ. ಮಕ್ಕಳ ಉತ್ತಮ ಕಲಿಕೆಗಾಗಿ ನಿಮ್ಮ ಶ್ರಮಕ್ಕೆ ಅಭಿನಂದನೆಗಳು!</p>
+        <button class="pill-btn" onclick="resetFeedbackModal()">ಮತ್ತೊಂದು ಪ್ರತಿಕ್ರಿಯೆ ಬರೆಯಿರಿ</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Info / Guidelines / Alternatives Modal -->
+  <div class="modal-backdrop" id="infoModal" role="dialog" aria-modal="true">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal('infoModal')" aria-label="ಮುಚ್ಚಿ">✕</button>
+      <div id="infoModalContent"></div>
+    </div>
+  </div>
+
+  <script>
+    const assemblyDataPart1 = [
+      // ಜೂನ್ 2026
+      { date: "2026-06-01", day: "Monday", grade: "4", subject: "ಪರಿಸರ ಅಧ್ಯಯನ", title: "ಪರಿಸರ ಚಿತ್ರ ಪ್ರದರ್ಶನ", activity: "ಪರಿಸರ ಚಿತ್ರಗಳು ಅಥವಾ ಕೋಲಾಜ್ ಪ್ರದರ್ಶಿಸಿ, ಅವುಗಳನ್ನು ಗುರುತಿಸಿ 3 ರಿಂದ 5 ವಾಕ್ಯಗಳಲ್ಲಿ ವಿವರಿಸುವ ಚಟುವಟಿಕೆ.", activityType: "ಊಹಿಸಿ ಗುರುತಿಸಿ", parentActivity: "ಕಲಿಕಾ ವಾತಾವರಣ ನಿರ್ಮಿಸೋಣ - ಪೋಷಕರು ತಮ್ಮ ಮನೆಗಳಲ್ಲಿ ಮಕ್ಕಳ ಕಲಿಕೆಗೆ ಅನುಕೂಲವಾಗುವಂತೆ ಕಲಿಕಾ ವಾತಾವರಣವನ್ನು ನಿರ್ಮಿಸಿಕೊಡುವುದು." },
+      { date: "2026-06-02", day: "Tuesday", grade: "4", subject: "ಪರಿಸರ ಅಧ್ಯಯನ", title: "ಪರಿಸರ ಸಂರಕ್ಷಣೆ", activity: "ಸ್ಥಳೀಯವಾಗಿ ಪರಿಸರ ಸಂರಕ್ಷಣೆಯಲ್ಲಿ ತೊಡಗಿರುವ ವ್ಯಕ್ತಿಗಳು ಹಾಗೂ ಸಂಸ್ಥೆಗಳ ಪರಿಶ್ರಮದ ಬಗ್ಗೆ ಚರ್ಚೆ.", activityType: "ಪ್ರದರ್ಶನ", parentActivity: "ಪರಿಸರಕ್ಕಾಗಿ ಗಿಡ ನೆಡೋಣ - ಪೋಷಕರು ತಮ್ಮ ಮಕ್ಕಳೊಂದಿಗೆ ಹೂವು ಅಥವಾ ಹಣ್ಣಿನ ಗಿಡವನ್ನು ನೆಡುವುದು ಮತ್ತು ಮಕ್ಕಳಿಗೆ ಗಿಡದ ಪೋಷಣೆಯ ಬಗ್ಗೆ ತಿಳಿಸುವುದು." },
+      { date: "2026-06-03", day: "Wednesday", grade: "4", subject: "ಪರಿಸರ ಅಧ್ಯಯನ", title: "ಪರಿಸರದಲ್ಲಿ ಆಕೃತಿಗಳು", activity: "ಶಾಲಾ ಆವರಣದಲ್ಲಿ ಕಂಡುಬರುವ ವಿವಿಧ ಆಕೃತಿಯ ವಸ್ತುಗಳನ್ನು ಗುರುತಿಸಿ, ಪಟ್ಟಿ ಮಾಡಿ ಹೋಲಿಕೆ ಮಾಡುವ ಚಟುವಟಿಕೆ.", activityType: "ಪ್ರಯೋಗ", parentActivity: "ಕಲಿಕಾ ವಾತಾವರಣ ನಿರ್ಮಿಸೋಣ - ಮನೆಯಲ್ಲಿ ಮಕ್ಕಳ ಕಲಿಕೆಗೆ ಸೂಕ್ತ ವಾತಾವರಣ ಕಲ್ಪಿಸುವುದು." },
+      { date: "2026-06-04", day: "Thursday", grade: "4", subject: "ಪರಿಸರ ಅಧ್ಯಯನ", title: "ಪರಿಸರ ಮಾಲಿನ್ಯ ತಡೆ", activity: "ಪರಿಸರ ಮಾಲಿನ್ಯದ ಕಾರಣಗಳು ಮತ್ತು ಪರಿಣಾಮ ಹಾಗೂ ತಡೆಗಟ್ಟುವ ಕುರಿತು ಚರ್ಚೆ ನಡೆಸುವ ಚಟುವಟಿಕೆ.", activityType: "ಸಂವಾದ", parentActivity: "ಕಲಿಕಾ ವಾತಾವರಣ ನಿರ್ಮಿಸೋಣ - ಸ್ವಚ್ಛ ಪರಿಸರ ಮತ್ತು ಕಲಿಕಾ ಮೂಲೆಯನ್ನು ಮನೆಯಲ್ಲಿ ನಿರ್ಮಿಸುವುದು." },
+      { date: "2026-06-05", day: "Friday", grade: "4", subject: "ಪರಿಸರ ಅಧ್ಯಯನ", title: "ವಿಶ್ವ ಪರಿಸರ ದಿನಾಚರಣೆ", activity: "ಭಿತ್ತಿಪತ್ರಗಳ ಮೂಲಕ ಪರಿಸರದ ಪ್ರಯೋಜನಗಳು ಹಾಗೂ ಸಂರಕ್ಷಣೆಯ ಅಗತ್ಯವನ್ನು ವಿವರಿಸುವುದು.", activityType: "ಪ್ರದರ್ಶನ", parentActivity: "ಪರಿಸರಕ್ಕಾಗಿ ಗಿಡ ನೆಡೋಣ - ಮಕ್ಕಳೊಂದಿಗೆ ಗಿಡ ನೆಟ್ಟು ಪೋಷಣೆಯ ಬಗ್ಗೆ ಅರಿವು ಮೂಡಿಸುವುದು." },
+      { date: "2026-06-06", day: "Saturday", grade: "4", subject: "ಪರಿಸರ ಅಧ್ಯಯನ", title: "ದೈಹಿಕ ವ್ಯಾಯಾಮ", activity: "ಶಾಲೆಗೆ ಅನುಕೂಲವಾಗುವಂತೆ ಶನಿವಾರ ದೈಹಿಕ ವ್ಯಾಯಾಮವನ್ನು ಎಲ್ಲಾ ಮಕ್ಕಳಿಗೆ ಮಾಡಿಸುವುದು.", activityType: "ಪ್ರದರ್ಶನ", parentActivity: "ಕಲಿಕಾ ವಾತಾವರಣ ನಿರ್ಮಿಸೋಣ - ಮನೆಯಲ್ಲಿ ಮಕ್ಕಳ ದೈಹಿಕ ಮತ್ತು ಮಾನಸಿಕ ಆರೋಗ್ಯಕ್ಕೆ ಪೂರಕ ವಾತಾವರಣ ನೀಡುವುದು." },
+
+      { date: "2026-06-08", day: "Monday", grade: "5", subject: "ಮಳೆಗಾಲ", title: "ಮಳೆಯ ಮಹತ್ವ", activity: "ಮಳೆಯ ಉಪಯೋಗಗಳು ಮತ್ತು ಮಳೆ ಬಾರದಾಗ ಉಂಟಾಗುವ ಅನನುಕೂಲಗಳನ್ನು ಪಟ್ಟಿ ಮಾಡಿ ಹಂಚಿಕೊಳ್ಳುವುದು.", activityType: "ಪ್ರಸ್ತುತಿ", parentActivity: "ಪರಿಸರಕ್ಕಾಗಿ ಗಿಡ ನೆಡೋಣ - ಪೋಷಕರು ತಮ್ಮ ಮಕ್ಕಳೊಂದಿಗೆ ಹೂವು ಅಥವಾ ಹಣ್ಣಿನ ಗಿಡವನ್ನು ನೆಡುವುದು ಮತ್ತು ಗಿಡದ ಪೋಷಣೆ ತಿಳಿಸುವುದು." },
+      { date: "2026-06-09", day: "Tuesday", grade: "5", subject: "ಮಳೆಗಾಲ", title: "ಮಳೆಯ ಹಾಡು", activity: "ಮಳೆಗೆ ಸಂಬಂಧಿಸಿದ ಹಾಡುಗಳನ್ನು ಗುಂಪಿನಲ್ಲಿ ಹಾಡುವ ಚಟುವಟಿಕೆ.", activityType: "ಸಮೂಹ ಗೀತೆ", parentActivity: "ಪರಿಸರಕ್ಕಾಗಿ ಗಿಡ ನೆಡೋಣ - ಮಳೆಗಾಲದಲ್ಲಿ ಸಸಿಗಳನ್ನು ನೆಟ್ಟು ಸಂರಕ್ಷಿಸುವುದು." },
+      { date: "2026-06-10", day: "Wednesday", grade: "5", subject: "ಮಳೆಗಾಲ", title: "ಜಲಚಕ್ರ", activity: "ಜಲಚಕ್ರದ ಚಿತ್ರಗಳನ್ನು ಪ್ರದರ್ಶಿಸಿ ಅದರ ಹಂತಗಳು ಮತ್ತು ಕಾರ್ಯವಿಧಾನವನ್ನು ವಿವರಿಸುವುದು.", activityType: "ಪ್ರದರ್ಶನ", parentActivity: "ಪರಿಸರಕ್ಕಾಗಿ ಗಿಡ ನೆಡೋಣ - ಮಳೆ ನೀರು ಮತ್ತು ಗಿಡಗಳ ನಡುವಿನ ಸಂಬಂಧದ ಬಗ್ಗೆ ಮಕ್ಕಳಿಗೆ ತಿಳಿಸುವುದು." },
+      { date: "2026-06-11", day: "Thursday", grade: "5", subject: "ಮಳೆಗಾಲ", title: "ಮಳೆಗಾಲದ ಮುನ್ನೆಚ್ಚರಿಕೆ", activity: "ಮಳೆಗಾಲದಲ್ಲಿ ಪಾಲಿಸಬೇಕಾದ ಸ್ವಚ್ಛತೆ, ಆರೋಗ್ಯ ಮತ್ತು ಸುರಕ್ಷತಾ ಕ್ರಮಗಳ ಬಗ್ಗೆ ಜಾಗೃತಿ ಮೂಡಿಸುವುದು.", activityType: "ಜಾಗೃತಿ ಅಭಿಯಾನ", parentActivity: "ಮಳೆಗಾಲದ ಆಹಾರಗಳ ಪರಿಚಯ - ಮಳೆಗಾಲದಲ್ಲಿ ಆರೋಗ್ಯ ಕಾಪಾಡಿಕೊಳ್ಳಲು ಸೇವಿಸಬಹುದಾದ ಆಹಾರಗಳ ಬಗ್ಗೆ ತಿಳಿಸುವುದು." },
+      { date: "2026-06-12", day: "Friday", grade: "5", subject: "ಮಳೆಗಾಲ", title: "ಮಳೆಗಾಲದ ಬೆಳೆಗಳು", activity: "ಮಳೆಗಾಲದ ಬೆಳೆಗಳು ಹಾಗೂ ಋತುಮಾನದ ಹಣ್ಣುಗಳ ಪರಿಚಯ ಮಾಡುವುದು.", activityType: "ಪ್ರದರ್ಶನ", parentActivity: "ಮಳೆಗಾಲದ ಆಹಾರಗಳ ಪರಿಚಯ - ಋತುಮಾನದ ಹಣ್ಣು-ತರಕಾರಿಗಳ ಮಹತ್ವವನ್ನು ಮಕ್ಕಳಿಗೆ ವಿವರಿಸುವುದು." },
+      { date: "2026-06-13", day: "Saturday", grade: "5", subject: "ಮಳೆಗಾಲ", title: "SDMC/ಸಮುದಾಯ ಸಹಭಾಗಿತ್ವ", activity: "ಸಮುದಾಯ ಅಥವಾ ಎಸ್‌ಡಿಎಂಸಿ ಸದಸ್ಯರು ತಮ್ಮ ಜ್ಞಾನ ಮತ್ತು ವೃತ್ತಿಯ ಅನುಭವಗಳನ್ನು ಹಂಚಿಕೊಳ್ಳುತ್ತಾರೆ.", activityType: "ಪ್ರಸ್ತುತಿ", parentActivity: "ಸಮುದಾಯ ಸಹಭಾಗಿತ್ವ - ಶಾಲೆಯ ಅಭಿವೃದ್ಧಿಯಲ್ಲಿ ಪೋಷಕರು ಮತ್ತು ಸಮುದಾಯದ ಪಾತ್ರದ ಬಗ್ಗೆ ಚರ್ಚಿಸುವುದು." },
+
+      { date: "2026-06-15", day: "Monday", grade: "6", subject: "ಪ್ರತಿಭೆಯ ಅನಾವರಣ", title: "ಮೌಲ್ಯಯುತ ನಾಟಕ", activity: "ಪ್ರಾಮಾಣಿಕತೆ, ಸಹಕಾರ, ಸ್ವಚ್ಛತೆ ಹಾಗೂ ಸಮಯಪಾಲನೆ ಕುರಿತಾದ ಮೌಲ್ಯಗಳನ್ನು ನಾಟಕದ ಮೂಲಕ ಪ್ರದರ್ಶಿಸುವುದು.", activityType: "ಪಾತ್ರಾಭಿನಯ", parentActivity: "ಪ್ರತಿಭಾ ಪ್ರದರ್ಶನ - ಪೋಷಕರು ತಮ್ಮ ಮಕ್ಕಳ ಪ್ರತಿಭೆಗಳನ್ನು ಪ್ರದರ್ಶಿಸಲು ತಿಳಿಸಬೇಕು ಮತ್ತು ಪ್ರೋತ್ಸಾಹದ ಮಾತುಗಳೊಂದಿಗೆ ಮೆಚ್ಚುಗೆ ವ್ಯಕ್ತಪಡಿಸಬೇಕು." },
+      { date: "2026-06-16", day: "Tuesday", grade: "6", subject: "ಪ್ರತಿಭೆಯ ಅನಾವರಣ", title: "ಆರ್ಟ್ ಮತ್ತು ಕ್ರಾಫ್ಟ್", activity: "ಕಾಗದ ಹಾಗೂ ತ್ಯಾಜ್ಯ ವಸ್ತುಗಳಿಂದ ತಯಾರಿಸಿದ ಕಲಾತ್ಮಕ ವಸ್ತುಗಳನ್ನು ಪ್ರದರ್ಶಿಸಿ ವಿವರಿಸುವುದು.", activityType: "ಪ್ರದರ್ಶನ", parentActivity: "ಪ್ರತಿಭಾ ಪ್ರದರ್ಶನ - ಮಕ್ಕಳ ಕಲಾತ್ಮಕ ಸೃಜನಶೀಲತೆಯನ್ನು ಪೋಷಕರು ಪ್ರೋತ್ಸಾಹಿಸುವುದು." },
+      { date: "2026-06-17", day: "Wednesday", grade: "6", subject: "ಪ್ರತಿಭೆಯ ಅನಾವರಣ", title: "ಕಥೆಯ ಸಂಭಾಷಣೆ", activity: "ಕಥೆಯ ಪಾತ್ರಗಳಾಗಿ ಅಭಿನಯಿಸಿ ಸಂಭಾಷಣೆಯ ಮೂಲಕ ಕಥೆಯ ಘಟನೆಗಳನ್ನು ಪ್ರದರ್ಶಿಸುವುದು.", activityType: "ಪಾತ್ರಾಭಿನಯ", parentActivity: "ಪ್ರತಿಭಾ ಪ್ರದರ್ಶನ - ಮನೆಯಲ್ಲಿ ಮಕ್ಕಳಿಂದ ಕಥೆ ಹೇಳಿಸಿ ಅಭಿನಂದಿಸುವುದು." },
+      { date: "2026-06-18", day: "Thursday", grade: "6", subject: "ಪ್ರತಿಭೆಯ ಅನಾವರಣ", title: "ಹಾಡು ಹಾಡೋಣ", activity: "ದೇಶಭಕ್ತಿ, ಪರಿಸರ ಅಥವಾ ಜಾಗೃತಿ ಹಾಡುಗಳನ್ನು ಗುಂಪಿನಲ್ಲಿ ಹಾಡಿ ಸಂದೇಶ ಸಾರುವುದು.", activityType: "ಅಭಿನಯ ಗೀತೆ", parentActivity: "ಪ್ರತಿಭಾ ಪ್ರದರ್ಶನ - ಮಕ್ಕಳ ಹಾಡುಗಾರಿಕೆ ಮತ್ತು ಸಂಗೀತ ಪ್ರತಿಭೆಗೆ ಉತ್ತೇಜನ ನೀಡುವುದು." },
+      { date: "2026-06-19", day: "Friday", grade: "6", subject: "ಪ್ರತಿಭೆಯ ಅನಾವರಣ", title: "ವೃತ್ತಿಗಳನ್ನು ತಿಳಿಯೋಣ", activity: "ವಿವಿಧ ವೃತ್ತಿ ಅಥವಾ ನಾಯಕರ ಪಾತ್ರಗಳನ್ನು ಅಭಿನಯಿಸಿ ಅವರ ಕೊಡುಗೆಗಳ ಬಗ್ಗೆ ಸಂದೇಶ ನೀಡುವುದು.", activityType: "ಪಾತ್ರಾಭಿನಯ", parentActivity: "ಪ್ರತಿಭಾ ಪ್ರದರ್ಶನ - ಸಮಾಜದ ವಿವಿಧ ವೃತ್ತಿಗಳ ಬಗ್ಗೆ ಮಕ್ಕಳೊಂದಿಗೆ ಚರ್ಚಿಸುವುದು." },
+      { date: "2026-06-20", day: "Saturday", grade: "6", subject: "ಪ್ರತಿಭೆಯ ಅನಾವರಣ", title: "ಸಂಭ್ರಮ ಶನಿವಾರ", activity: "ಸಂಭ್ರಮ ಶನಿವಾರ: ವಿಶೇಷ ಚೇತನವುಳ್ಳ ವ್ಯಕ್ತಿಗಳೊಂದಿಗೆ ಸಂವಹನ.", activityType: "ಚಟುವಟಿಕೆ", parentActivity: "ಪ್ರತಿಭಾ ಪ್ರದರ್ಶನ - ಎಲ್ಲರನ್ನೂ ಗೌರವಿಸುವ ಮತ್ತು ಸಹಾನುಭೂತಿಯ ಮೌಲ್ಯಗಳನ್ನು ಕಲಿಸುವುದು." },
+
+      { date: "2026-06-22", day: "Monday", grade: "7/8", subject: "ಸಸ್ಯ ಜಗತ್ತು", title: "ಸಸ್ಯ ಭಾಗಗಳ ಪರಿಚಯ", activity: "ಸಸ್ಯ ಅಥವಾ ಮಾದರಿಯ ಮೂಲಕ ಸಸ್ಯದ ಭಾಗಗಳು ಮತ್ತು ಅವುಗಳ ಕಾರ್ಯವನ್ನು ಪರಿಚಯಿಸುವುದು.", activityType: "ಪ್ರದರ್ಶನ", parentActivity: "ಮಳೆಗಾಲದ ಆಹಾರಗಳ ಪರಿಚಯ - ಪೋಷಕರು ತಮ್ಮ ಮಕ್ಕಳಿಗೆ ಮಳೆಗಾಲದಲ್ಲಿ ಆರೋಗ್ಯವನ್ನು ಉತ್ತಮವಾಗಿಟ್ಟುಕೊಳ್ಳಲು ಸೇವಿಸಬಹುದಾದ ಆಹಾರಗಳ ಬಗ್ಗೆ ತಿಳಿಸಿಕೊಡುವುದು." },
+      { date: "2026-06-23", day: "Tuesday", grade: "7/8", subject: "ಸಸ್ಯ ಜಗತ್ತು", title: "ದ್ಯುತಿ ಸಂಶ್ಲೇಷಣೆ", activity: "ಸರಳ ಪ್ರಯೋಗದ ಮೂಲಕ ಸಸ್ಯಗಳು ಆಹಾರ ತಯಾರಿಸುವ ವಿಧಾನವನ್ನು ಪ್ರದರ್ಶಿಸಿ ವಿವರಿಸುವುದು.", activityType: "ಪ್ರಯೋಗ", parentActivity: "ಮಳೆಗಾಲದ ಆಹಾರಗಳ ಪರಿಚಯ - ಸಸ್ಯಗಳಿಂದ ದೊರೆಯುವ ಪೌಷ್ಟಿಕ ಆಹಾರಗಳ ಪರಿಚಯ ಮಾಡಿಸುವುದು." },
+      { date: "2026-06-24", day: "Wednesday", grade: "7/8", subject: "ಸಸ್ಯ ಜಗತ್ತು", title: "ವಿವಿಧ ಬಣ್ಣದ ಎಲೆಗಳು", activity: "ವಿವಿಧ ಬಣ್ಣ ಮತ್ತು ಆಕಾರದ ಎಲೆಗಳನ್ನು ಪ್ರದರ್ಶಿಸಿ ಅವುಗಳ ವಿಶೇಷತೆಗಳ ಬಗ್ಗೆ ಮಾಹಿತಿ ಹಂಚಿಕೊಳ್ಳುವುದು.", activityType: "ಪ್ರದರ್ಶನ", parentActivity: "ಮಳೆಗಾಲದ ಆಹಾರಗಳ ಪರಿಚಯ - ಹಸಿರು ಸೊಪ್ಪು ಮತ್ತು ತರಕಾರಿಗಳ ಆರೋಗ್ಯ ಲಾಭಗಳನ್ನು ತಿಳಿಸುವುದು." },
+      { date: "2026-06-25", day: "Thursday", grade: "7/8", subject: "ಸಸ್ಯ ಜಗತ್ತು", title: "ಸಸ್ಯಗಳ ಪೋಷಣೆ", activity: "ಚಾರ್ಟ್ ಅಥವಾ ನೈಜ ಸಸ್ಯದ ಮೂಲಕ ಸಸ್ಯಗಳ ಪೋಷಣೆಗೆ ಅಗತ್ಯವಾದ ಅಂಶಗಳನ್ನು ವಿವರಿಸುವುದು.", activityType: "ಪ್ರದರ್ಶನ", parentActivity: "ಮಳೆಗಾಲದ ಆಹಾರಗಳ ಪರಿಚಯ - ಬಿಸಿಯಾದ ಮತ್ತು ಶುದ್ಧವಾದ ಆಹಾರ ಸೇವನೆಯ ಮಹತ್ವ ತಿಳಿಸುವುದು." },
+      { date: "2026-06-26", day: "Friday", grade: "7/8", subject: "ಸಸ್ಯ ಜಗತ್ತು", title: "ಔಷಧೀಯ ಸಸ್ಯಗಳು", activity: "ಔಷಧೀಯ ಸಸ್ಯಗಳನ್ನು ಪ್ರದರ್ಶಿಸಿ ಅವುಗಳ ಉಪಯೋಗ ಮತ್ತು ಮಹತ್ವವನ್ನು ಪರಿಚಯಿಸುವುದು.", activityType: "ಪ್ರದರ್ಶನ", parentActivity: "ಮಳೆಗಾಲದ ಆಹಾರಗಳ ಪರಿಚಯ - ತುಳಸಿ, ಶುಂಠಿ ಮುಂತಾದ ಮನೆಮದ್ದು ಸಸ್ಯಗಳ ಉಪಯೋಗ ತಿಳಿಸುವುದು." },
+      { date: "2026-06-27", day: "Saturday", grade: "7/8", subject: "ಸಸ್ಯ ಜಗತ್ತು", title: "ದೈಹಿಕ ವ್ಯಾಯಾಮ", activity: "ಶಾಲೆಗೆ ಅನುಕೂಲವಾಗುವಂತೆ ಶನಿವಾರ ದೈಹಿಕ ವ್ಯಾಯಾಮವನ್ನು ಎಲ್ಲಾ ಮಕ್ಕಳಿಗೆ ಮಾಡಿಸುವುದು.", activityType: "ಪ್ರದರ್ಶನ", parentActivity: "ಮಳೆಗಾಲದ ಆಹಾರಗಳ ಪರಿಚಯ - ನಿಯಮಿತ ವ್ಯಾಯಾಮ ಮತ್ತು ಸಮತೋಲಿತ ಆಹಾರದ ಅರಿವು ಮೂಡಿಸುವುದು." },
+
+      { date: "2026-06-29", day: "Monday", grade: "7/8", subject: "ಇತಿಹಾಸ ತಿಳಿಯೋಣ", title: "ಶಾಸನಗಳು", activity: "ಕರ್ನಾಟಕದಲ್ಲಿರುವ ಶಾಸನಗಳನ್ನು ಪಟ್ಟಿ ಮಾಡಿ ಅವುಗಳ ಮಹತ್ವ ಮತ್ತು ಮಾಹಿತಿಯನ್ನು ಹಂಚಿಕೊಳ್ಳುವುದು.", activityType: "ಪ್ರದರ್ಶನ", parentActivity: "ಕಲಿಕಾ ವಾತಾವರಣ ನಿರ್ಮಿಸೋಣ - ಸ್ಥಳೀಯ ಐತಿಹಾಸಿಕ ಸ್ಮಾರಕಗಳ ಬಗ್ಗೆ ಮಕ್ಕಳೊಂದಿಗೆ ಚರ್ಚಿಸುವುದು." },
+      { date: "2026-06-30", day: "Tuesday", grade: "7/8", subject: "ಇತಿಹಾಸ ತಿಳಿಯೋಣ", title: "ನಾಣ್ಯಗಳು", activity: "ವಿವಿಧ ನಾಣ್ಯಗಳನ್ನು ಸಂಗ್ರಹಿಸಿ ಅವುಗಳ ವೈಶಿಷ್ಟ್ಯಗಳು ಮತ್ತು ಇತಿಹಾಸದ ಬಗ್ಗೆ ಪ್ರಸ್ತುತಪಡಿಸುವುದು.", activityType: "ಪ್ರಸ್ತುತಿ", parentActivity: "ಕಲಿಕಾ ವಾತಾವರಣ ನಿರ್ಮಿಸೋಣ - ಹಳೆಯ ನಾಣ್ಯಗಳು ಹಾಗೂ ನೋಟುಗಳ ಇತಿಹಾಸವನ್ನು ಮಕ್ಕಳಿಗೆ ತೋರಿಸುವುದು." },
+
+      // ಜುಲೈ 2026
+      { date: "2026-07-01", day: "Wednesday", grade: "7/8", subject: "ಕೃಷಿ & ವಿಜ್ಞಾನ", title: "ರೈತನ ಮಿತ್ರ ಎರೆಹುಳು", activity: "ಎರೆಹುಳು ಮೂಲಕ ಎರೆ ಗೊಬ್ಬರ ತಯಾರಿ ಮಾಡುವ ವಿಧಾನ ಕುರಿತು ಪ್ರಯೋಗ ಮಾಡುವುದು.", activityType: "ಪ್ರಯೋಗ", parentActivity: "ನಿಮ್ಮನ್ನು ಪರಿಚಯಿಸಿಕೊಳ್ಳಿ - ಮಗು ತನ್ನ ಹೆಸರು, ಶಾಲೆ, ತರಗತಿ, ಇಷ್ಟದ ಚಟುವಟಿಕೆ ಹಾಗೂ ಭವಿಷ್ಯದ ಕನಸಿನ ಬಗ್ಗೆ ಕುಟುಂಬ ಸದಸ್ಯರ ಮುಂದೆ ಪರಿಚಯಿಸಿಕೊಳ್ಳುವುದು." },
+      { date: "2026-07-02", day: "Thursday", grade: "7/8", subject: "ಕೃಷಿ & ವಿಜ್ಞಾನ", title: "ನೈಸರ್ಗಿಕ & ರಾಸಾಯನಿಕ ಗೊಬ್ಬರ", activity: "ವಿದ್ಯಾರ್ಥಿಗಳು ನೈಸರ್ಗಿಕ ಮತ್ತು ರಾಸಾಯನಿಕ ಗೊಬ್ಬರಗಳ ಉಪಯೋಗಗಳು, ಪ್ರಯೋಜನಗಳು ಹಾಗೂ ಪರಿಸರದ ಮೇಲೆ ಆಗುವ ಪರಿಣಾಮಗಳ ಬಗ್ಗೆ ಗುಂಪಿನಲ್ಲಿ ಚರ್ಚಿಸಿ ತಿಳಿಸುವುದು.", activityType: "ಗುಂಪು ಚರ್ಚೆ", parentActivity: "ನಿಮ್ಮನ್ನು ಪರಿಚಯಿಸಿಕೊಳ್ಳಿ - ಮಕ್ಕಳಲ್ಲಿ ಆತ್ಮವಿಶ್ವಾಸದಿಂದ ಮಾತನಾಡುವ ಕೌಶಲ್ಯ ಬೆಳೆಸುವುದು." },
+      { date: "2026-07-03", day: "Friday", grade: "7/8", subject: "ಕೃಷಿ & ವಿಜ್ಞಾನ", title: "ಸೂಕ್ಷ್ಮದರ್ಶಕ", activity: "ವಿದ್ಯಾರ್ಥಿಗಳು ಕಣ್ಣಿಗೆ ಕಾಣದ ಸೂಕ್ಷ್ಮ ಜೀವಿಗಳು ಹಾಗೂ ವಸ್ತುಗಳನ್ನು ವೀಕ್ಷಿಸಲು ಸೂಕ್ಷ್ಮದರ್ಶಕ ಹೇಗೆ ಸಹಾಯ ಮಾಡುತ್ತದೆ ಎಂಬುದನ್ನು ವಿವರಿಸುತ್ತಾರೆ.", activityType: "ಪ್ರಯೋಗ", parentActivity: "ನಿಮ್ಮನ್ನು ಪರಿಚಯಿಸಿಕೊಳ್ಳಿ - ಮಗುವಿನ ಆಸಕ್ತಿ ಮತ್ತು ಗುರಿಗಳನ್ನು ಆಲಿಸಿ ಪ್ರೋತ್ಸಾಹಿಸುವುದು." },
+      { date: "2026-07-04", day: "Saturday", grade: "7/8", subject: "ಕೃಷಿ & ವಿಜ್ಞಾನ", title: "ದೈಹಿಕ ವ್ಯಾಯಾಮ", activity: "ಶಾಲೆಗೆ ಅನುಕೂಲವಾಗುವಂತೆ ಶನಿವಾರ ದೈಹಿಕ ವ್ಯಾಯಾಮವನ್ನು ಎಲ್ಲಾ ಮಕ್ಕಳಿಗೆ ಮಾಡಿಸುವುದು.", activityType: "ಪ್ರದರ್ಶನ", parentActivity: "ನಿಮ್ಮನ್ನು ಪರಿಚಯಿಸಿಕೊಳ್ಳಿ - ದೈಹಿಕ ಚಟುವಟಿಕೆಗಳಲ್ಲಿ ಮಕ್ಕಳನ್ನು ತೊಡಗಿಸುವುದು." },
+
+      { date: "2026-07-06", day: "Monday", grade: "4", subject: "ನಾವು ನಮ್ಮ ಊರು", title: "ನಾವು ಯಾರು", activity: "ವಿದ್ಯಾರ್ಥಿಗಳು 'ನಾವು ಯಾರು?' ಎಂಬ ಸ್ವ-ಪರಿಚಯವನ್ನು ಊಹಿಸಿ ಗುರುತಿಸಿ ಚಟುವಟಿಕೆ ಮೂಲಕ ತಮ್ಮ ಆಸಕ್ತಿ, ಪ್ರತಿಭೆ, ಗುರಿಗಳು ಮತ್ತು ಕನಸುಗಳ ಬಗ್ಗೆ ಸಂಕ್ಷಿಪ್ತವಾಗಿ ಹಂಚಿಕೊಳ್ಳುತ್ತಾರೆ.", activityType: "ಊಹಿಸಿ ಗುರುತಿಸಿ", parentActivity: "ಸಮುದಾಯದ ಹೀರೋಗಳು - ಮಕ್ಕಳು ತಮ್ಮ ಗ್ರಾಮ ಅಥವಾ ಊರಿಗೆ ಕೊಡುಗೆ ನೀಡಿರುವ ಕೆಲವು ನಾಯಕರನ್ನು ಪೋಷಕರ ಸಹಾಯದಿಂದ ಗುರುತಿಸಿ ಅವರ ಸಾಧನೆಗಳ ಕುರಿತು ಚರ್ಚಿಸುವುದು." },
+      { date: "2026-07-07", day: "Tuesday", grade: "4", subject: "ನಾವು ನಮ್ಮ ಊರು", title: "ನಮ್ಮ ಕುಟುಂಬ", activity: "ವಿದ್ಯಾರ್ಥಿಗಳು ತಮ್ಮ ಕುಟುಂಬದ ಸದಸ್ಯರು, ಅವರ ವೃತ್ತಿಗಳು ಹಾಗೂ ಕುಟುಂಬದ ಮಹತ್ವದ ಬಗ್ಗೆ ಸಂಕ್ಷಿಪ್ತವಾಗಿ ಮಾತನಾಡುತ್ತಾರೆ.", activityType: "ಪ್ರಸ್ತುತಿ", parentActivity: "ಸಮುದಾಯದ ಹೀರೋಗಳು - ಕುಟುಂಬ ಮತ್ತು ಊರಿನ ಹಿರಿಯರ ಸೇವೆಯನ್ನು ಗೌರವಿಸುವಂತೆ ತಿಳಿಸುವುದು." },
+      { date: "2026-07-08", day: "Wednesday", grade: "4", subject: "ನಾವು ನಮ್ಮ ಊರು", title: "ನಮ್ಮೂರ ಜಾತ್ರೆ", activity: "ವಿದ್ಯಾರ್ಥಿಗಳು ತಮ್ಮ ಊರಿನ ಜಾತ್ರೆಯ ವಿಶೇಷತೆಗಳು, ಸಂಪ್ರದಾಯಗಳು ಹಾಗೂ ಸಾಂಸ್ಕೃತಿಕ ಮಹತ್ವ ಹಾಗೂ ವಿವಿಧ ಕಾರ್ಯಕ್ರಮಗಳ ಬಗ್ಗೆ ಸಂಕ್ಷಿಪ್ತವಾಗಿ ಮಾತನಾಡುತ್ತಾರೆ.", activityType: "ಪ್ರಸ್ತುತಿ", parentActivity: "ಸಮುದಾಯದ ಹೀರೋಗಳು - ಊರಿನ ಜಾತ್ರೆ ಮತ್ತು ಸಾಂಸ್ಕೃತಿಕ ಪರಂಪರೆಯ ಬಗ್ಗೆ ಮಕ್ಕಳಿಗೆ ಮಾಹಿತಿ ನೀಡುವುದು." },
+      { date: "2026-07-09", day: "Thursday", grade: "4", subject: "ನಾವು ನಮ್ಮ ಊರು", title: "ನಮ್ಮೂರ ಸಾಧಕರು", activity: "ವಿದ್ಯಾರ್ಥಿಗಳು ಗ್ರಾಮದಲ್ಲಿ ವಿವಿಧ ಕ್ಷೇತ್ರಗಳಲ್ಲಿ ಸಾಧನೆ ಮಾಡಿದ ವ್ಯಕ್ತಿಗಳ ಬಗ್ಗೆ ಪರಿಚಯಿಸುತ್ತಾ, ಅವರ ಪರಿಶ್ರಮ, ಸಾಧನೆ ಹಾಗೂ ಸಮಾಜಕ್ಕೆ ನೀಡಿದ ಕೊಡುಗೆಗಳ ಬಗ್ಗೆ ಹಂಚಿಕೊಳ್ಳುತ್ತಾರೆ.", activityType: "ಪ್ರಸ್ತುತಿ", parentActivity: "ಸಮುದಾಯದ ಹೀರೋಗಳು - ಗ್ರಾಮದ ಸಾಧಕರ ಜೀವನಗಾಥೆಯನ್ನು ಮಕ್ಕಳಿಗೆ ಪರಿಚಯಿಸುವುದು." },
+      { date: "2026-07-10", day: "Friday", grade: "4", subject: "ನಾವು ನಮ್ಮ ಊರು", title: "ನಾವು ಓದಿದ ಪುಸ್ತಕ", activity: "ವಿದ್ಯಾರ್ಥಿಗಳು ತಾವು ಓದಿದ ಪುಸ್ತಕದ ಹೆಸರು, ಲೇಖಕರು, ಕಥಾವಸ್ತು ಅಥವಾ ಮುಖ್ಯ ಅಂಶಗಳು ಹಾಗೂ ಅದರಿಂದ ಕಲಿತ ಪಾಠಗಳ ಬಗ್ಗೆ ಸಂಕ್ಷಿಪ್ತವಾಗಿ ಹಂಚಿಕೊಳ್ಳುತ್ತಾರೆ.", activityType: "ಪ್ರದರ್ಶನ", parentActivity: "ಸಮುದಾಯದ ಹೀರೋಗಳು - ಮಕ್ಕಳಲ್ಲಿ ಪುಸ್ತಕ ಓದುವ ಹವ್ಯಾಸವನ್ನು ಬೆಳೆಸುವುದು." },
+      { date: "2026-07-11", day: "Saturday", grade: "4", subject: "ನಾವು ನಮ್ಮ ಊರು", title: "SDMC/ಸಮುದಾಯ ಸಹಭಾಗಿತ್ವ", activity: "ಸಮುದಾಯ ಅಥವಾ ಎಸ್‌ಡಿಎಂಸಿ ಸದಸ್ಯರು ತಮ್ಮ ಜ್ಞಾನ ಮತ್ತು ವೃತ್ತಿಯ ಅನುಭವಗಳನ್ನು ಹಂಚಿಕೊಳ್ಳುತ್ತಾರೆ.", activityType: "ಪ್ರಸ್ತುತಿ", parentActivity: "ಸಮುದಾಯದ ಹೀರೋಗಳು - ಸಮುದಾಯದ ಸದಸ್ಯರೊಂದಿಗೆ ಸಂವಾದ ನಡೆಸಲು ಮಕ್ಕಳಿಗೆ ಪ್ರೇರೇಪಿಸುವುದು." },
+
+      { date: "2026-07-13", day: "Monday", grade: "5", subject: "ವಿಶೇಷ ವಿಷಯಗಳ ಪರಿಚಯ", title: "ಮಮತೆಯ ಮಡಿಲು", activity: "ಕುಟುಂಬದ ಪ್ರತಿ ಸಂಬಂಧಗಳ ಮಹತ್ವವನ್ನು ಅರ್ಥ ಮಾಡಿಕೊಂಡು ಅವುಗಳನ್ನು ಜೀವನಾನುಭವಕ್ಕೆ ಸಂಪರ್ಕಿಸುವುದು.", activityType: "ಪ್ರಸ್ತುತಿ", parentActivity: "ಬಾಲ್ಯದ ಕಥೆ - ಪೋಷಕರು ಅಥವಾ ಅಜ್ಜ-ಅಜ್ಜಿಯವರು ತಮ್ಮ ಬಾಲ್ಯದ ಒಂದು ಘಟನೆ ಅಥವಾ ಅಂದಿನ ಶಿಕ್ಷಣ ವ್ಯವಸ್ಥೆ, ಜೀವನದ ಕುರಿತು ಮಗುವಿನೊಂದಿಗೆ ಹಂಚಿಕೊಳ್ಳುವುದು." },
+      { date: "2026-07-14", day: "Tuesday", grade: "5", subject: "ವಿಶೇಷ ವಿಷಯಗಳ ಪರಿಚಯ", title: "Self Introduction", activity: "ಪಾತ್ರಾಭಿನಯದ ಮೂಲಕ ತಮ್ಮನ್ನು ಪರಿಚಯಿಸಿಕೊಳ್ಳಲು ಅಗತ್ಯವಾದ ಇಂಗ್ಲೀಷ್ ಪದಸಂಪತ್ತು ಮತ್ತು ಭಾಷೆಯನ್ನು ಬಳಸುವುದು.", activityType: "ಪಾತ್ರಾಭಿನಯ", parentActivity: "ಬಾಲ್ಯದ ಕಥೆ - ಮನೆಯಲ್ಲಿ ಮಕ್ಕಳೊಂದಿಗೆ ಸರಳ ಇಂಗ್ಲೀಷ್ ಪದಗಳ ಬಳಕೆಗೆ ಪ್ರೋತ್ಸಾಹಿಸುವುದು." },
+      { date: "2026-07-15", day: "Wednesday", grade: "5", subject: "ವಿಶೇಷ ವಿಷಯಗಳ ಪರಿಚಯ", title: "ರೈತರ ಶ್ರಮ", activity: "ಕೃಷಿಯ ಪ್ರಕ್ರಿಯೆಗಳು ಮತ್ತು ಆಹಾರ ಉತ್ಪಾದನೆಯಲ್ಲಿ ರೈತರ ಶ್ರಮದ ಕೊಡುಗೆಗಳನ್ನು ಪಾತ್ರಾಭಿನಯದ ಮೂಲಕ ಪ್ರಸ್ತುತಪಡಿಸುವುದು.", activityType: "ಪಾತ್ರಾಭಿನಯ", parentActivity: "ಬಾಲ್ಯದ ಕಥೆ - ಆಹಾರವನ್ನು ವ್ಯರ್ಥ ಮಾಡದಂತೆ ಮತ್ತು ರೈತರ ಶ್ರಮವನ್ನು ಗೌರವಿಸುವಂತೆ ತಿಳಿಸುವುದು." },
+      { date: "2026-07-16", day: "Thursday", grade: "5", subject: "ವಿಶೇಷ ವಿಷಯಗಳ ಪರಿಚಯ", title: "ಕ್ರೀಡಾ ಸಾಧಕರು", activity: "ವಿವಿಧ ಕ್ರೀಡೆಯಲ್ಲಿ ಸಾಧನೆ ಮಾಡಿದ ರಾಷ್ಟ್ರೀಯ ಸಾಧಕರ ಮಾಹಿತಿಯನ್ನು ಸಂಗ್ರಹಿಸಿ ಪ್ರಸ್ತುತಿ ಮಾಡುವುದು.", activityType: "ಪ್ರಸ್ತುತಿ", parentActivity: "ಬಾಲ್ಯದ ಕಥೆ - ಬಾಲ್ಯದಲ್ಲಿ ತಾವು ಆಡಿದ ಆಟಗಳು ಹಾಗೂ ಕ್ರೀಡಾ ಸಾಧಕರ ಬಗ್ಗೆ ಮಕ್ಕಳಿಗೆ ತಿಳಿಸುವುದು." },
+      { date: "2026-07-17", day: "Friday", grade: "5", subject: "ವಿಶೇಷ ವಿಷಯಗಳ ಪರಿಚಯ", title: "ಕ್ರೀಡಾ ಪ್ರಶ್ನೋತ್ತರ", activity: "ಪ್ರಸಿದ್ಧ ಕ್ರೀಡೆಗಳು, ಆಟಗಾರರು, ನಿಯಮಗಳಿಗೆ ಸಂಬಂಧಿಸಿದ ಸರಳ ಪ್ರಶ್ನೆಗಳನ್ನು ಕೇಳಿ ಉತ್ತರ ಪಡೆಯುವುದು.", activityType: "ರಸಪ್ರಶ್ನೆ", parentActivity: "ಬಾಲ್ಯದ ಕಥೆ - ಮಕ್ಕಳೊಂದಿಗೆ ಸಾಮಾನ್ಯ ಜ್ಞಾನದ ಪ್ರಶ್ನೋತ್ತರ ಆಟವಾಡುವುದು." },
+      { date: "2026-07-18", day: "Saturday", grade: "5", subject: "ವಿಶೇಷ ವಿಷಯಗಳ ಪರಿಚಯ", title: "ಸಂಭ್ರಮ ಶನಿವಾರ", activity: "ಸಂಭ್ರಮ ಶನಿವಾರ: ಮಾದಕ ವಸ್ತುಗಳ ದುರುಪಯೋಗ ತಡೆಗಟ್ಟುವಿಕೆ.", activityType: "ಚಟುವಟಿಕೆ", parentActivity: "ಬಾಲ್ಯದ ಕಥೆ - ಉತ್ತಮ ಅಭ್ಯಾಸಗಳು ಮತ್ತು ಆರೋಗ್ಯಕರ ಜೀವನಶೈಲಿಯ ಮಹತ್ವ ತಿಳಿಸುವುದು." },
+
+      { date: "2026-07-20", day: "Monday", grade: "6", subject: "ನಾಡ ಸಂಭ್ರಮ", title: "ಕರ್ನಾಟಕದ ವಿವಿಧ ಭಾಷೆಗಳು", activity: "ಕರ್ನಾಟಕದಲ್ಲಿ ಮಾತನಾಡುವ ಎಲ್ಲಾ ಭಾಷೆಗಳ ವಿಶೇಷತೆ ಮತ್ತು ವೈವಿಧ್ಯತೆಗಳ ಬಗ್ಗೆ ಸಂಕ್ಷಿಪ್ತವಾಗಿ ಸಂಭಾಷಣೆ ಮೂಲಕ ಪರಿಚಯ ಮಾಡುವುದು.", activityType: "ಸಂಭಾಷಣೆ", parentActivity: "ಮನೆಯ ಸ್ವಚ್ಛತೆ - ಪೋಷಕರು ಆರೋಗ್ಯಕರ ಜೀವನಕ್ಕಾಗಿ ಮಕ್ಕಳಿಗೆ ಮನೆಯ ಸ್ವಚ್ಛತೆ ಬಗ್ಗೆ ಅರಿವು ಮೂಡಿಸಿ, ಅವರ ಓದುವ ಮೂಲೆಯನ್ನು ಮಕ್ಕಳೇ ಸ್ವಚ್ಛವಾಗಿಡುವಂತೆ ತಿಳಿಸುವುದು." },
+      { date: "2026-07-21", day: "Tuesday", grade: "6", subject: "ನಾಡ ಸಂಭ್ರಮ", title: "ಕರ್ನಾಟಕ ಮತ, ಪಂಥ ಧರ್ಮ & ಜನಾಂಗ", activity: "ಕರ್ನಾಟಕದಲ್ಲಿರುವ ವಿವಿಧ ಮತ, ಧರ್ಮ ಹಾಗೂ ಜನಾಂಗಗಳ ಸಂಸ್ಕೃತಿ, ಜೀವನಶೈಲಿಯ ಬಗ್ಗೆ ಛದ್ಮವೇಷ ಧರಿಸಿ ಪರಿಚಯಿಸುವುದು.", activityType: "ಛದ್ಮವೇಷ", parentActivity: "ಮನೆಯ ಸ್ವಚ್ಛತೆ - ಎಲ್ಲಾ ಸಂಸ್ಕೃತಿಗಳನ್ನು ಗೌರವಿಸುವುದು ಮತ್ತು ಮನೆಯ ಪರಿಸರ ಸ್ವಚ್ಛವಾಗಿಡುವುದು." },
+      { date: "2026-07-22", day: "Wednesday", grade: "6", subject: "ನಾಡ ಸಂಭ್ರಮ", title: "ತಮ್ಮ ಜಿಲ್ಲೆಯ ಪರಿಚಯ & ವಿಶೇಷತೆ", activity: "ತಮ್ಮ ಜಿಲ್ಲೆಗಳ ಐತಿಹಾಸಿಕ ಸ್ಥಳಗಳು, ಕಲೆ, ಸಂಸ್ಕೃತಿ ಹಾಗೂ ವಿಶೇಷತೆಗಳ ಬಗ್ಗೆ ಸಂಕ್ಷಿಪ್ತವಾಗಿ ಪರಿಚಯಿಸುವುದು.", activityType: "ಪ್ರಸ್ತುತಿ", parentActivity: "ಮನೆಯ ಸ್ವಚ್ಛತೆ - ಜಿಲ್ಲೆಯ ಪ್ರಮುಖ ಸ್ಥಳಗಳ ಪರಿಚಯ ಮತ್ತು ಸ್ವಚ್ಛತೆ ಕಾಪಾಡುವ ಅರಿವು." },
+      { date: "2026-07-23", day: "Thursday", grade: "6", subject: "ನಾಡ ಸಂಭ್ರಮ", title: "ಕನ್ನಡ ಕವಿಗಳ ಪರಿಚಯ", activity: "ಕನ್ನಡದ ಕವಿಗಳ ಜೀವನ, ಸಾಹಿತ್ಯಕ್ಕೆ ಕೊಡುಗೆ ಹಾಗೂ ಪ್ರಸಿದ್ಧ ಕೃತಿಗಳು, ಕವಿಗಳ ಸಂದೇಶಗಳ ಬಗ್ಗೆ ಸಂಕ್ಷಿಪ್ತವಾಗಿ ಪರಿಚಯಿಸುತ್ತಾರೆ.", activityType: "ಪ್ರಸ್ತುತಿ", parentActivity: "ಮನೆಯ ಸ್ವಚ್ಛತೆ - ಕನ್ನಡ ಕವಿಗಳ ಕವಿತೆಗಳನ್ನು ಓದಲು ಮಕ್ಕಳಿಗೆ ಪ್ರೋತ್ಸಾಹಿಸುವುದು." },
+      { date: "2026-07-24", day: "Friday", grade: "6", subject: "ನಾಡ ಸಂಭ್ರಮ", title: "ಕರ್ನಾಟಕ ರಾಜ್ಯದ ಇತಿಹಾಸ", activity: "ವಿದ್ಯಾರ್ಥಿಗಳು ಕರ್ನಾಟಕ ರಾಜ್ಯದ ಇತಿಹಾಸ, ಕನ್ನಡ ನಾಡಿನ ಐತಿಹಾಸಿಕ ಘಟನೆಗಳು ಮತ್ತು ಮಹನೀಯರ ಕೊಡುಗೆಗಳನ್ನು ಸಂಕ್ಷಿಪ್ತವಾಗಿ ಪರಿಚಯಿಸುವುದು.", activityType: "ಪ್ರಸ್ತುತಿ", parentActivity: "ಮನೆಯ ಸ್ವಚ್ಛತೆ - ಓದುವ ಮೂಲೆಯನ್ನು ವ್ಯವಸ್ಥಿತವಾಗಿ ಇಟ್ಟುಕೊಳ್ಳುವ ಅಭ್ಯಾಸ ಬೆಳೆಸುವುದು." },
+      { date: "2026-07-25", day: "Saturday", grade: "6", subject: "ನಾಡ ಸಂಭ್ರಮ", title: "ದೈಹಿಕ ವ್ಯಾಯಾಮ", activity: "ಶಾಲೆಗೆ ಅನುಕೂಲವಾಗುವಂತೆ ಶನಿವಾರ ದೈಹಿಕ ವ್ಯಾಯಾಮವನ್ನು ಎಲ್ಲಾ ಮಕ್ಕಳಿಗೆ ಮಾಡಿಸುವುದು.", activityType: "ಪ್ರದರ್ಶನ", parentActivity: "ಮನೆಯ ಸ್ವಚ್ಛತೆ - ಸ್ವಚ್ಛತೆ ಮತ್ತು ಆರೋಗ್ಯದ ನಡುವಿನ ಸಂಬಂಧವನ್ನು ತಿಳಿಸುವುದು." },
+
+      { date: "2026-07-27", day: "Monday", grade: "7/8", subject: "ಮೌಲ್ಯ ಶಿಕ್ಷಣ", title: "ಘೋಷ ವಾಕ್ಯ ಪ್ರದರ್ಶನ", activity: "ಸ್ನೇಹ ಮತ್ತು ಮಾನವೀಯತೆಯನ್ನು ಬಿಂಬಿಸುವ ಸ್ಫೂರ್ತಿದಾಯಕ ಘೋಷ ವಾಕ್ಯಗಳ ರಚನೆ ಮತ್ತು ಪ್ರದರ್ಶನ ಮಾಡುವುದು.", activityType: "ಪ್ರದರ್ಶನ", parentActivity: "ಮನೆಯ ಸ್ವಚ್ಛತೆ - ಉತ್ತಮ ಮೌಲ್ಯಗಳು ಹಾಗೂ ಶಿಸ್ತಿನ ಜೀವನದ ಕುರಿತು ಮಾರ್ಗದರ್ಶನ ನೀಡುವುದು." },
+      { date: "2026-07-28", day: "Tuesday", grade: "7/8", subject: "ಮೌಲ್ಯ ಶಿಕ್ಷಣ", title: "ಆಶುಭಾಷಣ", activity: "ಮೌಲ್ಯ ಶಿಕ್ಷಣದ ಕುರಿತು ಆಶುಭಾಷಣ ಮಾಡುವುದು ಹಾಗೂ ಮಕ್ಕಳು ಸೃಜನಾತ್ಮಕ ಭಾಷಣ ಮಾಡಲು ಪ್ರೋತ್ಸಾಹಿಸುವುದು.", activityType: "ಸೃಜನಾತ್ಮಕ ಭಾಷಣ", parentActivity: "ಮನೆಯ ಸ್ವಚ್ಛತೆ - ಮಕ್ಕಳಿಗೆ ಸಭಾಕಂಪನವಿಲ್ಲದೆ ಮಾತನಾಡಲು ಮನೆಯಲ್ಲಿ ಅವಕಾಶ ನೀಡುವುದು." },
+      { date: "2026-07-29", day: "Wednesday", grade: "7/8", subject: "ಮೌಲ್ಯ ಶಿಕ್ಷಣ", title: "ಒಂದು ಒಳ್ಳೆ ಕೆಲಸ", activity: "ಪ್ರತಿ ದಿನ ಮಕ್ಕಳು ತಾವು ಮಾಡಿದ ಒಳ್ಳೆ ಕೆಲಸಗಳನ್ನು ಬರೆಯುವಂತೆ ಮಾಡಿ ಮಕ್ಕಳಿಂದ ಪಾತ್ರಾಭಿನಯ ಮಾಡುವುದು.", activityType: "ಪಾತ್ರಾಭಿನಯ", parentActivity: "ಮನೆಯ ಸ್ವಚ್ಛತೆ - ಮಗು ದಿನವೂ ಒಂದು ಒಳ್ಳೆಯ ಕೆಲಸ ಮಾಡುವಂತೆ ಪ್ರೇರೇಪಿಸುವುದು." },
+      { date: "2026-07-30", day: "Thursday", grade: "7/8", subject: "ಮೌಲ್ಯ ಶಿಕ್ಷಣ", title: "ಒಗ್ಗಟ್ಟಿನಲ್ಲಿ ಬಲವಿದೆ", activity: "ಒಗ್ಗಟ್ಟಿನಲ್ಲಿ ಬಲವಿದೆ ಎಂಬುದರ ಕುರಿತು ಮಕ್ಕಳು ಸಮೂಹ ಗಾಯನವನ್ನು ಹಾಡುವುದು.", activityType: "ಸಮೂಹ ಗಾಯನ", parentActivity: "ಮನೆಯ ಸ್ವಚ್ಛತೆ - ಕುಟುಂಬದಲ್ಲಿ ಒಗ್ಗಟ್ಟು ಮತ್ತು ಪರಸ್ಪರ ಸಹಕಾರದ ಮಹತ್ವ ತಿಳಿಸುವುದು." },
+      { date: "2026-07-31", day: "Friday", grade: "7/8", subject: "ಮೌಲ್ಯ ಶಿಕ್ಷಣ", title: "ಸಹಬಾಳ್ವೆ", activity: "ಸಹಬಾಳ್ವೆಯ ಮಹತ್ವವನ್ನು ಗುಂಪು ಸಂಭಾಷಣೆ ಮೂಲಕ ಪ್ರಸ್ತುತಪಡಿಸುವುದು.", activityType: "ಗುಂಪು ಚರ್ಚೆ", parentActivity: "ಮನೆಯ ಸ್ವಚ್ಛತೆ - ನೆರೆಹೊರೆಯವರೊಂದಿಗೆ ಸೌಹಾರ್ದಯುತ ಸಹಬಾಳ್ವೆಯ ಬಗ್ಗೆ ತಿಳಿಸುವುದು." },
+
+      // ಆಗಸ್ಟ್ 2026
+      { date: "2026-08-01", day: "Saturday", grade: "7/8", subject: "ಸರಳ ಸಮೀಕರಣಗಳು", title: "ದೈಹಿಕ ವ್ಯಾಯಾಮ", activity: "ಶಾಲೆಗೆ ಅನುಕೂಲವಾಗುವಂತೆ ಶನಿವಾರ ದೈಹಿಕ ವ್ಯಾಯಾಮವನ್ನು ಎಲ್ಲಾ ಮಕ್ಕಳಿಗೆ ಮಾಡಿಸುವುದು.", activityType: "ಪ್ರದರ್ಶನ", parentActivity: "ದಿನನಿತ್ಯದ ಜೀವನದಲ್ಲಿ ಸಮೀಕರಣ - ಮನೆಯಲ್ಲಿರುವ ವಸ್ತುಗಳನ್ನು ಬಳಸುವ ಮೂಲಕ ಸಂಕಲನ, ವ್ಯವಕಲನ, ಗುಣಾಕಾರದ ಲೆಕ್ಕಗಳನ್ನು ಕೇಳುವುದು." },
+      { date: "2026-08-03", day: "Monday", grade: "7/8", subject: "ನೈಸರ್ಗಿಕ ಸಂಪನ್ಮೂಲಗಳು ಮತ್ತು ಪರಿಸರ", title: "ಸಂಪನ್ಮೂಲಗಳ ಗುರುತು ಹಿಡಿಯೋಣ", activity: "ಊಹಿಸಿ ಗುರುತಿಸುವ ಚಟುವಟಿಕೆಯಲ್ಲಿ ಸಂಪನ್ಮೂಲಗಳು ಬರಿದಾಗುವ ಮತ್ತು ಬರಿದಾಗದ ಎಂದು ವರ್ಗೀಕರಿಸುವುದು.", activityType: "ಊಹಿಸಿ ಗುರುತಿಸಿ", parentActivity: "ಸ್ವಚ್ಛತಾ ಅಭಿಯಾನ - ಪೋಷಕರು ತಮ್ಮ ಮಕ್ಕಳೊಡನೆ ಮನೆಯ ಸುತ್ತಮುತ್ತಲಿನ ಪ್ರದೇಶವನ್ನು ಸ್ವಚ್ಛಗೊಳಿಸಿ, ಒಣ ಕಸ ಮತ್ತು ಹಸಿ ಕಸ ವಿಂಗಡಿಸುವ ಅಭ್ಯಾಸ ಬೆಳೆಸಬೇಕು." },
+      { date: "2026-08-04", day: "Tuesday", grade: "7/8", subject: "ನೈಸರ್ಗಿಕ ಸಂಪನ್ಮೂಲಗಳು ಮತ್ತು ಪರಿಸರ", title: "ಕಲ್ಲಿದ್ದಲು ಮತ್ತು ಪೆಟ್ರೋಲಿಯಂ", activity: "ಗುಂಪು ಚರ್ಚೆಯ ಮೂಲಕ ಕಲ್ಲಿದ್ದಲು ಮತ್ತು ಪೆಟ್ರೋಲಿಯಂನ ಉತ್ಪಾದನೆ, ಸಂಸ್ಕರಣೆ ಹಾಗೂ ಬಳಕೆಯ ಬಗ್ಗೆ ತಿಳಿಸುವುದು.", activityType: "ಗುಂಪು ಚರ್ಚೆ", parentActivity: "ಸ್ವಚ್ಛತಾ ಅಭಿಯಾನ - ಇಂಧನ ಮತ್ತು ನೈಸರ್ಗಿಕ ಸಂಪನ್ಮೂಲಗಳ ಮಿತ ಬಳಕೆ ಬಗ್ಗೆ ತಿಳಿಸುವುದು." },
+      { date: "2026-08-05", day: "Wednesday", grade: "7/8", subject: "ನೈಸರ್ಗಿಕ ಸಂಪನ್ಮೂಲಗಳು ಮತ್ತು ಪರಿಸರ", title: "ಮಾಲಿನ್ಯ ತಡೆಗಟ್ಟೋಣ", activity: "ಗುಂಪು ಚರ್ಚೆಯ ಮೂಲಕ ಮಾಲಿನ್ಯದ ಕಾರಣಗಳು, ಪರಿಣಾಮಗಳು ಮತ್ತು ತಡೆಗಟ್ಟುವ ಕ್ರಮಗಳನ್ನು ಗುರುತಿಸುವುದು.", activityType: "ಗುಂಪು ಚರ್ಚೆ", parentActivity: "ಸ್ವಚ್ಛತಾ ಅಭಿಯಾನ - ಪ್ಲಾಸ್ಟಿಕ್ ಬಳಕೆ ಕಡಿಮೆ ಮಾಡಿ ಪರಿಸರ ಮಾಲಿನ್ಯ ತಡೆಯಲು ಸಹಕರಿಸುವುದು." },
+      { date: "2026-08-06", day: "Thursday", grade: "7/8", subject: "ನೈಸರ್ಗಿಕ ಸಂಪನ್ಮೂಲಗಳು ಮತ್ತು ಪರಿಸರ", title: "ಬಾಟಲಿ ರಂಧ್ರ ಪ್ರಯೋಗ", activity: "ಪ್ರಯೋಗದ ಮೂಲಕ ದ್ರವ ಮತ್ತು ಅನಿಲಗಳ ಒತ್ತಡವನ್ನು ಗಮನಿಸಿ ಅದರ ಪರಿಣಾಮಗಳನ್ನು ಅರ್ಥ ಮಾಡಿಸುವುದು.", activityType: "ಪ್ರಯೋಗ", parentActivity: "ಸ್ವಚ್ಛತಾ ಅಭಿಯಾನ - ಮನೆಯಲ್ಲಿ ನೀರಿನ ಉಳಿತಾಯ ಮತ್ತು ಸ್ವಚ್ಛತೆ ಕಾಪಾಡುವುದು." },
+      { date: "2026-08-07", day: "Friday", grade: "7/8", subject: "ನೈಸರ್ಗಿಕ ಸಂಪನ್ಮೂಲಗಳು ಮತ್ತು ಪರಿಸರ", title: "ಬಲಗಳ ಅನ್ವೇಷಣೆ", activity: "ಪ್ರಾತ್ಯಕ್ಷಿಕೆಯ ಮೂಲಕ ಸಂಪರ್ಕ ಸಹಿತ ಮತ್ತು ಸಂಪರ್ಕ ರಹಿತ ಬಲಗಳ ವ್ಯತ್ಯಾಸವನ್ನು ತಿಳಿಯುವುದು.", activityType: "ಪ್ರದರ್ಶನ", parentActivity: "ಸ್ವಚ್ಛತಾ ಅಭಿಯಾನ - ಒಣ ಮತ್ತು ಹಸಿ ಕಸವನ್ನು ಪ್ರತ್ಯೇಕವಾಗಿ ವಿಲೇವಾರಿ ಮಾಡುವ ಅಭ್ಯಾಸ." },
+      { date: "2026-08-08", day: "Saturday", grade: "7/8", subject: "ನೈಸರ್ಗಿಕ ಸಂಪನ್ಮೂಲಗಳು ಮತ್ತು ಪರಿಸರ", title: "SDMC/ಸಮುದಾಯ ಸಹಭಾಗಿತ್ವ", activity: "ಸಮುದಾಯ ಅಥವಾ ಎಸ್‌ಡಿಎಂಸಿ ಸದಸ್ಯರು ತಮ್ಮ ಜ್ಞಾನ ಮತ್ತು ವೃತ್ತಿಯ ಅನುಭವಗಳನ್ನು ಹಂಚಿಕೊಳ್ಳುತ್ತಾರೆ.", activityType: "ಪ್ರಸ್ತುತಿ", parentActivity: "ಸ್ವಚ್ಛತಾ ಅಭಿಯಾನ - ಶಾಲಾ ಆವರಣದ ಸ್ವಚ್ಛತೆಯಲ್ಲಿ ಸಮುದಾಯದ ಸಹಭಾಗಿತ್ವ." },
+
+      { date: "2026-08-10", day: "Monday", grade: "4", subject: "ವೀರ ವನಿತೆಯರು", title: "ಚೆನ್ನಾಬೈರಾದೇವಿ", activity: "ಛದ್ಮವೇಷದ ಮೂಲಕ ಚೆನ್ನಾಬೈರಾದೇವಿಯವರ ಜೀವಮಾನ, ಸಾಧನೆಗಳು ಮತ್ತು ಇತಿಹಾಸವನ್ನು ಪರಿಚಯಿಸುವುದು.", activityType: "ಛದ್ಮವೇಷ", parentActivity: "ವೀರ ವನಿತೆಯರು - ಪೋಷಕರು ವೀರ ವನಿತೆಯರ ಸಾಹಸಮಯ ಕಥೆಗಳನ್ನು ಮಕ್ಕಳಿಗೆ ಹೇಳಬೇಕು. ಮಕ್ಕಳು ಕಥೆಯನ್ನು ಸಹಪಾಠಿಗಳೊಂದಿಗೆ ಹಂಚಿಕೊಳ್ಳಬೇಕು." },
+      { date: "2026-08-11", day: "Tuesday", grade: "4", subject: "ವೀರ ವನಿತೆಯರು", title: "ಬೆಳವಾಡಿ ಮಲ್ಲಮ್ಮ", activity: "ಛದ್ಮವೇಷದ ಮೂಲಕ ಬೆಳವಾಡಿ ಮಲ್ಲಮ್ಮ ಅವರ ಧೈರ್ಯ, ನಾಯಕತ್ವ ಮತ್ತು ಕೊಡುಗೆಗಳನ್ನು ಪರಿಚಯಿಸುವುದು.", activityType: "ಛದ್ಮವೇಷ", parentActivity: "ವೀರ ವನಿತೆಯರು - ಬೆಳವಾಡಿ ಮಲ್ಲಮ್ಮನವರ ಧೈರ್ಯದ ಕಥೆಯನ್ನು ಮಕ್ಕಳಿಗೆ ತಿಳಿಸುವುದು." },
+      { date: "2026-08-12", day: "Wednesday", grade: "4", subject: "ವೀರ ವನಿತೆಯರು", title: "ಝಾನ್ಸಿ ರಾಣಿ ಲಕ್ಷ್ಮೀಬಾಯಿ", activity: "ಛದ್ಮವೇಷದ ಮೂಲಕ ಝಾನ್ಸಿ ರಾಣಿ ಲಕ್ಷ್ಮೀಬಾಯಿ ಅವರ ಶೌರ್ಯ ಮತ್ತು ಹೋರಾಟವನ್ನು ತಿಳಿಸಿಕೊಡುವುದು.", activityType: "ಛದ್ಮವೇಷ", parentActivity: "ವೀರ ವನಿತೆಯರು - ಸ್ವಾತಂತ್ರ್ಯ ಹೋರಾಟದಲ್ಲಿ ಮಹಿಳೆಯರ ಪಾತ್ರವನ್ನು ವಿವರಿಸುವುದು." },
+      { date: "2026-08-13", day: "Thursday", grade: "4", subject: "ವೀರ ವನಿತೆಯರು", title: "ಕಿತ್ತೂರು ರಾಣಿ ಚೆನ್ನಮ್ಮ", activity: "ಛದ್ಮವೇಷದ ಮೂಲಕ ಕಿತ್ತೂರು ರಾಣಿ ಚೆನ್ನಮ್ಮ ಅವರ ಸ್ವಾತಂತ್ರ್ಯ ಹೋರಾಟವನ್ನು ಪರಿಚಯಿಸುವುದು.", activityType: "ಛದ್ಮವೇಷ", parentActivity: "ವೀರ ವನಿತೆಯರು - ಕಿತ್ತೂರು ರಾಣಿ ಚೆನ್ನಮ್ಮನವರ ದೇಶಭಕ್ತಿಯ ಕಥೆ ಹೇಳುವುದು." },
+      { date: "2026-08-14", day: "Friday", grade: "4", subject: "ವೀರ ವನಿತೆಯರು", title: "ಒನಕೆ ಓಬವ್ವ", activity: "ಛದ್ಮವೇಷದ ಮೂಲಕ ಒನಕೆ ಓಬವ್ವ ಅವರ ಧೈರ್ಯ ಮತ್ತು ಸಾಹಸದ ಇತಿಹಾಸವನ್ನು ಪರಿಚಯಿಸುವುದು.", activityType: "ಛದ್ಮವೇಷ", parentActivity: "ವೀರ ವನಿತೆಯರು - ಒನಕೆ ಓಬವ್ವನವರ ಸಮಯಪ್ರಜ್ಞೆ ಮತ್ತು ಸಾಹಸದ ಬಗ್ಗೆ ತಿಳಿಸುವುದು." },
+      { date: "2026-08-15", day: "Saturday", grade: "4", subject: "ವೀರ ವನಿತೆಯರು", title: "ಸ್ವಾತಂತ್ರ್ಯ ದಿನಾಚರಣೆ", activity: "ಸ್ವಾತಂತ್ರ್ಯ ದಿನದ ಅಂಗವಾಗಿ ದೇಶಭಕ್ತಿ ಗೀತೆ, ಭಾಷಣ ಹಾಗೂ ಸಾಂಸ್ಕೃತಿಕ ಕಾರ್ಯಕ್ರಮಗಳನ್ನು ಮಾಡುವುದು.", activityType: "ಆಚರಣೆ", parentActivity: "ವೀರ ವನಿತೆಯರು - ರಾಷ್ಟ್ರೀಯ ಹಬ್ಬ ಮತ್ತು ಸ್ವಾತಂತ್ರ್ಯ ದಿನಾಚರಣೆಯ ಮಹತ್ವ ತಿಳಿಸುವುದು." },
+
+      { date: "2026-08-17", day: "Monday", grade: "5", subject: "ಪರಿಸರ ಮತ್ತು ಸಮುದಾಯ", title: "ನಮ್ಮ ಗ್ರಾಮದ ವೃತ್ತಿಗಳು", activity: "ಪಾತ್ರಾಭಿನಯದ ಮೂಲಕ ಗ್ರಾಮದ ವಿವಿಧ ವೃತ್ತಿಗಳು ಮತ್ತು ಅವುಗಳ ಮಹತ್ವವನ್ನು ಪರಿಚಯಿಸುವುದು.", activityType: "ಪಾತ್ರಾಭಿನಯ", parentActivity: "ದೇಶೀ ಕ್ರೀಡೆಗಳು - ಪೋಷಕರು ಮತ್ತು ಮಕ್ಕಳು ಸೇರಿ ಕಬಡ್ಡಿ, ಲಗೋರಿ, ಕುಂಟೆಬಿಲ್ಲೆ, ಚೆನ್ನೆಮಣೆ, ಗಿಲ್ಲಿದಾಂಡು ಮುಂತಾದ ಸ್ಥಳೀಯ ದೇಶೀ ಕ್ರೀಡೆಗಳನ್ನು ಆಡಬೇಕು." },
+      { date: "2026-08-18", day: "Tuesday", grade: "5", subject: "ಪರಿಸರ ಮತ್ತು ಸಮುದಾಯ", title: "ನಗರ ಮತ್ತು ಗ್ರಾಮ", activity: "ಗುಂಪು ಚರ್ಚೆಯ ಮೂಲಕ ನಗರ ಮತ್ತು ಗ್ರಾಮೀಣ ಭಾಗದ ಜನರ ಜೀವನಶೈಲಿ ಹಾಗೂ ಸೌಲಭ್ಯಗಳನ್ನು ಹೋಲಿಕೆ ಮಾಡುವುದು.", activityType: "ಗುಂಪು ಚರ್ಚೆ", parentActivity: "ದೇಶೀ ಕ್ರೀಡೆಗಳು - ಗ್ರಾಮೀಣ ಆಟಗಳ ಸಂತೋಷವನ್ನು ಮಕ್ಕಳೊಂದಿಗೆ ಹಂಚಿಕೊಳ್ಳುವುದು." },
+      { date: "2026-08-19", day: "Wednesday", grade: "5", subject: "ಪರಿಸರ ಮತ್ತು ಸಮುದಾಯ", title: "ಶ್ರಮಕ್ಕೆ ಗೌರವ / ಕೆಲಸಕ್ಕೆ ಗೌರವ", activity: "ಮೂಕಾಭಿನಯದ ಮೂಲಕ ವಿವಿಧ ವೃತ್ತಿಗಳು ಮತ್ತು ಶ್ರಮದ ಮಹತ್ವವನ್ನು ಪ್ರದರ್ಶಿಸುವುದು.", activityType: "ಮೂಕಾಭಿನಯ", parentActivity: "ದೇಶೀ ಕ್ರೀಡೆಗಳು - ಪ್ರತಿಯೊಂದು ಕೆಲಸಕ್ಕೂ ಗೌರವ ನೀಡುವ ಮೌಲ್ಯವನ್ನು ತಿಳಿಸುವುದು." },
+      { date: "2026-08-20", day: "Thursday", grade: "5", subject: "ಪರಿಸರ ಮತ್ತು ಸಮುದಾಯ", title: "ರಾಷ್ಟ್ರೀಯ ಸದ್ಭಾವನಾ ದಿನ", activity: "ಪ್ರತಿಜ್ಞೆ ಮತ್ತು ಜಾಗೃತಿ ಚಟುವಟಿಕೆಯ ಮೂಲಕ ಏಕತೆ, ಶಾಂತಿ ಮತ್ತು ಸೌಹಾರ್ದತೆಯ ಮಹತ್ವ ತಿಳಿಸುವುದು.", activityType: "ಜಾಗೃತಿ ಅಭಿಯಾನ", parentActivity: "ದೇಶೀ ಕ್ರೀಡೆಗಳು - ತಂಡದಲ್ಲಿ ಸೌಹಾರ್ದತೆಯಿಂದ ಆಟವಾಡುವ ಗುಣ ಬೆಳೆಸುವುದು." },
+      { date: "2026-08-21", day: "Friday", grade: "5", subject: "ಪರಿಸರ ಮತ್ತು ಸಮುದಾಯ", title: "ನೀರಿನ ಮೂಲಗಳು", activity: "ಊಹಿಸಿ ಗುರುತಿಸುವ ಚಟುವಟಿಕೆಯಲ್ಲಿ ನೀರಿನ ವಿವಿಧ ಮೂಲಗಳನ್ನು ಗುರುತಿಸಿ ಹೆಸರಿಸುವುದು.", activityType: "ಊಹಿಸಿ ಗುರುತಿಸಿ", parentActivity: "ದೇಶೀ ಕ್ರೀಡೆಗಳು - ಸುತ್ತಮುತ್ತಲಿನ ನೀರಿನ ಮೂಲಗಳ ಸಂರಕ್ಷಣೆಯ ಬಗ್ಗೆ ಅರಿವು ಮೂಡಿಸುವುದು." },
+      { date: "2026-08-22", day: "Saturday", grade: "5", subject: "ಪರಿಸರ ಮತ್ತು ಸಮುದಾಯ", title: "ದೈಹಿಕ ವ್ಯಾಯಾಮ", activity: "ಶಾಲೆಗೆ ಅನುಕೂಲವಾಗುವಂತೆ ಶನಿವಾರ ದೈಹಿಕ ವ್ಯಾಯಾಮವನ್ನು ಎಲ್ಲಾ ಮಕ್ಕಳಿಗೆ ಮಾಡಿಸುವುದು.", activityType: "ಪ್ರದರ್ಶನ", parentActivity: "ದೇಶೀ ಕ್ರೀಡೆಗಳು - ಮಕ್ಕಳೊಂದಿಗೆ ಹೊರಾಂಗಣ ಆಟಗಳಲ್ಲಿ ಪಾಲ್ಗೊಳ್ಳುವುದು." },
+
+      { date: "2026-08-24", day: "Monday", grade: "6", subject: "ಕ್ರೀಡಾ ಪ್ರಪಂಚ", title: "ಕಬಡ್ಡಿ", activity: "ರಸಪ್ರಶ್ನೆಯ ಮೂಲಕ ಕಬಡ್ಡಿ ಆಟದ ನಿಯಮಗಳು, ಮಹತ್ವ ಮತ್ತು ಆರೋಗ್ಯಕರ ಪ್ರಯೋಜನಗಳನ್ನು ತಿಳಿಸುವುದು.", activityType: "ರಸಪ್ರಶ್ನೆ", parentActivity: "ದೇಶೀ ಕ್ರೀಡೆಗಳು - ಪೋಷಕರು ಮತ್ತು ಮಕ್ಕಳು ಸೇರಿ ಕಬಡ್ಡಿ, ಲಗೋರಿ, ಚೆನ್ನೆಮಣೆ ಮುಂತಾದ ದೇಶೀ ಕ್ರೀಡೆಗಳನ್ನು ಆಡಬೇಕು." },
+      { date: "2026-08-25", day: "Tuesday", grade: "6", subject: "ಕ್ರೀಡಾ ಪ್ರಪಂಚ", title: "ವಾಲಿಬಾಲ್", activity: "ರಸಪ್ರಶ್ನೆಯ ಮೂಲಕ ವಾಲಿಬಾಲ್ ಆಟದ ನಿಯಮಗಳು, ಕೌಶಲಗಳು ಮತ್ತು ಮಹತ್ವವನ್ನು ತಿಳಿಸುವುದು.", activityType: "ರಸಪ್ರಶ್ನೆ", parentActivity: "ದೇಶೀ ಕ್ರೀಡೆಗಳು - ಕ್ರೀಡಾ ಸ್ಫೂರ್ತಿ ಮತ್ತು ನಿಯಮಗಳ ಪಾಲನೆಯ ಮಹತ್ವ ತಿಳಿಸುವುದು." },
+      { date: "2026-08-26", day: "Wednesday", grade: "6", subject: "ಕ್ರೀಡಾ ಪ್ರಪಂಚ", title: "ಖೋ-ಖೋ", activity: "ರಸಪ್ರಶ್ನೆಯ ಮೂಲಕ ಖೋ-ಖೋ ಆಟದ ನಿಯಮಗಳು, ಕೌಶಲಗಳು ಮತ್ತು ಕ್ರೀಡೆಯಿಂದಾಗುವ ಆರೋಗ್ಯಕರ ಪ್ರಯೋಜನಗಳನ್ನು ತಿಳಿಸುವುದು.", activityType: "ರಸಪ್ರಶ್ನೆ", parentActivity: "ದೇಶೀ ಕ್ರೀಡೆಗಳು - ದೈಹಿಕ ಚುರುಕುತನಕ್ಕಾಗಿ ಆಟಗಳ ಮಹತ್ವ ವಿವರಿಸುವುದು." },
+      { date: "2026-08-27", day: "Thursday", grade: "6", subject: "ಕ್ರೀಡಾ ಪ್ರಪಂಚ", title: "ಚೆಸ್", activity: "ರಸಪ್ರಶ್ನೆಯ ಮೂಲಕ ಚೆಸ್ ಆಟದ ನಿಯಮಗಳು ಹಾಗೂ ಬುದ್ಧಿವಿಕಾಸದಲ್ಲಿ ಅದರ ಪಾತ್ರವನ್ನು ತಿಳಿಸುವುದು.", activityType: "ರಸಪ್ರಶ್ನೆ", parentActivity: "ದೇಶೀ ಕ್ರೀಡೆಗಳು - ಬುದ್ಧಿಶಕ್ತಿ ಬೆಳೆಸುವ ಒಳಾಂಗಣ ಆಟಗಳನ್ನು ಪ್ರೋತ್ಸಾಹಿಸುವುದು." },
+      { date: "2026-08-28", day: "Friday", grade: "6", subject: "ಕ್ರೀಡಾ ಪ್ರಪಂಚ", title: "ಕ್ರಿಕೆಟ್", activity: "ರಸಪ್ರಶ್ನೆಯ ಮೂಲಕ ಕ್ರಿಕೆಟ್ ಆಟದ ನಿಯಮಗಳು, ಆಟಗಾರರು ಮತ್ತು ಕ್ರೀಡೆಯ ಮಹತ್ವವನ್ನು ತಿಳಿಸುವುದು.", activityType: "ರಸಪ್ರಶ್ನೆ", parentActivity: "ದೇಶೀ ಕ್ರೀಡೆಗಳು - ನೆಚ್ಚಿನ ಕ್ರೀಡೆಗಳು ಮತ್ತು ಕ್ರೀಡಾಪಟುಗಳ ಬಗ್ಗೆ ಚರ್ಚಿಸುವುದು." },
+      { date: "2026-08-29", day: "Saturday", grade: "6", subject: "ಕ್ರೀಡಾ ಪ್ರಪಂಚ", title: "ರಾಷ್ಟ್ರೀಯ ಕ್ರೀಡಾ ದಿನಾಚರಣೆ", activity: "ರಸಪ್ರಶ್ನೆಯ ಮೂಲಕ ಕ್ರೀಡೆಗಳ ಮಹತ್ವ ಹಾಗೂ ಸಮಗ್ರ ಬೆಳವಣಿಗೆಯಲ್ಲಿ ಅವುಗಳ ಪಾತ್ರವನ್ನು ತಿಳಿಸುವುದು.", activityType: "ರಸಪ್ರಶ್ನೆ", parentActivity: "ದೇಶೀ ಕ್ರೀಡೆಗಳು - ರಾಷ್ಟ್ರೀಯ ಕ್ರೀಡಾ ದಿನದಂದು ಕುಟುಂಬ ಸಮೇತ ಆಟವಾಡುವುದು." },
+
+      { date: "2026-08-31", day: "Monday", grade: "7/8", subject: "ಸರಳ ಸಮೀಕರಣಗಳು", title: "ನಿತ್ಯ ಸಮೀಕರಣಗಳ ಪರಿಚಯ", activity: "ಪ್ರಾತ್ಯಕ್ಷಿಕೆಯ ಮೂಲಕ ಪಠ್ಯದಲ್ಲಿರುವ ನಿತ್ಯ ಸಮೀಕರಣಗಳನ್ನು ಪ್ರಸ್ತುತಪಡಿಸಿ ಪಠಣ ಮಾಡಿಸುವುದು.", activityType: "ಪ್ರಸ್ತುತಿ", parentActivity: "ದಿನನಿತ್ಯದ ಜೀವನದಲ್ಲಿ ಸಮೀಕರಣ - ಮನೆಯಲ್ಲಿರುವ ವಸ್ತುಗಳನ್ನು ಬಳಸಿ ಮಕ್ಕಳಿಗೆ ಅರ್ಥವಾಗುವ ರೀತಿಯಲ್ಲಿ ಗಣಿತದ ಲೆಕ್ಕಗಳನ್ನು ಕೇಳುವುದು." },
+
+      // ಸೆಪ್ಟೆಂಬರ್ 2026
+      { date: "2026-09-01", day: "Tuesday", grade: "7/8", subject: "ದೇಶ ಭಕ್ತಿ ಮತ್ತು ನಾಗರಿಕ ಜವಾಬ್ದಾರಿ", title: "ದೇಶ ಭಕ್ತಿ ಗೀತೆ ಗಾಯನ", activity: "ಎಲ್ಲಾ ವಿದ್ಯಾರ್ಥಿಗಳು ದೇಶಭಕ್ತಿ ಗೀತೆಯನ್ನು ಹಾಡುವುದು, ಹಾಡಿನಲ್ಲಿರುವ ಪ್ರಮುಖ ಪದಗಳು, ಸಂದೇಶ ಮತ್ತು ದೇಶಪ್ರೇಮದ ಮೌಲ್ಯಗಳನ್ನು ವಿದ್ಯಾರ್ಥಿಗಳು ವಿವರಿಸುವುದು.", activityType: "ಸಮೂಹ ಗಾಯನ", parentActivity: "ನನ್ನ ಕನಸಿನ ವೃತ್ತಿ - ಪೋಷಕರು ತಮ್ಮ ಮಗು ಭವಿಷ್ಯದಲ್ಲಿ ಏನಾಗಲು ಬಯಸುತ್ತಿದೆ ಎಂದು ಚರ್ಚಿಸಿ, ಆ ವೃತ್ತಿಗೆ ಸಂಬಂಧಿಸಿದ ಚಿತ್ರಗಳನ್ನು ಮಗುವಿನ ಕಲಿಕಾ ಮೂಲೆಯಲ್ಲಿ ಹಾಕುವುದು." },
+      { date: "2026-09-02", day: "Wednesday", grade: "7/8", subject: "ದೇಶ ಭಕ್ತಿ ಮತ್ತು ನಾಗರಿಕ ಜವಾಬ್ದಾರಿ", title: "ಸಾರ್ವಜನಿಕ ಆಸ್ತಿ ಸಂಪತ್ತುಗಳ ರಕ್ಷಣೆ", activity: "'ಸಾರ್ವಜನಿಕ ಆಸ್ತಿ ನಮ್ಮೆಲ್ಲರ ಆಸ್ತಿ', 'ಶಾಲೆಯ ಆಸ್ತಿಯನ್ನು ಕಾಪಾಡೋಣ' ಮುಂತಾದ ವಿಷಯಗಳ ಕುರಿತು ವಿದ್ಯಾರ್ಥಿಗಳು ಮಾತನಾಡುವುದು.", activityType: "ಪ್ರಸ್ತುತಿ", parentActivity: "ನನ್ನ ಕನಸಿನ ವೃತ್ತಿ - ಸಾರ್ವಜನಿಕ ಆಸ್ತಿಗಳ ರಕ್ಷಣೆಯಲ್ಲಿ ನಾಗರಿಕರ ಜವಾಬ್ದಾರಿ ತಿಳಿಸುವುದು." },
+      { date: "2026-09-03", day: "Thursday", grade: "7/8", subject: "ದೇಶ ಭಕ್ತಿ ಮತ್ತು ನಾಗರಿಕ ಜವಾಬ್ದಾರಿ", title: "ಮತದಾನದ ಮಹತ್ವ", activity: "ಮತದಾನ ಮಹತ್ವದ ಬಗ್ಗೆ ಮತ್ತು ಮತದಾನ ನಾಗರಿಕನ ಅಮೂಲ್ಯ ಹಕ್ಕು ಮತ್ತು ಜವಾಬ್ದಾರಿ ಎಂಬ ಸಂದೇಶವನ್ನು ತಿಳಿಸುವುದು.", activityType: "ಪ್ರಸ್ತುತಿ", parentActivity: "ನನ್ನ ಕನಸಿನ ವೃತ್ತಿ - ಪ್ರಜಾಪ್ರಭುತ್ವದಲ್ಲಿ ಮತದಾನದ ಮಹತ್ವದ ಕುರಿತು ಮಕ್ಕಳಿಗೆ ಅರಿವು ನೀಡುವುದು." },
+      { date: "2026-09-04", day: "Friday", grade: "7/8", subject: "ದೇಶ ಭಕ್ತಿ ಮತ್ತು ನಾಗರಿಕ ಜವಾಬ್ದಾರಿ", title: "ಸಾರ್ವಜನಿಕ ಸ್ಥಳಗಳ ಶುಚಿತ್ವ", activity: "ಸಾರ್ವಜನಿಕ ಆಸ್ತಿಗಳಾದ ಉದ್ಯಾನವನ, ಬಸ್ ನಿಲ್ದಾಣ, ಶಾಲಾ ಆವರಣ, ಆಸ್ಪತ್ರೆ ಮುಂತಾದ ಸ್ಥಳಗಳನ್ನು ಸ್ವಚ್ಛವಾಗಿಡುವ ಕುರಿತು ಪಾತ್ರಾಭಿನಯದ ಮೂಲಕ ಅರಿವು ಮೂಡಿಸುವುದು.", activityType: "ಪಾತ್ರಾಭಿನಯ", parentActivity: "ನನ್ನ ಕನಸಿನ ವೃತ್ತಿ - ಸಾರ್ವಜನಿಕ ಸ್ಥಳಗಳಲ್ಲಿ ಸ್ವಚ್ಛತೆ ಪಾಲಿಸುವ ಮಾದರಿ ತೋರುವುದು." },
+      { date: "2026-09-05", day: "Saturday", grade: "7/8", subject: "ದೇಶ ಭಕ್ತಿ ಮತ್ತು ನಾಗರಿಕ ಜವಾಬ್ದಾರಿ", title: "ಡಾ. ಎಸ್. ರಾಧಾಕೃಷ್ಣನ್ ಜಯಂತಿ", activity: "ಡಾ. ಸರ್ವಪಲ್ಲಿ ರಾಧಾಕೃಷ್ಣನ್ ಅವರ ಭಾವಚಿತ್ರವನ್ನಿಟ್ಟು ಶಿಕ್ಷಕರ ದಿನಾಚರಣೆಯನ್ನು ಆಚರಿಸುವುದು.", activityType: "ಆಚರಣೆ", parentActivity: "ನನ್ನ ಕನಸಿನ ವೃತ್ತಿ - ಶಿಕ್ಷಕರ ದಿನಾಚರಣೆಯ ಮಹತ್ವ ಮತ್ತು ಗುರುಗಳ ಮಾರ್ಗದರ್ಶನದ ಬೆಲೆ ತಿಳಿಸುವುದು." },
+
+      { date: "2026-09-07", day: "Monday", grade: "7/8", subject: "ನಮ್ಮ ಸಂವಿಧಾನ ನಮ್ಮ ಹೆಮ್ಮೆ", title: "ಮಕ್ಕಳ ಹಕ್ಕುಗಳು", activity: "ಮಕ್ಕಳಿಗೆ ಸಂವಿಧಾನ ನೀಡಿರುವ ಮೂಲಭೂತ ಹಕ್ಕುಗಳ ಕುರಿತು ಪ್ರಸ್ತುತಿ ಪಡಿಸಿ, ಹಕ್ಕುಗಳ ಮಹತ್ವದ ಬಗ್ಗೆ ತಿಳಿಸುವುದು.", activityType: "ಪ್ರಸ್ತುತಿ", parentActivity: "ಸಂತೆ/ಮಾರುಕಟ್ಟೆ ಬಗ್ಗೆ ತಿಳಿಯೋಣ - ಪೋಷಕರು ಮಕ್ಕಳಿಗೆ ಮಾರುಕಟ್ಟೆಯಲ್ಲಿ ಸಿಗುವ ವಸ್ತುಗಳು, ತರಕಾರಿ, ಹಣ್ಣುಗಳ ಹೆಸರು, ಬಣ್ಣ, ಆಕಾರ ಮತ್ತು ಬೆಲೆಗಳ ಬಗ್ಗೆ ತಿಳಿಸುವುದು." },
+      { date: "2026-09-08", day: "Tuesday", grade: "7/8", subject: "ನಮ್ಮ ಸಂವಿಧಾನ ನಮ್ಮ ಹೆಮ್ಮೆ", title: "ನಿರಂತರ ಪ್ರಯತ್ನದಿಂದ ಸಾಧನೆ", activity: "ವಿದ್ಯಾರ್ಥಿಗಳು 2-3 ನಿಮಿಷಗಳ ಕಾಲ ನಿರಂತರ ಪ್ರಯತ್ನದಿಂದ ಯಶಸ್ಸು ಸಾಧಿಸಿದ ವ್ಯಕ್ತಿಯ ನೈಜ ಕಥೆಯನ್ನು ಹೇಳುವುದು.", activityType: "ಕಥೆ ನಿರೂಪಣೆ", parentActivity: "ಸಂತೆ/ಮಾರುಕಟ್ಟೆ ಬಗ್ಗೆ ತಿಳಿಯೋಣ - ಮಾರುಕಟ್ಟೆ ವ್ಯವಹಾರ ಮತ್ತು ಹಣದ ಲೆಕ್ಕಾಚಾರ ಕಲಿಸುವುದು." },
+      { date: "2026-09-09", day: "Wednesday", grade: "7/8", subject: "ನಮ್ಮ ಸಂವಿಧಾನ ನಮ್ಮ ಹೆಮ್ಮೆ", title: "ನ್ಯಾಯಾಂಗ ವ್ಯವಸ್ಥೆ", activity: "ನ್ಯಾಯಾಂಗ ವ್ಯವಸ್ಥೆ ಕುರಿತು ಮಕ್ಕಳು ವಿಷಯವನ್ನು ಮಂಡಿಸುವರು, ನ್ಯಾಯಾಲಯಗಳ ಚಿತ್ರ ಪ್ರದರ್ಶಿಸುವರು.", activityType: "ಪ್ರಸ್ತುತಿ", parentActivity: "ಸಂತೆ/ಮಾರುಕಟ್ಟೆ ಬಗ್ಗೆ ತಿಳಿಯೋಣ - ನ್ಯಾಯ, ಸಮಾನತೆ ಹಾಗೂ ನಿಯಮಗಳ ಬಗ್ಗೆ ಮಾತನಾಡುವುದು." },
+      { date: "2026-09-10", day: "Thursday", grade: "7/8", subject: "ನಮ್ಮ ಸಂವಿಧಾನ ನಮ್ಮ ಹೆಮ್ಮೆ", title: "ಮಕ್ಕಳ ಶೈಕ್ಷಣಿಕ ಹಕ್ಕು", activity: "ವಿದ್ಯಾರ್ಥಿಗಳು ತಮ್ಮ ಹಕ್ಕುಗಳು ಮತ್ತು ಕರ್ತವ್ಯಗಳು, ಶಿಕ್ಷಣದ ಹಕ್ಕಿನ ಮಹತ್ವ, ಸಮಾನತೆಯ ಮಹತ್ವ, ಪ್ರಜಾಪ್ರಭುತ್ವ ಮತ್ತು ನಾಗರಿಕ ಹಕ್ಕುಗಳ ಕುರಿತು ಮಾತನಾಡುವುದು.", activityType: "ಪ್ರಸ್ತುತಿ", parentActivity: "ಸಂತೆ/ಮಾರುಕಟ್ಟೆ ಬಗ್ಗೆ ತಿಳಿಯೋಣ - ಶಿಕ್ಷಣದ ಮಹತ್ವ ಮತ್ತು ಕಲಿಕೆಯ ಆಸಕ್ತಿ ಬೆಳೆಸುವುದು." },
+      { date: "2026-09-11", day: "Friday", grade: "7/8", subject: "ನಮ್ಮ ಸಂವಿಧಾನ ನಮ್ಮ ಹೆಮ್ಮೆ", title: "ರಾಜ್ಯ ಸಭೆ", activity: "ರಾಜ್ಯ ಸಭೆಯ ಕುರಿತು ಫ್ಲೋ ಚಾರ್ಟ್ ಮೂಲಕ ಶ್ರೇಣಿಯನ್ನು ವಿವರಿಸುವುದು.", activityType: "ಪ್ರಸ್ತುತಿ", parentActivity: "ಸಂತೆ/ಮಾರುಕಟ್ಟೆ ಬಗ್ಗೆ ತಿಳಿಯೋಣ - ಸ್ಥಳೀಯ ವಸ್ತುಗಳು ಮತ್ತು ಮಾರುಕಟ್ಟೆಯ ಬೆಲೆ ವ್ಯತ್ಯಾಸ ತಿಳಿಸುವುದು." },
+      { date: "2026-09-12", day: "Saturday", grade: "7/8", subject: "ನಮ್ಮ ಸಂವಿಧಾನ ನಮ್ಮ ಹೆಮ್ಮೆ", title: "SDMC/ಸಮುದಾಯ ಸಹಭಾಗಿತ್ವ", activity: "ಸಮುದಾಯ ಅಥವಾ ಎಸ್‌ಡಿಎಂಸಿ ಸದಸ್ಯರು ತಮ್ಮ ಜ್ಞಾನ ಮತ್ತು ವೃತ್ತಿಯ ಅನುಭವಗಳನ್ನು ಹಂಚಿಕೊಳ್ಳುತ್ತಾರೆ.", activityType: "ಪ್ರಸ್ತುತಿ", parentActivity: "ಸಂತೆ/ಮಾರುಕಟ್ಟೆ ಬಗ್ಗೆ ತಿಳಿಯೋಣ - ಸಮುದಾಯದ ಸದಸ್ಯರೊಂದಿಗೆ ಶಾಲಾ ಚಟುವಟಿಕೆಗಳಲ್ಲಿ ಭಾಗವಹಿಸುವುದು." },
+
+      { date: "2026-09-14", day: "Monday", grade: "4", subject: "ಮೋಜಿನ ಕಲಿಕೆ", title: "ಗಣೇಶ ಹಬ್ಬ", activity: "ಗಣೇಶ ಹಬ್ಬದ ಆಚರಣೆ ಹಾಗೂ ಪರಿಸರ ಸ್ನೇಹಿ ಗಣೇಶನ ಮಹತ್ವದ ಬಗ್ಗೆ ಹಂಚಿಕೊಳ್ಳುವುದು.", activityType: "ಹಬ್ಬ", parentActivity: "ಹಬ್ಬಗಳ ಪರಿಚಯ - ಪೋಷಕರು ತಮ್ಮ ಕುಟುಂಬದಲ್ಲಿ ಆಚರಿಸುವ ವಿಶೇಷ ಹಬ್ಬಗಳ ಮಹತ್ವ, ಆಚರಣೆ ವಿಧಾನ, ವಿಶೇಷ ಆಹಾರಗಳ ಬಗ್ಗೆ ಮಕ್ಕಳಿಗೆ ಪರಿಚಯಿಸುವುದು." },
+      { date: "2026-09-15", day: "Tuesday", grade: "4", subject: "ಮೋಜಿನ ಕಲಿಕೆ", title: "ಪ್ರಾಣಿ ಪಕ್ಷಿ ಪ್ರಪಂಚ", activity: "ವಿದ್ಯಾರ್ಥಿಗಳು ವಿವಿಧ ಪ್ರಾಣಿ-ಪಕ್ಷಿಗಳ ಧ್ವನಿಗಳನ್ನು ಅನುಕರಣೆ ಮಾಡುವುದು. ಇತರ ವಿದ್ಯಾರ್ಥಿಗಳು ಅದು ಯಾವ ಪ್ರಾಣಿ ಅಥವಾ ಪಕ್ಷಿ ಎಂದು ಗುರುತಿಸುವುದು.", activityType: "ಅನುಕರಣೆ", parentActivity: "ಹಬ್ಬಗಳ ಪರಿಚಯ - ಪ್ರಕೃತಿ ಮತ್ತು ಪ್ರಾಣಿ-ಪಕ್ಷಿಗಳ ಬಗೆಗಿನ ಪ್ರೀತಿಯನ್ನು ಬೆಳೆಸುವುದು." },
+      { date: "2026-09-16", day: "Wednesday", grade: "4", subject: "ಮೋಜಿನ ಕಲಿಕೆ", title: "ಒಗಟಿಗೆ ಉತ್ತರ", activity: "ವಿದ್ಯಾರ್ಥಿಗಳು ಒಗಟನ್ನು ಕೇಳುವುದು. ಇತರ ವಿದ್ಯಾರ್ಥಿಗಳು ಉತ್ತರವನ್ನು ಊಹಿಸಿ ಹೇಳುವುದು.", activityType: "ಒಗಟು", parentActivity: "ಹಬ್ಬಗಳ ಪರಿಚಯ - ಮನೆಯಲ್ಲಿ ಮಕ್ಕಳೊಂದಿಗೆ ಜಾನಪದ ಒಗಟುಗಳನ್ನು ಕೇಳಿ ಆಟವಾಡುವುದು." },
+      { date: "2026-09-17", day: "Thursday", grade: "4", subject: "ಮೋಜಿನ ಕಲಿಕೆ", title: "ಕಥೆ ಕಟ್ಟೋಣ", activity: "ವಿದ್ಯಾರ್ಥಿಯೊಬ್ಬರು ಒಂದು ವಾಕ್ಯದಿಂದ ಕಥೆಯನ್ನು ಪ್ರಾರಂಭಿಸುವುದು, ಉಳಿದ ವಿದ್ಯಾರ್ಥಿಗಳು ಒಬ್ಬೊಬ್ಬರಾಗಿ ಒಂದೊಂದು ವಾಕ್ಯ ಸೇರಿಸಿ ಕಥೆಯನ್ನು ಮುಂದುವರಿಸುವುದು.", activityType: "ಕಥೆ ನಿರೂಪಣೆ", parentActivity: "ಹಬ್ಬಗಳ ಪರಿಚಯ - ಕುಟುಂಬದ ಹಿರಿಯರಿಂದ ಹಬ್ಬದ ಕಥೆಗಳನ್ನು ಕೇಳಿ ತಿಳಿಯುವುದು." },
+      { date: "2026-09-18", day: "Friday", grade: "4", subject: "ಮೋಜಿನ ಕಲಿಕೆ", title: "Fun with English", activity: "ವಿದ್ಯಾರ್ಥಿಗಳು ಇಂಗ್ಲೀಷ್ ಪದದ ಸುಳಿವುಗಳನ್ನು ನೀಡುವುದು ಮತ್ತು ಉಳಿದ ವಿದ್ಯಾರ್ಥಿಗಳು ಪದವನ್ನು ಊಹಿಸುವುದು.", activityType: "ರಸಪ್ರಶ್ನೆ", parentActivity: "ಹಬ್ಬಗಳ ಪರಿಚಯ - ಮನೆಯ ಹಬ್ಬದ ವಸ್ತುಗಳ ಹೆಸರನ್ನು ಕನ್ನಡ ಮತ್ತು ಇಂಗ್ಲೀಷ್‌ನಲ್ಲಿ ಹೇಳಿಸುವುದು." },
+      { date: "2026-09-19", day: "Saturday", grade: "4", subject: "ಮೋಜಿನ ಕಲಿಕೆ", title: "ಸಂಭ್ರಮ ಶನಿವಾರ", activity: "ಸಂಭ್ರಮ ಶನಿವಾರ: ಪೌಷ್ಟಿಕತೆ, ಸ್ವಾಸ್ಥ್ಯ ಮತ್ತು ನೈರ್ಮಲೀಕರಣ.", activityType: "ಚಟುವಟಿಕೆ", parentActivity: "ಹಬ್ಬಗಳ ಪರಿಚಯ - ಹಬ್ಬಗಳಲ್ಲಿ ತಯಾರಿಸುವ ಪೌಷ್ಟಿಕ ಆಹಾರಗಳ ಮಹತ್ವ ತಿಳಿಸುವುದು." },
+
+      { date: "2026-09-21", day: "Monday", grade: "5", subject: "ಗಣಿತ ಕಲಿಯೋಣ ಪ್ರಕೃತಿ ಅರಿಯೋಣ", title: "ಪ್ರಕೃತಿ ನಮ್ಮ ಸ್ನೇಹಿತ", activity: "ಪ್ರಕೃತಿಯ ಅಂಶಗಳು, ಅವುಗಳ ಉಪಯೋಗ, ಮತ್ತು ಪರಿಸರ ಸಂರಕ್ಷಣೆಯ ಅಗತ್ಯತೆಯನ್ನು ಅರ್ಥ ಮಾಡಿಕೊಂಡು ಗುಂಪು ಚರ್ಚೆ ಮಾಡುವುದು.", activityType: "ಗುಂಪು ಚರ್ಚೆ", parentActivity: "ಕಸದಿಂದ ರಸ - ಪೋಷಕರು ಮಕ್ಕಳಿಗೆ ಮನೆಯಲ್ಲಿ ಉಪಯೋಗಿಸದಿರುವ ವಸ್ತುಗಳನ್ನು ಬಳಸಿಕೊಂಡು ಹೇಗೆ ಉಪಯುಕ್ತ ವಸ್ತುಗಳನ್ನು ತಯಾರು ಮಾಡಬಹುದೆಂದು ಹೇಳಿಕೊಡುವುದು." },
+      { date: "2026-09-22", day: "Tuesday", grade: "5", subject: "ಗಣಿತ ಕಲಿಯೋಣ ಪ್ರಕೃತಿ ಅರಿಯೋಣ", title: "ಸಂಖ್ಯಾ ಸರಪಳಿ", activity: "ಒಂದು ಮಗು ಒಂದು ಸಂಖ್ಯೆ ಹೇಳಿ ಮುಂದಿನ ಮಗು ಅದರ ಮುಂದಿನ ಸಂಖ್ಯೆ ಹೇಳುವ ಮೂಲಕ ಸಂಖ್ಯಾ ವಿನ್ಯಾಸವನ್ನು ರಚಿಸುವುದು.", activityType: "ಪ್ರದರ್ಶನ", parentActivity: "ಕಸದಿಂದ ರಸ - ಮರುಬಳಕೆ ವಸ್ತುಗಳಿಂದ ಸಂಖ್ಯಾ ಚಾರ್ಟ್ ತಯಾರಿಸಲು ನೆರವಾಗುವುದು." },
+      { date: "2026-09-23", day: "Wednesday", grade: "5", subject: "ಗಣಿತ ಕಲಿಯೋಣ ಪ್ರಕೃತಿ ಅರಿಯೋಣ", title: "Helping Hands", activity: "ಸಹಾಯ, ಸಹಕಾರ ಮತ್ತು ಅವುಗಳ ದೈನಂದಿನ ಜೀವನದಲ್ಲಿನ ಮಹತ್ವವನ್ನು ಇಂಗ್ಲೀಷ್ ಭಾಷೆಯ ಮೂಲಕ ಪಾತ್ರಾಭಿನಯ ಮಾಡುವರು.", activityType: "ಪಾತ್ರಾಭಿನಯ", parentActivity: "ಕಸದಿಂದ ರಸ - ಮನೆಯ ಸಣ್ಣಪುಟ್ಟ ಕೆಲಸಗಳಲ್ಲಿ ಮಕ್ಕಳ ಸಹಕಾರ ಪಡೆಯುವುದು." },
+      { date: "2026-09-24", day: "Thursday", grade: "5", subject: "ಗಣಿತ ಕಲಿಯೋಣ ಪ್ರಕೃತಿ ಅರಿಯೋಣ", title: "ಆಕಾರ ಗುರುತಿಸುವಿಕೆ", activity: "ರೇಖೆ, ಚೌಕ, ಆಯತ, ವೃತ್ತ, ತ್ರಿಭುಜ, ಶಂಕು, ಸಿಲಿಂಡರ್, ಇತರೆ ಆಕೃತಿಗಳನ್ನು ತೋರಿಸಿ ಹೆಸರಿಸುವುದು.", activityType: "ಪ್ರದರ್ಶನ", parentActivity: "ಕಸದಿಂದ ರಸ - ರಟ್ಟಿನ ಪೆಟ್ಟಿಗೆಗಳಿಂದ ವಿವಿಧ ಜ್ಯಾಮಿತೀಯ ಆಕಾರಗಳನ್ನು ತಯಾರಿಸುವುದು." },
+      { date: "2026-09-25", day: "Friday", grade: "5", subject: "ಗಣಿತ ಕಲಿಯೋಣ ಪ್ರಕೃತಿ ಅರಿಯೋಣ", title: "ಸಮಯ ತಿಳಿಯೋಣ", activity: "24 ಗಂಟೆ ಹಾಗೂ 12 ಗಂಟೆ ಗಡಿಯಾರದಲ್ಲಿ ಸಮಯ ನೋಡಿ ಗುರುತಿಸಲು ಇತರೆ ಮಕ್ಕಳಲ್ಲಿ ಕೇಳುವುದು.", activityType: "ರಸಪ್ರಶ್ನೆ", parentActivity: "ಕಸದಿಂದ ರಸ - ಕಾಗದ ಅಥವಾ ರಟ್ಟಿನಿಂದ ಗಡಿಯಾರ ಮಾದರಿ ತಯಾರಿಸಿ ಸಮಯ ನೋಡುವುದನ್ನು ಕಲಿಸುವುದು." },
+      { date: "2026-09-26", day: "Saturday", grade: "5", subject: "ಗಣಿತ ಕಲಿಯೋಣ ಪ್ರಕೃತಿ ಅರಿಯೋಣ", title: "ದೈಹಿಕ ವ್ಯಾಯಾಮ", activity: "ಶಾಲೆಗೆ ಅನುಕೂಲವಾಗುವಂತೆ ಶನಿವಾರ ದೈಹಿಕ ವ್ಯಾಯಾಮವನ್ನು ಎಲ್ಲಾ ಮಕ್ಕಳಿಗೆ ಮಾಡಿಸುವುದು.", activityType: "ಪ್ರದರ್ಶನ", parentActivity: "ಕಸದಿಂದ ರಸ - ಸಮಯಪಾಲನೆ ಮತ್ತು ದೈಹಿಕ ವ್ಯಾಯಾಮದ ಅಭ್ಯಾಸ ಮಾಡಿಸುವುದು." },
+
+      { date: "2026-09-28", day: "Monday", grade: "6", subject: "ಹೆಮ್ಮೆಯ ಭಾರತ", title: "ಹಿಮಾಲಯ ಪರ್ವತದ ಮಾದರಿ ಪ್ರದರ್ಶನ", activity: "ಮಕ್ಕಳು ಥರ್ಮಕೋಲ್, ಮಣ್ಣು, ಕಾಗದ ಅಥವಾ ಮರುಬಳಕೆಯ ವಸ್ತುಗಳಿಂದ ಹಿಮಾಲಯದ ಮಾದರಿಯನ್ನು ತಯಾರಿಸುವರು ಮತ್ತು 2 ನಿಮಿಷಗಳ ಕಾಲ ಮಾಹಿತಿ ನೀಡುವರು.", activityType: "ಪ್ರದರ್ಶನ", parentActivity: "ಕಸದಿಂದ ರಸ - ಮರುಬಳಕೆ ವಸ್ತುಗಳಿಂದ ಭೌಗೋಳಿಕ ಮಾದರಿಗಳನ್ನು ಮಾಡಲು ಪ್ರೋತ್ಸಾಹಿಸುವುದು." },
+      { date: "2026-09-29", day: "Tuesday", grade: "6", subject: "ಹೆಮ್ಮೆಯ ಭಾರತ", title: "ದಕ್ಷಿಣದಲ್ಲಿನ ಪ್ರಸ್ಥಭೂಮಿ ಪರಿಚಯ", activity: "ವಿದ್ಯಾರ್ಥಿಗಳು ದಖ್ಖನ್ ಪ್ರಸ್ಥಭೂಮಿಯ ಬಗ್ಗೆ ಮಾಹಿತಿ ನೀಡುವರು.", activityType: "ಪ್ರಸ್ತುತಿ", parentActivity: "ಕಸದಿಂದ ರಸ - ಭಾರತದ ಪ್ರಾಕೃತಿಕ ವೈವಿಧ್ಯತೆಯ ಕುರಿತು ಮಕ್ಕಳೊಂದಿಗೆ ಮಾತನಾಡುವುದು." },
+      { date: "2026-09-30", day: "Wednesday", grade: "6", subject: "ಹೆಮ್ಮೆಯ ಭಾರತ", title: "ಭಾರತದ ಪ್ರಮುಖ ಬಂದರುಗಳು", activity: "ಒಬ್ಬ ವಿದ್ಯಾರ್ಥಿಯು ನಿರೂಪಕನಾಗಿ, ಮತ್ತೊಬ್ಬ ವಿದ್ಯಾರ್ಥಿಯು 'ಭೂಗೋಳ ಶಾಸ್ತ್ರಜ್ಞ' ಅಥವಾ 'ಬಂದರು ಅಧಿಕಾರಿ' ಪಾತ್ರವನ್ನು ನಿರ್ವಹಿಸುವುದು.", activityType: "ಸಂದರ್ಶನ", parentActivity: "ಕಸದಿಂದ ರಸ - ಹಡಗು ಮತ್ತು ಬಂದರುಗಳ ಕಾರ್ಯವೈಖರಿಯ ಬಗ್ಗೆ ಮಾಹಿತಿ ಹಂಚಿಕೊಳ್ಳುವುದು." },
+
+      // ಅಕ್ಟೋಬರ್ 2026
+      { date: "2026-10-01", day: "Thursday", grade: "6", subject: "ಮಾಹಿತಿಯಿಂದ ತಿಳುವಳಿಕೆಗೆ", title: "ಶಾಲೆ ಚಿತ್ರಗಳಲ್ಲಿ ಪಿಕ್ಟೋಗ್ರಾಫ್", activity: "ಮಾಹಿತಿ ಸಂಗ್ರಹಿಸಿ ಪಿಕ್ಟೋಗ್ರಾಫ್ ರಚಿಸಿ, ಅದನ್ನು ಓದುವ ವಿಧಾನ ಹಾಗೂ ದೊರೆಯುವ ಮಾಹಿತಿಯನ್ನು ವಿವರಿಸುವುದು.", activityType: "ಅಭಿಪ್ರಾಯ ಸಂಗ್ರಹ", parentActivity: "ಭೂ ಸಂರಕ್ಷಣೆ - ಪೋಷಕರು ತಮ್ಮ ಮಕ್ಕಳಿಗೆ ಮಣ್ಣಿನ ಸವಕಳಿ ಬಗ್ಗೆ ತಿಳಿಸಿ, ಮಣ್ಣಿನ ಸವಕಳಿಯನ್ನು ಯಾವ ವಿಧಾನ ಬಳಸಿ ಸಂರಕ್ಷಿಸಬಹುದು ಎಂದು ತಿಳಿಸಿಕೊಡಬೇಕು." },
+      { date: "2026-10-02", day: "Friday", grade: "6", subject: "ಮಾಹಿತಿಯಿಂದ ತಿಳುವಳಿಕೆಗೆ", title: "ಗಾಂಧಿ ಜಯಂತಿ / ಲಾಲ್ ಬಹದ್ದೂರ್ ಶಾಸ್ತ್ರಿ ಜಯಂತಿ", activity: "ಮಹಾತ್ಮ ಗಾಂಧೀಜಿ ಹಾಗೂ ಲಾಲ್ ಬಹದ್ದೂರ್ ಶಾಸ್ತ್ರಿ ಯವರ ಜಯಂತಿ ಆಚರಣೆ ಮಾಡುವುದು.", activityType: "ಆಚರಣೆ", parentActivity: "ಭೂ ಸಂರಕ್ಷಣೆ - ಗಾಂಧೀಜಿಯವರ ಸ್ವಚ್ಛತೆ ಮತ್ತು ಸತ್ಯದ ಮೌಲ್ಯಗಳನ್ನು ಮಕ್ಕಳಿಗೆ ತಿಳಿಸುವುದು." },
+      { date: "2026-10-03", day: "Saturday", grade: "6", subject: "ಮಾಹಿತಿಯಿಂದ ತಿಳುವಳಿಕೆಗೆ", title: "ದೈಹಿಕ ವ್ಯಾಯಾಮ", activity: "ಶಾಲೆಗೆ ಅನುಕೂಲವಾಗುವಂತೆ ಶನಿವಾರ ದೈಹಿಕ ವ್ಯಾಯಾಮವನ್ನು ಎಲ್ಲಾ ಮಕ್ಕಳಿಗೆ ಮಾಡಿಸುವುದು.", activityType: "ಪ್ರದರ್ಶನ", parentActivity: "ಭೂ ಸಂರಕ್ಷಣೆ - ಮನೆ ಸುತ್ತಲಿನ ಮಣ್ಣು ಮತ್ತು ಗಿಡಗಳನ್ನು ಕಾಪಾಡುವುದು." },
+      { date: "2026-10-05", day: "Monday", grade: "7/8", subject: "ದಸರಾ ರಜೆಗಳು", title: "ದಸರಾ ರಜೆ", activity: "ಅಕ್ಟೋಬರ್ 05 ರಿಂದ 22 ರವರೆಗೆ ದಸರಾ ರಜೆಗಳು. ಮನೆಯಲ್ಲಿ ಪೋಷಕರ ಚಟುವಟಿಕೆಗಳು: ನಮ್ಮ ಕನಸಿನ ಮನೆ ಚಿತ್ರ ಬಿಡಿಸುವುದು ಹಾಗೂ ಮಣ್ಣಿನ ಮಾದರಿ ಪರಿಚಯ.", activityType: "ರಜೆ", parentActivity: "ನಮ್ಮ ಕನಸಿನ ಮನೆ - ಮಕ್ಕಳು ತಮ್ಮ ಕನಸಿನ ಮನೆಯ ಚಿತ್ರ ಬರೆದು ಪೋಷಕರಿಗೆ ತೋರಿಸಿ ಕಲಿಕಾ ಮೂಲೆಯಲ್ಲಿ ಪ್ರದರ್ಶಿಸುವುದು." },
+      { date: "2026-10-12", day: "Monday", grade: "7/8", subject: "ದಸರಾ ರಜೆಗಳು", title: "ದಸರಾ ರಜೆ", activity: "ದಸರಾ ರಜಾ ಅವಧಿ ಚಟುವಟಿಕೆ: ಕುಟುಂಬದ ಹಿರಿಯರೊಂದಿಗೆ ಮಣ್ಣಿನ ಮಾದರಿ ಮತ್ತು ಬೆಳೆಗಳ ಕುರಿತು ಚರ್ಚಿಸಿ.", activityType: "ರಜೆ", parentActivity: "ಮಣ್ಣಿನ ಮಾದರಿ ಪರಿಚಯ - ಪೋಷಕರು ತಮ್ಮ ಜಮೀನಿನ ಮಣ್ಣಿನ ಮಾದರಿಯನ್ನು ತೋರಿಸಿ ಅದು ಯಾವ ಬೆಳೆಗಳಿಗೆ ಸೂಕ್ತವಾಗಿದೆ ಎಂದು ತಿಳಿಸುವುದು." },
+      { date: "2026-10-19", day: "Monday", grade: "4", subject: "ದಸರಾ ರಜೆಗಳು", title: "ದಸರಾ ರಜೆ", activity: "ದಸರಾ ರಜಾ ಅವಧಿ: ಅಕ್ಟೋಬರ್ 22 ರವರೆಗೆ ದಸರಾ ರಜೆ. ಕುಟುಂಬ ಸಮೀಕ್ಷೆ ಮತ್ತು ಓದಿನ ಅಭ್ಯಾಸ ಮುಂದುವರಿಸಿ.", activityType: "ರಜೆ", parentActivity: "ಕುಟುಂಬ ಸಮೀಕ್ಷೆ - ಮಕ್ಕಳಿಗೆ ಕುಟುಂಬ ಸಮೀಕ್ಷೆ ಮಾಡಲು ತಿಳಿಸಿ ಜನಸಂಖ್ಯೆ, ವಯಸ್ಸು, ವಿದ್ಯಾರ್ಹತೆ ಕುರಿತು ವರದಿ ಮಾಡಿಸುವುದು." },
+      { date: "2026-10-23", day: "Friday", grade: "4", subject: "ನಮ್ಮ ಭೂಮಿ", title: "8-ದಿಕ್ಕುಗಳ ಪರಿಚಯ", activity: "ಪ್ರಾತ್ಯಕ್ಷಿಕೆಯ ಮೂಲಕ ಶಾಲೆಯ ಸುತ್ತಲಿನ ಸ್ಥಳಗಳು ಹಾಗೂ ಮನೆ-ಶಾಲೆಯ ಸ್ಥಾನವನ್ನು ಎಂಟು ದಿಕ್ಕುಗಳ ಆಧಾರದಲ್ಲಿ ವಿವರಿಸುವುದು.", activityType: "ಪ್ರದರ್ಶನ", parentActivity: "ಮಣ್ಣಿನ ಮಾದರಿ ಪರಿಚಯ - ಮನೆ-ಶಾಲೆಯ ದಿಕ್ಕುಗಳು ಮತ್ತು ಸುತ್ತಮುತ್ತಲಿನ ಪರಿಸರವನ್ನು ಪರಿಚಯಿಸುವುದು." },
+      { date: "2026-10-24", day: "Saturday", grade: "4", subject: "ನಮ್ಮ ಭೂಮಿ", title: "ದೈಹಿಕ ವ್ಯಾಯಾಮ", activity: "ಶಾಲೆಗೆ ಅನುಕೂಲವಾಗುವಂತೆ ಶನಿವಾರ ದೈಹಿಕ ವ್ಯಾಯಾಮವನ್ನು ಎಲ್ಲಾ ಮಕ್ಕಳಿಗೆ ಮಾಡಿಸುವುದು.", activityType: "ಪ್ರದರ್ಶನ", parentActivity: "ನಮ್ಮ ಕನಸಿನ ಮನೆ - ಪ್ರತಿದಿನ ಬೆಳಗ್ಗೆ ವ್ಯಾಯಾಮ ಮಾಡಲು ಮಕ್ಕಳನ್ನು ಪ್ರೋತ್ಸಾಹಿಸುವುದು." },
+
+      { date: "2026-10-26", day: "Monday", grade: "5", subject: "ನಮ್ಮ ಸುತ್ತಮುತ್ತಲಿನಿಂದ ಕಲಿಕೆ", title: "ಚಿತ್ರ ನೋಡಿ ಮಾತಾಡುವುದು", activity: "ಚಿತ್ರವನ್ನು ಗಮನಿಸಿ ಅದರ ಕುರಿತು ಪದಸಂಪತ್ತು ಬಳಸಿ ವಿವರಣೆ ಮತ್ತು ಕಥೆ ನಿರೂಪಣೆ ಮಾಡುವ ಚಟುವಟಿಕೆ.", activityType: "ಕಥಾ ನಿರೂಪಣೆ", parentActivity: "ಕುಟುಂಬ ಸಮೀಕ್ಷೆ - ಪೋಷಕರು ತಮ್ಮ ಮಕ್ಕಳಿಗೆ ಕುಟುಂಬ ಸಮೀಕ್ಷೆ ಮಾಡಲು ತಿಳಿಸಿ, ಜನಸಂಖ್ಯೆ, ವಯಸ್ಸು, ವಿದ್ಯಾರ್ಹತೆ, ಉದ್ಯೋಗ ಕುರಿತು ವರದಿ ಸಿದ್ಧಪಡಿಸುವುದು." },
+      { date: "2026-10-27", day: "Tuesday", grade: "5", subject: "ನಮ್ಮ ಸುತ್ತಮುತ್ತಲಿನಿಂದ ಕಲಿಕೆ", title: "ಪಾತ್ರಾಭಿನಯ ಆಟ", activity: "ಹಳ್ಳ, ನದಿ, ಉಪನದಿ ಮತ್ತು ಸಮುದ್ರಗಳ ಮಹತ್ವ ಹಾಗೂ ಅವುಗಳ ಸಂಗಮವನ್ನು ಪಾತ್ರಾಭಿನಯದ ಮೂಲಕ ವಿವರಿಸುವುದು.", activityType: "ಪಾತ್ರಾಭಿನಯ", parentActivity: "ಕುಟುಂಬ ಸಮೀಕ್ಷೆ - ಊರಿನ ನದಿ, ಕೆರೆಗಳ ಮಹತ್ವವನ್ನು ಮಕ್ಕಳಿಗೆ ತಿಳಿಸುವುದು." },
+      { date: "2026-10-28", day: "Wednesday", grade: "5", subject: "ನಮ್ಮ ಸುತ್ತಮುತ್ತಲಿನಿಂದ ಕಲಿಕೆ", title: "ಸ್ವಚ್ಛತೆ", activity: "ಪಾತ್ರಾಭಿನಯದ ಮೂಲಕ ಕಸವನ್ನು ಸರಿಯಾದ ಸ್ಥಳದಲ್ಲಿ ವಿಲೇವಾರಿ ಮಾಡುವ ಅಭ್ಯಾಸ ಹಾಗೂ ಸ್ವಚ್ಛತೆಯ ಮಹತ್ವ ತಿಳಿಸುವುದು.", activityType: "ಪಾತ್ರಾಭಿನಯ", parentActivity: "ಕುಟುಂಬ ಸಮೀಕ್ಷೆ - ಮನೆಯಲ್ಲಿ ಕಸ ವಿಲೇವಾರಿ ಮತ್ತು ಸ್ವಚ್ಛತೆಯ ಅಭ್ಯಾಸ ಕಲಿಸುವುದು." },
+      { date: "2026-10-29", day: "Thursday", grade: "5", subject: "ನಮ್ಮ ಸುತ್ತಮುತ್ತಲಿನಿಂದ ಕಲಿಕೆ", title: "ವಸ್ತುಗಳು ಸ್ವರೂಪ", activity: "ಪ್ರಾತ್ಯಕ್ಷಿಕೆಯ ಮೂಲಕ ಘನ, ದ್ರವ ಮತ್ತು ಅನಿಲ ವಸ್ತುಗಳ ಉದಾಹರಣೆಗಳನ್ನು ತೋರಿಸಿ ಅವುಗಳನ್ನು ವರ್ಗೀಕರಿಸುವುದು.", activityType: "ಪ್ರದರ್ಶನ", parentActivity: "ಕುಟುಂಬ ಸಮೀಕ್ಷೆ - ಮನೆಯಲ್ಲಿರುವ ಘನ ಮತ್ತು ದ್ರವ ವಸ್ತುಗಳನ್ನು ಗುರುತಿಸಲು ಹೇಳುವುದು." },
+      { date: "2026-10-30", day: "Friday", grade: "5", subject: "ನಮ್ಮ ಸುತ್ತಮುತ್ತಲಿನಿಂದ ಕಲಿಕೆ", title: "Traffic Officers", activity: "ಮೂಕಾಭಿನಯದ ಮೂಲಕ ಸಂಚಾರ ನಿಯಮಗಳನ್ನು ಪ್ರದರ್ಶಿಸಿ, ಅವುಗಳ ಮಹತ್ವವನ್ನು ಗುರುತಿಸಿ ಇಂಗ್ಲೀಷ್‌ನಲ್ಲಿ ವಿವರಿಸುವುದು.", activityType: "ಮೂಕಾಭಿನಯ", parentActivity: "ಕುಟುಂಬ ಸಮೀಕ್ಷೆ - ರಸ್ತೆ ಸುರಕ್ಷತೆ ಮತ್ತು ಸಂಚಾರ ನಿಯಮಗಳ ಬಗ್ಗೆ ಮಕ್ಕಳಿಗೆ ತಿಳಿಸುವುದು." },
+      { date: "2026-10-31", day: "Saturday", grade: "5", subject: "ನಮ್ಮ ಸುತ್ತಮುತ್ತಲಿನಿಂದ ಕಲಿಕೆ", title: "ದೈಹಿಕ ವ್ಯಾಯಾಮ", activity: "ಶಾಲೆಗೆ ಅನುಕೂಲವಾಗುವಂತೆ ಶನಿವಾರ ದೈಹಿಕ ವ್ಯಾಯಾಮವನ್ನು ಎಲ್ಲಾ ಮಕ್ಕಳಿಗೆ ಮಾಡಿಸುವುದು.", activityType: "ಪ್ರದರ್ಶನ", parentActivity: "ಕುಟುಂಬ ಸಮೀಕ್ಷೆ - ಕುಟುಂಬ ಸಮೀಕ್ಷೆಯ ವರದಿಯನ್ನು ಮಕ್ಕಳಿಂದ ಓದಿಸಿ ಕೇಳುವುದು." }
+    ];
+
+    const assemblyDataPart2 = [
+      // ನವೆಂಬರ್ 2026
+      { date: "2026-11-02", day: "Monday", grade: "6", subject: "ನಮ್ಮ ನಾಡು ನಮ್ಮ ನುಡಿ", title: "ಕನ್ನಡ ಗೀತೆಗಳು", activity: "ಹಾವಭಾವಗಳೊಂದಿಗೆ ಕನ್ನಡ ಗೀತೆಗಳನ್ನು ಗುಂಪಿನಲ್ಲಿ ಪಠಿಸಿ, ಭಾಷೆಯ ಸೊಗಡು ಮತ್ತು ಅರ್ಥವನ್ನು ಪರಿಚಯಿಸುವರು.", activityType: "ಅಭಿನಯ ಗೀತೆ", parentActivity: "ಜಾನಪದ ಕಲೆಗಳ ಪರಿಚಯ - ಪೋಷಕರು ತಮ್ಮ ಗ್ರಾಮದ ಜಾನಪದ ಕಲೆಗಳ ಪರಿಚಯವನ್ನು ಮಕ್ಕಳಿಗೆ ತಿಳಿಸಿಕೊಡುವರು ಮತ್ತು ಅದರ ವಿಶೇಷತೆ, ಇತಿಹಾಸದ ಬಗ್ಗೆ ಮನವರಿಕೆ ಮಾಡುವರು." },
+      { date: "2026-11-03", day: "Tuesday", grade: "6", subject: "ನಮ್ಮ ನಾಡು ನಮ್ಮ ನುಡಿ", title: "ನಮ್ಮ ಜಿಲ್ಲೆ ನಮ್ಮ ಹೆಮ್ಮೆ", activity: "ಪ್ರವಾಸ ಮಾರ್ಗದರ್ಶಕರಾಗಿ ಜಿಲ್ಲೆಯ ವಿಶೇಷತೆಗಳು, ಪ್ರಸಿದ್ಧ ಸ್ಥಳಗಳು ಮತ್ತು ಸಂಸ್ಕೃತಿಯನ್ನು ಪರಿಚಯಿಸುವರು.", activityType: "ಪ್ರವಾಸ ಮಾರ್ಗದರ್ಶಕ", parentActivity: "ಜಾನಪದ ಕಲೆಗಳ ಪರಿಚಯ - ತಮ್ಮ ಜಿಲ್ಲೆಯ ಪ್ರಸಿದ್ಧ ಸ್ಥಳಗಳು ಹಾಗೂ ಸಾಂಸ್ಕೃತಿಕ ಕಲೆಗಳ ಬಗ್ಗೆ ಮಕ್ಕಳೊಂದಿಗೆ ಚರ್ಚಿಸುವುದು." },
+      { date: "2026-11-04", day: "Wednesday", grade: "6", subject: "ನಮ್ಮ ನಾಡು ನಮ್ಮ ನುಡಿ", title: "ಕನ್ನಡ ಜ್ಞಾನಪೀಠ ಪ್ರಶಸ್ತಿ ಪುರಸ್ಕೃತರು", activity: "ಜ್ಞಾನಪೀಠ ಪ್ರಶಸ್ತಿ ಪುರಸ್ಕೃತ ಕವಿಗಳ ಕಾವ್ಯನಾಮ ಮತ್ತು ಶ್ರೇಷ್ಠ ಕೃತಿಗಳ ಪರಿಚಯ ಹಾಗೂ ಅವರ ಚಿತ್ರಗಳನ್ನು ಗುರುತಿಸುವರು.", activityType: "ಊಹಿಸಿ ಗುರುತಿಸಿ", parentActivity: "ಜಾನಪದ ಕಲೆಗಳ ಪರಿಚಯ - ಕನ್ನಡದ ಪ್ರಮುಖ ಕವಿಗಳು ಹಾಗೂ ಲೇಖಕರ ಬಗ್ಗೆ ಮಕ್ಕಳಿಗೆ ತಿಳಿಸುವುದು." },
+      { date: "2026-11-05", day: "Thursday", grade: "6", subject: "ನಮ್ಮ ನಾಡು ನಮ್ಮ ನುಡಿ", title: "ಕರ್ನಾಟಕ ರಾಜ್ಯ ಪರಿಚಯ", activity: "ಕರ್ನಾಟಕದ ಭೂಪಟವನ್ನು ಪ್ರದರ್ಶಿಸಿ ಪ್ರಮುಖ ಜಿಲ್ಲೆಗಳು, ಸ್ಥಳಗಳು ಮತ್ತು ವೈಶಿಷ್ಟ್ಯಗಳನ್ನು ಪರಿಚಯಿಸುವರು.", activityType: "ಪ್ರವಾಸ ಮಾರ್ಗದರ್ಶಕ", parentActivity: "ಜಾನಪದ ಕಲೆಗಳ ಪರಿಚಯ - ಕರ್ನಾಟಕದ ಭೂಪಟದಲ್ಲಿ ತಮ್ಮ ಜಿಲ್ಲೆ ಮತ್ತು ನೆರೆಹೊರೆಯ ಜಿಲ್ಲೆಗಳನ್ನು ತೋರಿಸುವುದು." },
+      { date: "2026-11-06", day: "Friday", grade: "6", subject: "ನಮ್ಮ ನಾಡು ನಮ್ಮ ನುಡಿ", title: "ಕನ್ನಡ ಪದಗಳ ಆಟ", activity: "ಕನ್ನಡ ಅಕ್ಷರಗಳನ್ನು ಬಳಸಿ ಹೊಸ ಪದಗಳನ್ನು ರಚಿಸಿ, ಪದಸಂಪತ್ತು ವೃದ್ಧಿಸುವ ಚಟುವಟಿಕೆ ಮುನ್ನಡೆಸುವರು.", activityType: "ಪದರಚನೆ", parentActivity: "ಜಾನಪದ ಕಲೆಗಳ ಪರಿಚಯ - ಮನೆಯಲ್ಲಿ ಮಕ್ಕಳೊಂದಿಗೆ ಕನ್ನಡ ಪದಬಂಧ ಅಥವಾ ಅಂತ್ಯಾಕ್ಷರಿ ಆಟವಾಡುವುದು." },
+      { date: "2026-11-07", day: "Saturday", grade: "6", subject: "ನಮ್ಮ ನಾಡು ನಮ್ಮ ನುಡಿ", title: "ದೈಹಿಕ ವ್ಯಾಯಾಮ", activity: "ಶಾಲೆಗೆ ಅನುಕೂಲವಾಗುವಂತೆ ಶನಿವಾರ ದೈಹಿಕ ವ್ಯಾಯಾಮವನ್ನು ಎಲ್ಲಾ ಮಕ್ಕಳಿಗೆ ಮಾಡಿಸುವುದು.", activityType: "ಪ್ರದರ್ಶನ", parentActivity: "ಜಾನಪದ ಕಲೆಗಳ ಪರಿಚಯ - ಜಾನಪದ ಆಟಗಳು ಮತ್ತು ದೈಹಿಕ ಚಟುವಟಿಕೆಗಳಿಗೆ ಉತ್ತೇಜನ ನೀಡುವುದು." },
+
+      { date: "2026-11-09", day: "Monday", grade: "7/8", subject: "ಜೀವಲೋಕದ ಅದ್ಭುತಗಳು", title: "ದೇಹದ ಸಂದೇಶವಾಹಕರು", activity: "ಅಭಿನಯದ ಮೂಲಕ ದೇಹದಲ್ಲಿ ರಕ್ತ ಮತ್ತು ನೀರಿನ ಸಾಗಣಿಕೆ ಪ್ರಕ್ರಿಯೆಯನ್ನು ಸರಳವಾಗಿ ಪ್ರದರ್ಶಿಸುವರು.", activityType: "ಪಾತ್ರಾಭಿನಯ", parentActivity: "ಧ್ವನಿ ಅನುಕರಣೆ - ಪೋಷಕರು ಮಕ್ಕಳೊಡನೆ ಕುಳಿತು ವಿವಿಧ ರೀತಿಯ ಪ್ರಾಣಿ, ಪಕ್ಷಿಗಳ ಧ್ವನಿ ಅನುಕರಣೆ ಮಾಡಬೇಕು, ಮಕ್ಕಳು ಅದನ್ನು ಗುರುತಿಸಬೇಕು." },
+      { date: "2026-11-10", day: "Tuesday", grade: "7/8", subject: "ಜೀವಲೋಕದ ಅದ್ಭುತಗಳು", title: "ಜೀವದ ಹರಿವು", activity: "ಪ್ರಾತ್ಯಕ್ಷಿಕೆಯ ಮೂಲಕ ಸಸ್ಯಗಳಲ್ಲಿ ನೀರಿನ ಸಾಗಣಿಕೆ ಹೇಗೆ ನಡೆಯುತ್ತದೆ ಎಂಬುದನ್ನು ತೋರಿಸುವರು.", activityType: "ಪ್ರದರ್ಶನ", parentActivity: "ಧ್ವನಿ ಅನುಕರಣೆ - ಸಸ್ಯಗಳಿಗೆ ನೀರು ಹಾಕಿ ಬೆಳೆಸುವ ಜವಾಬ್ದಾರಿಯನ್ನು ಮಕ್ಕಳಿಗೆ ನೀಡುವುದು." },
+      { date: "2026-11-11", day: "Wednesday", grade: "7/8", subject: "ಜೀವಲೋಕದ ಅದ್ಭುತಗಳು", title: "ವಿಜ್ಞಾನ ಸುಳಿವು", activity: "ಊಹಿಸಿ ಗುರುತಿಸುವ ಚಟುವಟಿಕೆಯಲ್ಲಿ ಸಸ್ಯ ಮತ್ತು ಪ್ರಾಣಿಗಳಿಗೆ ಸಂಬಂಧಿಸಿದ ಸುಳಿವುಗಳನ್ನು ಗುರುತಿಸುವರು.", activityType: "ಊಹಿಸಿ ಗುರುತಿಸಿ", parentActivity: "ಧ್ವನಿ ಅನುಕರಣೆ - ಸುತ್ತಮುತ್ತಲಿನ ಪಕ್ಷಿಗಳು ಮತ್ತು ಪ್ರಾಣಿಗಳ ಧ್ವನಿ ಹಾಗೂ ಹೆಸರುಗಳನ್ನು ಗುರುತಿಸುವ ಆಟ." },
+      { date: "2026-11-12", day: "Thursday", grade: "7/8", subject: "ಜೀವಲೋಕದ ಅದ್ಭುತಗಳು", title: "ಪ್ರಕೃತಿ ಉಳಿಸೋಣ", activity: "ಜಾಗೃತಿ ಅಭಿಯಾನದ ಮೂಲಕ ಸಸ್ಯ ಸಂರಕ್ಷಣೆ ಮತ್ತು ಪರಿಸರ ರಕ್ಷಣೆಯ ಸಂದೇಶಗಳನ್ನು ಹಂಚಿಕೊಳ್ಳುವರು.", activityType: "ಜಾಗೃತಿ ಅಭಿಯಾನ", parentActivity: "ಧ್ವನಿ ಅನುಕರಣೆ - ಪೋಷಕರು ಮಕ್ಕಳೊಡನೆ ಕುಳಿತು ವಿವಿಧ ರೀತಿಯ ಪ್ರಾಣಿ, ಪಕ್ಷಿಗಳ ಧ್ವನಿ ಅನುಕರಣೆ ಮಾಡಬೇಕು, ಮಕ್ಕಳು ಅದನ್ನು ಗುರುತಿಸಬೇಕು." },
+      { date: "2026-11-13", day: "Friday", grade: "7/8", subject: "ಜೀವಲೋಕದ ಅದ್ಭುತಗಳು", title: "ಹೂವಿನ ರಹಸ್ಯ", activity: "ಹೂವಿನ ವಿವಿಧ ಭಾಗಗಳನ್ನು ತೋರಿಸಿ ಅವುಗಳ ಕಾರ್ಯ ಮತ್ತು ಮಹತ್ವವನ್ನು ವಸ್ತು ಪರಿಚಯದ ಮೂಲಕ ವಿವರಿಸುವರು.", activityType: "ವಸ್ತು ಪರಿಚಯ", parentActivity: "ಧ್ವನಿ ಅನುಕರಣೆ - ಮನೆ ತೋಟದ ಹೂವುಗಳ ಭಾಗಗಳನ್ನು ಮಕ್ಕಳಿಗೆ ತೋರಿಸಿ ಪರಿಚಯಿಸುವುದು." },
+      { date: "2026-11-14", day: "Saturday", grade: "7/8", subject: "ಜೀವಲೋಕದ ಅದ್ಭುತಗಳು", title: "ಮಕ್ಕಳ ದಿನಾಚರಣೆ", activity: "ಪಂಡಿತ್ ಜವಾಹರಲಾಲ್ ನೆಹರು ಅವರ ಜಯಂತಿಯನ್ನು ಮಕ್ಕಳ ದಿನಾಚರಣೆಯಾಗಿ ಆಚರಣೆ ಮಾಡುವುದು.", activityType: "ಪ್ರಸ್ತುತಿ", parentActivity: "ಧ್ವನಿ ಅನುಕರಣೆ - ಮಕ್ಕಳ ದಿನಾಚರಣೆಯಂದು ಮಕ್ಕಳ ಪ್ರತಿಭೆ ಮತ್ತು ಸೃಜನಶೀಲತೆಯನ್ನು ಪ್ರಶಂಸಿಸುವುದು." },
+
+      { date: "2026-11-16", day: "Monday", grade: "7/8", subject: "ಭೂಮಿ", title: "ಕಾಡು ಉಳಿಸೋಣ", activity: "ಅರಣ್ಯ ಸಂರಕ್ಷಣೆಯ ಅಗತ್ಯತೆ ಮತ್ತು ಕಾಡುಗಳ ಮಹತ್ವದ ಕುರಿತು ಜಾಗೃತಿ ಸಂದೇಶಗಳನ್ನು ನೀಡುವರು.", activityType: "ಜಾಗೃತಿ ಅಭಿಯಾನ", parentActivity: "ನಮ್ಮ ಸಂಸ್ಕೃತಿ ಪರಿಚಯ - ಪೋಷಕರು ತಮ್ಮ ಮನೆ, ಕುಟುಂಬ, ಊರು/ಗ್ರಾಮದ ವಿಶೇಷತೆ, ಜನರ ವೇಷಭೂಷಣ, ಆಹಾರ ಪದ್ಧತಿ ಮತ್ತು ಆಚರಣೆಗಳ ಕುರಿತು ಮಕ್ಕಳಿಗೆ ತಿಳಿಸಿಕೊಡುವುದು." },
+      { date: "2026-11-17", day: "Tuesday", grade: "7/8", subject: "ಭೂಮಿ", title: "ಕಾಡು ಏಕೆ ಕಡಿಮೆಯಾಗುತ್ತಿದೆ?", activity: "ಗುಂಪು ಚರ್ಚೆಯ ಮೂಲಕ ಅರಣ್ಯ ನಾಶಕ್ಕೆ ಕಾರಣವಾಗುವ ಮಾನವ ಚಟುವಟಿಕೆಗಳನ್ನು ವಿಶ್ಲೇಷಿಸುವರು.", activityType: "ಗುಂಪು ಚರ್ಚೆ", parentActivity: "ನಮ್ಮ ಸಂಸ್ಕೃತಿ ಪರಿಚಯ - ಪರಿಸರ ಮತ್ತು ಪ್ರಕೃತಿಯನ್ನು ಗೌರವಿಸುವ ನಮ್ಮ ಸಂಸ್ಕೃತಿಯ ಬಗ್ಗೆ ತಿಳಿಸುವುದು." },
+      { date: "2026-11-18", day: "Wednesday", grade: "7/8", subject: "ಭೂಮಿ", title: "ಭೂಮಿಯ ರೇಖೆಗಳು", activity: "ಗೋಳ ಮತ್ತು ನಕ್ಷೆಯ ಸಹಾಯದಿಂದ ಅಕ್ಷಾಂಶ ಮತ್ತು ರೇಖಾಂಶಗಳ ಮಹತ್ವವನ್ನು ವಿವರಿಸುವರು.", activityType: "ಪ್ರದರ್ಶನ", parentActivity: "ನಮ್ಮ ಸಂಸ್ಕೃತಿ ಪರಿಚಯ - ಊರಿನ ದಿಕ್ಕುಗಳು ಮತ್ತು ಭೌಗೋಳಿಕ ವಿಶೇಷತೆಗಳನ್ನು ಪರಿಚಯಿಸುವುದು." },
+      { date: "2026-11-19", day: "Thursday", grade: "7/8", subject: "ಭೂಮಿ", title: "ಸ್ಥಳ ಹುಡುಕಿ", activity: "ಅಕ್ಷಾಂಶ ಮತ್ತು ರೇಖಾಂಶಗಳ ಸುಳಿವಿನ ಆಧಾರದ ಮೇಲೆ ವಿವಿಧ ಸ್ಥಳಗಳನ್ನು ಗುರುತಿಸುವರು.", activityType: "ಊಹಿಸಿ ಗುರುತಿಸಿ", parentActivity: "ನಮ್ಮ ಸಂಸ್ಕೃತಿ ಪರಿಚಯ - ಕುಟುಂಬದ ಮೂಲ ಊರು ಮತ್ತು ಪ್ರಸಿದ್ಧ ಸ್ಥಳಗಳ ಮಾಹಿತಿ ನೀಡುವುದು." },
+      { date: "2026-11-20", day: "Friday", grade: "7/8", subject: "ಭೂಮಿ", title: "ಭೂಮಿಯ ವಿವಿಧ ಗೋಳಗಳು", activity: "ಮಾನವ ಸರಪಳಿಯ ಮೂಲಕ ಶಿಲಾಗೋಳ, ವಾಯುಗೋಳ ಮತ್ತು ಜಲಗೋಳಗಳ ಪಾತ್ರವನ್ನು ಪರಿಚಯಿಸುವರು.", activityType: "ಪ್ರದರ್ಶನ", parentActivity: "ನಮ್ಮ ಸಂಸ್ಕೃತಿ ಪರಿಚಯ - ನೆಲ, ಜಲ ಮತ್ತು ಗಾಳಿಯ ಸಂರಕ್ಷಣೆಯ ಸಾಂಪ್ರದಾಯಿಕ ವಿಧಾನಗಳನ್ನು ತಿಳಿಸುವುದು." },
+      { date: "2026-11-21", day: "Saturday", grade: "7/8", subject: "ಭೂಮಿ", title: "ಸಂಭ್ರಮ ಶನಿವಾರ", activity: "ಸಂಭ್ರಮ ಶನಿವಾರ: ಆರೋಗ್ಯ ಜೀವನಶೈಲಿ.", activityType: "ಚಟುವಟಿಕೆ", parentActivity: "ನಮ್ಮ ಸಂಸ್ಕೃತಿ ಪರಿಚಯ - ಆರೋಗ್ಯಕರ ಆಹಾರ ಪದ್ಧತಿ ಮತ್ತು ಜೀವನಶೈಲಿಯನ್ನು ಅಳವಡಿಸಿಕೊಳ್ಳುವುದು." },
+
+      { date: "2026-11-23", day: "Monday", grade: "4", subject: "ಸಂಖ್ಯೆಗಳ ಸಂಭ್ರಮ", title: "ಯಾವುದು ಹೆಚ್ಚು?", activity: "ಮಕ್ಕಳು ಎರಡು ಸಂಖ್ಯೆಗಳ ಹೋಲಿಕೆ ಮಾಡಿ ದೊಡ್ಡ ಸಂಖ್ಯೆಯನ್ನು ಗುರುತಿಸುವರು ಮತ್ತು ಹೇಳುವರು.", activityType: "ಥಟ್ ಅಂತ ಹೇಳಿ", parentActivity: "ಮನೆ ಮದ್ದು - ಪೋಷಕರು ತಮ್ಮ ಮಕ್ಕಳಿಗೆ ಸಾಧಾರಣ ರೋಗಗಳಿಗೆ ಮನೆಯಲ್ಲಿ ಮಾಡಿಕೊಳ್ಳುವ ಔಷಧಗಳ ಕುರಿತು ತಿಳಿಸುವುದು ಮತ್ತು ಸ್ಥಳೀಯವಾಗಿ ಸಿಗುವ ಔಷಧಿ ಸಸ್ಯಗಳ ಪರಿಚಯ ಮಾಡಿಕೊಡುವುದು." },
+      { date: "2026-11-24", day: "Tuesday", grade: "4", subject: "ಸಂಖ್ಯೆಗಳ ಸಂಭ್ರಮ", title: "ಆಕಾರ ಹುಡುಕಿ", activity: "ಸುತ್ತಮುತ್ತಲಿನ ವಸ್ತುಗಳಲ್ಲಿ ವಿವಿಧ ಆಕಾರಗಳನ್ನು ಊಹಿಸಿ ಗುರುತಿಸುವ ಚಟುವಟಿಕೆ ನಡೆಸುವರು.", activityType: "ಊಹಿಸಿ ಗುರುತಿಸಿ", parentActivity: "ಮನೆ ಮದ್ದು - ಮನೆಯಲ್ಲಿನ ವಸ್ತುಗಳ ಆಕಾರ ಮತ್ತು ಅಳತೆಗಳನ್ನು ಮಕ್ಕಳಿಗೆ ತೋರಿಸುವುದು." },
+      { date: "2026-11-25", day: "Wednesday", grade: "4", subject: "ಸಂಖ್ಯೆಗಳ ಸಂಭ್ರಮ", title: "ಅಳತೆ ಮಾಡೋಣ", activity: "ಸರಳ ವಸ್ತುಗಳ ಉದ್ದ ಮತ್ತು ತೂಕವನ್ನು ಅಳತೆ ಮಾಡಿ ಪ್ರಾತ್ಯಕ್ಷಿಕೆಯ ಮೂಲಕ ವಿವರಿಸುವರು.", activityType: "ಪ್ರದರ್ಶನ", parentActivity: "ಮನೆ ಮದ್ದು - ಅಡುಗೆ ಮನೆಯಲ್ಲಿ ಪ್ರಮಾಣ ಮತ್ತು ಅಳತೆಗಳ ಬಳಕೆಯನ್ನು ಮಕ್ಕಳಿಗೆ ತೋರಿಸುವುದು." },
+      { date: "2026-11-26", day: "Thursday", grade: "4", subject: "ಸಂಖ್ಯೆಗಳ ಸಂಭ್ರಮ", title: "ಮಾರುಕಟ್ಟೆ ಲೆಕ್ಕ", activity: "ಪಾತ್ರಾಭಿನಯದ ಮೂಲಕ ಖರೀದಿ, ಮಾರಾಟ ಮತ್ತು ಉಳಿದ ಹಣದ ಲೆಕ್ಕಾಚಾರವನ್ನು ತೋರಿಸುವರು.", activityType: "ಪಾತ್ರಾಭಿನಯ", parentActivity: "ಮನೆ ಮದ್ದು - ದಿನಸಿ ಖರೀದಿಸುವಾಗ ಮಕ್ಕಳಿಂದ ಚಿಲ್ಲರೆ ಹಣದ ಲೆಕ್ಕ ಮಾಡಿಸುವುದು." },
+      { date: "2026-11-27", day: "Friday", grade: "4", subject: "ಸಂಖ್ಯೆಗಳ ಸಂಭ್ರಮ", title: "ತೂಕದ ಬೊಟ್ಟು", activity: "ತೂಕದ ಬೊಟ್ಟುಗಳ ಚಿತ್ರ ಅಥವಾ ಮಾದರಿಯನ್ನು ಬಳಸಿ ಈ ವಿಷಯದ ಬಗ್ಗೆ ಪರಿಚಯ ಮಾಡುವರು.", activityType: "ವಸ್ತು ಪರಿಚಯ", parentActivity: "ಮನೆ ಮದ್ದು - ತೂಕದ ಮಾನಗಳಾದ ಗ್ರಾಂ ಮತ್ತು ಕಿಲೋಗ್ರಾಂಗಳ ವ್ಯತ್ಯಾಸ ತಿಳಿಸುವುದು." },
+      { date: "2026-11-28", day: "Saturday", grade: "4", subject: "ಸಂಖ್ಯೆಗಳ ಸಂಭ್ರಮ", title: "ದೈಹಿಕ ವ್ಯಾಯಾಮ", activity: "ಶಾಲೆಗೆ ಅನುಕೂಲವಾಗುವಂತೆ ಶನಿವಾರ ದೈಹಿಕ ವ್ಯಾಯಾಮವನ್ನು ಎಲ್ಲಾ ಮಕ್ಕಳಿಗೆ ಮಾಡಿಸುವರು.", activityType: "ಪ್ರದರ್ಶನ", parentActivity: "ಮನೆ ಮದ್ದು - ಆರೋಗ್ಯಕರ ಜೀವನಕ್ಕಾಗಿ ಪ್ರತಿದಿನ ವ್ಯಾಯಾಮ ಮತ್ತು ಪೌಷ್ಟಿಕ ಆಹಾರದ ಅರಿವು." },
+
+      { date: "2026-11-30", day: "Monday", grade: "5", subject: "ಆರೋಗ್ಯಕರ ಜೀವನ", title: "ಆಹಾರ ಎಲ್ಲಿಂದ ಬರುತ್ತದೆ?", activity: "ಊಹಿಸಿ ಗುರುತಿಸುವ ಚಟುವಟಿಕೆಯಲ್ಲಿ ಆಹಾರ ಪದಾರ್ಥಗಳ ಮೂಲಗಳನ್ನು ಪತ್ತೆಹಚ್ಚಿ ವಿವರಿಸುವರು.", activityType: "ಊಹಿಸಿ ಗುರುತಿಸಿ", parentActivity: "ಮನೆ ಮದ್ದು - ಸಸ್ಯಗಳಿಂದ ಹಾಗೂ ಪ್ರಾಣಿಗಳಿಂದ ದೊರೆಯುವ ಆಹಾರ ಪದಾರ್ಥಗಳ ಬಗ್ಗೆ ಮಕ್ಕಳೊಂದಿಗೆ ಚರ್ಚಿಸುವುದು." },
+
+      // ಡಿಸೆಂಬರ್ 2026
+      { date: "2026-12-01", day: "Tuesday", grade: "5", subject: "ಪ್ರವಾಸಿ ತಾಣಗಳ ಪರಿಚಯ", title: "ನೆಚ್ಚಿನ ಪ್ರವಾಸಿ ತಾಣ", activity: "ಸಾಂಸ್ಕೃತಿಕ ವೈಶಿಷ್ಟ್ಯ ಮತ್ತು ಸಾಮಾಜಿಕ ಮಹತ್ವವನ್ನು ಗುರುತಿಸಿ ಪರಿಚಯಿಸುವುದು.", activityType: "ಸಂಭಾಷಣೆ", parentActivity: "ನೆಚ್ಚಿನ ಪ್ರವಾಸಿ ತಾಣ - ಪೋಷಕರು ಮತ್ತು ಮಕ್ಕಳು ತಾವು ಈ ಹಿಂದೆ ಭೇಟಿ ನೀಡಿದ ಪ್ರವಾಸಿ ತಾಣಗಳಲ್ಲಿ ಇಷ್ಟವಾದ ಸ್ಥಳದ ಬಗ್ಗೆ ಚರ್ಚಿಸಿ ಒಂದು ಚಿತ್ರ ಬಿಡಿಸುವುದು." },
+      { date: "2026-12-02", day: "Wednesday", grade: "5", subject: "ಪ್ರವಾಸಿ ತಾಣಗಳ ಪರಿಚಯ", title: "ಪ್ರಸಿದ್ಧ ತಾಣವನ್ನು ಗುರುತಿಸೋಣ", activity: "ಪ್ರಸಿದ್ಧ ಪ್ರವಾಸಿ ತಾಣಗಳ ಪರಿಚಯ ಮಾಡುವುದು (ಉದಾ: ಮೈಸೂರು, ಹಂಪಿ, ಜೋಗ, ಕಿತ್ತೂರು, ಇತ್ಯಾದಿ) ಹಾಗೂ ಸ್ಥಳೀಯ ತಾಣಗಳು.", activityType: "ಊಹಿಸಿ ಗುರುತಿಸಿ", parentActivity: "ನೆಚ್ಚಿನ ಪ್ರವಾಸಿ ತಾಣ - ಕರ್ನಾಟಕದ ಪ್ರಸಿದ್ಧ ಪ್ರವಾಸಿ ತಾಣಗಳ ಚಿತ್ರ ಮತ್ತು ಕಥೆಗಳನ್ನು ಮಕ್ಕಳಿಗೆ ತೋರಿಸುವುದು." },
+      { date: "2026-12-03", day: "Thursday", grade: "5", subject: "ಪ್ರವಾಸಿ ತಾಣಗಳ ಪರಿಚಯ", title: "ವಿಶ್ವ ವಿಶೇಷಚೇತನರ ದಿನ", activity: "ವಿಶ್ವ ವಿಶೇಷಚೇತನರ ದಿನಕ್ಕೆ ಸಂಬಂಧಿಸಿದ ವಿವಿಧ ಸನ್ನಿವೇಶಗಳನ್ನು ಮಕ್ಕಳು ವಿಶ್ಲೇಷಿಸುವರು.", activityType: "ಸನ್ನಿವೇಶ ವಿಶ್ಲೇಷಣೆ", parentActivity: "ನೆಚ್ಚಿನ ಪ್ರವಾಸಿ ತಾಣ - ವಿಶೇಷಚೇತನರ ಬಗ್ಗೆ ಗೌರವ ಮತ್ತು ಸಹಾನುಭೂತಿ ಬೆಳೆಸುವುದು." },
+      { date: "2026-12-04", day: "Friday", grade: "5", subject: "ಪ್ರವಾಸಿ ತಾಣಗಳ ಪರಿಚಯ", title: "ಪ್ರವಾಸಿ ತಾಣ ಗುರುತಿಸುವುದು", activity: "ಭಾರತದ ನಕ್ಷೆಯಲ್ಲಿ ವಿವಿಧ ಪ್ರಮುಖ ಪ್ರವಾಸಿ ತಾಣಗಳನ್ನು ಗುರುತಿಸುವುದು.", activityType: "ಊಹಿಸಿ ಗುರುತಿಸಿ", parentActivity: "ನೆಚ್ಚಿನ ಪ್ರವಾಸಿ ತಾಣ - ಪ್ರವಾಸದ ಅನುಭವಗಳು ಮತ್ತು ಸ್ವಚ್ಛ ಪ್ರವಾಸೋದ್ಯಮದ ಮಹತ್ವ ತಿಳಿಸುವುದು." },
+      { date: "2026-12-05", day: "Saturday", grade: "5", subject: "ಪ್ರವಾಸಿ ತಾಣಗಳ ಪರಿಚಯ", title: "ದೈಹಿಕ ವ್ಯಾಯಾಮ", activity: "ಶಾಲೆಗೆ ಅನುಕೂಲವಾಗುವಂತೆ ಶನಿವಾರ ದೈಹಿಕ ವ್ಯಾಯಾಮವನ್ನು ಎಲ್ಲಾ ಮಕ್ಕಳಿಗೆ ಮಾಡಿಸುವುದು.", activityType: "ಪ್ರದರ್ಶನ", parentActivity: "ನೆಚ್ಚಿನ ಪ್ರವಾಸಿ ತಾಣ - ನಿಯಮಿತ ಯೋಗ ಮತ್ತು ದೈಹಿಕ ವ್ಯಾಯಾಮಕ್ಕೆ ಪ್ರೋತ್ಸಾಹಿಸುವುದು." },
+
+      { date: "2026-12-07", day: "Monday", grade: "6", subject: "ರಾಷ್ಟ್ರೀಯ ಉದ್ಯಾನವನಗಳು", title: "ನಾಗರಹೊಳೆ ರಾಷ್ಟ್ರೀಯ ಉದ್ಯಾನವನ", activity: "ವಿದ್ಯಾರ್ಥಿಗಳು ನಾಗರಹೊಳೆ ರಾಷ್ಟ್ರೀಯ ಉದ್ಯಾನವನದ ಬಗ್ಗೆ ಮಾಹಿತಿ ನೀಡುವುದು. ಚಿತ್ರಗಳ ಮೂಲಕ ಅದರ ಸಂಪೂರ್ಣ ಪರಿಚಯ ಮಾಡುವುದು.", activityType: "ಪ್ರದರ್ಶನ", parentActivity: "ಮನೆಯಲ್ಲೇ ಉಳಿತಾಯ - ಪೋಷಕರು ತಮ್ಮ ಮಕ್ಕಳಿಗೆ ಚಿಕ್ಕ ವಯಸ್ಸಿನಿಂದಲೇ ಉಳಿತಾಯ ಮನೋಭಾವವನ್ನು ಬೆಳೆಸುವುದು ಮತ್ತು ಅಗತ್ಯ ಸಹಕಾರ ನೀಡುವುದು." },
+      { date: "2026-12-08", day: "Tuesday", grade: "6", subject: "ರಾಷ್ಟ್ರೀಯ ಉದ್ಯಾನವನಗಳು", title: "ಕುದುರೆಮುಖ ರಾಷ್ಟ್ರೀಯ ಉದ್ಯಾನವನ", activity: "ವಿದ್ಯಾರ್ಥಿಗಳು ಕುದುರೆಮುಖ ರಾಷ್ಟ್ರೀಯ ಉದ್ಯಾನವನದ ಬಗ್ಗೆ ಮಾಹಿತಿ ನೀಡುವುದು. ಚಿತ್ರಗಳ ಮೂಲಕ ಅದರ ಸಂಪೂರ್ಣ ಪರಿಚಯ ಮಾಡುವುದು.", activityType: "ಪ್ರಸ್ತುತಿ", parentActivity: "ಮನೆಯಲ್ಲೇ ಉಳಿತಾಯ - ಹಣ, ನೀರು ಮತ್ತು ವಿದ್ಯುತ್ ಉಳಿತಾಯದ ಮಹತ್ವವನ್ನು ಮಕ್ಕಳಿಗೆ ಕಲಿಸುವುದು." },
+      { date: "2026-12-09", day: "Wednesday", grade: "6", subject: "ರಾಷ್ಟ್ರೀಯ ಉದ್ಯಾನವನಗಳು", title: "ಬಂಡೀಪುರ ರಾಷ್ಟ್ರೀಯ ಉದ್ಯಾನವನ", activity: "ವಿದ್ಯಾರ್ಥಿಗಳು ಬಂಡೀಪುರ ರಾಷ್ಟ್ರೀಯ ಉದ್ಯಾನವನದ ಬಗ್ಗೆ ಮಾಹಿತಿ ನೀಡುವುದು. ಚಿತ್ರಗಳ ಮೂಲಕ ಅದರ ಸಂಪೂರ್ಣ ಪರಿಚಯ ಮಾಡುವುದು.", activityType: "ಪ್ರದರ್ಶನ", parentActivity: "ಮನೆಯಲ್ಲೇ ಉಳಿತಾಯ - ವನ್ಯಜೀವಿ ಸಂರಕ್ಷಣೆ ಹಾಗೂ ಪ್ರಕೃತಿ ಉಳಿತಾಯದ ಬಗ್ಗೆ ತಿಳಿಸುವುದು." },
+      { date: "2026-12-10", day: "Thursday", grade: "6", subject: "ರಾಷ್ಟ್ರೀಯ ಉದ್ಯಾನವನಗಳು", title: "ಬನ್ನೇರುಘಟ್ಟ ಜೈವಿಕ ಉದ್ಯಾನವನ", activity: "ವಿದ್ಯಾರ್ಥಿಗಳು ಬನ್ನೇರುಘಟ್ಟ ಜೈವಿಕ ಉದ್ಯಾನವನದ ಬಗ್ಗೆ ಮಾಹಿತಿ ನೀಡುವುದು. ಚಿತ್ರಗಳ ಮೂಲಕ ಅದರ ಸಂಪೂರ್ಣ ಪರಿಚಯ ಮಾಡುವುದು.", activityType: "ಪ್ರಸ್ತುತಿ", parentActivity: "ಮನೆಯಲ್ಲೇ ಉಳಿತಾಯ - ಮಕ್ಕಳಿಗೆ ಸಣ್ಣ ಹುಂಡಿ ನೀಡಿ ಉಳಿತಾಯದ ಅಭ್ಯಾಸ ಪ್ರೋತ್ಸಾಹಿಸುವುದು." },
+      { date: "2026-12-11", day: "Friday", grade: "6", subject: "ರಾಷ್ಟ್ರೀಯ ಉದ್ಯಾನವನಗಳು", title: "ರಂಗನತಿಟ್ಟು ಪಕ್ಷಿಧಾಮ", activity: "ವಿದ್ಯಾರ್ಥಿಗಳು ರಂಗನತಿಟ್ಟು ಪಕ್ಷಿಧಾಮದ ಬಗ್ಗೆ ರಸಪ್ರಶ್ನೆ ಕೇಳುವುದು, ಉಳಿದ ಮಕ್ಕಳು ಆ ಪ್ರಶ್ನೆಗಳಿಗೆ ಉತ್ತರ ನೀಡುವುದು.", activityType: "ರಸಪ್ರಶ್ನೆ", parentActivity: "ಮನೆಯಲ್ಲೇ ಉಳಿತಾಯ - ವಲಸೆ ಹಕ್ಕಿಗಳು ಹಾಗೂ ಪಕ್ಷಿಧಾಮಗಳ ಸಂರಕ್ಷಣೆಯ ಬಗ್ಗೆ ಮಾತನಾಡುವುದು." },
+      { date: "2026-12-12", day: "Saturday", grade: "6", subject: "ರಾಷ್ಟ್ರೀಯ ಉದ್ಯಾನವನಗಳು", title: "SDMC/ಸಮುದಾಯ ಸಹಭಾಗಿತ್ವ", activity: "ಸಮುದಾಯ ಅಥವಾ ಎಸ್‌ಡಿಎಂಸಿ ಸದಸ್ಯರು ತಮ್ಮ ಜ್ಞಾನ ಮತ್ತು ವೃತ್ತಿಯ ಅನುಭವಗಳನ್ನು ಹಂಚಿಕೊಳ್ಳುತ್ತಾರೆ.", activityType: "ಪ್ರಸ್ತುತಿ", parentActivity: "ಮನೆಯಲ್ಲೇ ಉಳಿತಾಯ - ಸಮುದಾಯದ ಅನುಭವಿಗಳಿಂದ ಜೀವನ ಕೌಶಲ್ಯಗಳನ್ನು ಕಲಿಯುವುದು." },
+
+      { date: "2026-12-14", day: "Monday", grade: "7/8", subject: "ಜಾನಪದ ಸಾಹಿತ್ಯ ಮತ್ತು ಸಂಸ್ಕೃತಿ", title: "ಜಾನಪದ ಗೀತೆಗಳಿಗೆ ನೃತ್ಯ", activity: "ವಿದ್ಯಾರ್ಥಿಗಳು ಜಾನಪದ ಗೀತೆಗೆ ಅನುಗುಣವಾಗಿ ಸರಳ ನೃತ್ಯ ಮತ್ತು ಅಭಿನಯ ಪ್ರದರ್ಶಿಸುವುದು.", activityType: "ಅಭಿನಯ ಗೀತೆ", parentActivity: "ನಮ್ಮ ಪಾರಂಪರಿಕ ಕಲೆಗಳು - ಪೋಷಕರು ತಮ್ಮ ಮಕ್ಕಳಿಗೆ ಕುಟುಂಬದಲ್ಲಿ ಪಾಲಿಸಿಕೊಂಡು ಬಂದ ಪಾರಂಪರಿಕ ಕಲೆಗಳ ಪರಿಚಯ, ಮಹತ್ವ ಮತ್ತು ಇತಿಹಾಸ ತಿಳಿಸಿಕೊಡುವುದು." },
+      { date: "2026-12-15", day: "Tuesday", grade: "7/8", subject: "ಜಾನಪದ ಸಾಹಿತ್ಯ ಮತ್ತು ಸಂಸ್ಕೃತಿ", title: "ಜಾನಪದ ಕಲಾ ಪ್ರಕಾರಗಳ ಪರಿಚಯ", activity: "ಮಕ್ಕಳು ಜಾನಪದ ಕಲೆಗಳು ಜನರ ಜೀವನ, ಸಂಸ್ಕೃತಿ, ಆಚರಣೆ ಮತ್ತು ಸಂಪ್ರದಾಯಗಳನ್ನು ಪ್ರತಿಬಿಂಬಿಸುತ್ತವೆ ಎಂಬುದನ್ನು ಪ್ರಸ್ತುತಿ ಪಡಿಸುವುದು.", activityType: "ಪ್ರಸ್ತುತಿ", parentActivity: "ನಮ್ಮ ಪಾರಂಪರಿಕ ಕಲೆಗಳು - ಡೊಳ್ಳು ಕುಣಿತ, ವೀರಗಾಸೆ, ಯಕ್ಷಗಾನ ಮುಂತಾದ ಕಲೆಗಳ ಪರಿಚಯ ಮಾಡಿಸುವುದು." },
+      { date: "2026-12-16", day: "Wednesday", grade: "7/8", subject: "ಜಾನಪದ ಸಾಹಿತ್ಯ ಮತ್ತು ಸಂಸ್ಕೃತಿ", title: "ಜಾನಪದ ಕಲಾವಿದರ ಪರಿಚಯ", activity: "ಮಕ್ಕಳು ಸ್ಥಳೀಯ ಜಾನಪದ ಕಲಾವಿದರ ಹೆಸರು, ಊರು, ಕಲಾಪ್ರಕಾರ ಮತ್ತು ಸಾಧನೆಗಳನ್ನು ಪರಿಚಯಿಸುವುದು.", activityType: "ಪ್ರಸ್ತುತಿ", parentActivity: "ನಮ್ಮ ಪಾರಂಪರಿಕ ಕಲೆಗಳು - ಸ್ಥಳೀಯ ಜಾನಪದ ಕಲಾವಿದರ ಸಾಧನೆಗಳನ್ನು ಮಕ್ಕಳಿಗೆ ವಿವರಿಸುವುದು." },
+      { date: "2026-12-17", day: "Thursday", grade: "7/8", subject: "ಜಾನಪದ ಸಾಹಿತ್ಯ ಮತ್ತು ಸಂಸ್ಕೃತಿ", title: "ಸಂಸ್ಕೃತಿ ಬಿಂಬಿಸುವ ವೇಷ ಭೂಷಣ", activity: "ಮಕ್ಕಳು ಸ್ಥಳೀಯ ಸಮುದಾಯಗಳ ಸಾಂಪ್ರದಾಯಿಕ ವೇಷಭೂಷಣ ಧರಿಸಿ ಪ್ರದರ್ಶನ ನೀಡುವುದು.", activityType: "ಪ್ರದರ್ಶನ", parentActivity: "ನಮ್ಮ ಪಾರಂಪರಿಕ ಕಲೆಗಳು - ಸಾಂಪ್ರದಾಯಿಕ ಉಡುಗೆ-ತೊಡುಗೆಗಳ ವಿಶೇಷತೆಯನ್ನು ತಿಳಿಸುವುದು." },
+      { date: "2026-12-18", day: "Friday", grade: "7/8", subject: "ಜಾನಪದ ಸಾಹಿತ್ಯ ಮತ್ತು ಸಂಸ್ಕೃತಿ", title: "ಜಾನಪದ ಪರಂಪರೆ ಉಳಿಸೋಣ", activity: "ನಮ್ಮ ಜಾನಪದ ಕಲೆ, ಸಾಹಿತ್ಯ ಮತ್ತು ಸಂಸ್ಕೃತಿಯನ್ನು ಮುಂದಿನ ಪೀಳಿಗೆಗೆ ಹೇಗೆ ಉಳಿಸಬಹುದು ಎಂಬುದರ ಬಗ್ಗೆ ವಿದ್ಯಾರ್ಥಿಗಳ ಅಭಿಪ್ರಾಯ ಹಂಚಿಕೆ ಮಾಡುವುದು.", activityType: "ಪ್ರಸ್ತುತಿ", parentActivity: "ನಮ್ಮ ಪಾರಂಪರಿಕ ಕಲೆಗಳು - ಜಾನಪದ ಹಾಡುಗಳು ಮತ್ತು ಕಥೆಗಳನ್ನು ಮಕ್ಕಳೊಂದಿಗೆ ಹಂಚಿಕೊಳ್ಳುವುದು." },
+      { date: "2026-12-19", day: "Saturday", grade: "7/8", subject: "ಜಾನಪದ ಸಾಹಿತ್ಯ ಮತ್ತು ಸಂಸ್ಕೃತಿ", title: "ಸಂಭ್ರಮ ಶನಿವಾರ", activity: "ಸಂಭ್ರಮ ಶನಿವಾರ: ಸಾರ್ವಜನಿಕ ಸೌಕರ್ಯಗಳು ಮತ್ತು ನನ್ನ ಜವಾಬ್ದಾರಿ.", activityType: "ಚಟುವಟಿಕೆ", parentActivity: "ನಮ್ಮ ಪಾರಂಪರಿಕ ಕಲೆಗಳು - ಸಾರ್ವಜನಿಕ ಆಸ್ತಿ ಮತ್ತು ಸಾಂಸ್ಕೃತಿಕ ಸ್ಮಾರಕಗಳನ್ನು ರಕ್ಷಿಸುವ ಅರಿವು." },
+
+      { date: "2026-12-21", day: "Monday", grade: "7/8", subject: "ಸುತ್ತಮುತ್ತಲಿನ ಜಗತ್ತು", title: "ನನ್ನ ನೆಚ್ಚಿನ ಶಿಕ್ಷಕರು", activity: "ಮಕ್ಕಳು ತಮಗಿಷ್ಟವಾದ ಶಿಕ್ಷಕರ ಕುರಿತು ಮೂಕಾಭಿನಯ ಮಾಡುವುದು, ಉಳಿದ ಮಕ್ಕಳು ಅವರು ಯಾರು ಎಂದು ಊಹಿಸುವುದು.", activityType: "ಮೂಕಾಭಿನಯ", parentActivity: "ಪರಿಸರ ಸ್ನೇಹಿ ಸಾರಿಗೆ - ಸೈಕಲ್, ಕಾಲುನಡಿಗೆ, ಎಲೆಕ್ಟ್ರಿಕ್ ಬಸ್, ರೈಲುಗಳ ಬಗ್ಗೆ ಮಕ್ಕಳಿಗೆ ಪರಿಚಯಿಸಿ ವಾಯುಮಾಲಿನ್ಯ ತಡೆಯುವ ವಿಧಾನ ವಿವರಿಸುವುದು." },
+      { date: "2026-12-22", day: "Tuesday", grade: "7/8", subject: "ಸುತ್ತಮುತ್ತಲಿನ ಜಗತ್ತು", title: "Stories we Share", activity: "ಇಂಗ್ಲೀಷ್‌ನಲ್ಲಿ ಕಥೆ ನಿರೂಪಿಸುತ್ತಾ ಕಥೆಯ ಸಾರಾಂಶವನ್ನು ಸರಳ ವಾಕ್ಯಗಳ ಮೂಲಕ ತಿಳಿಸುವುದು.", activityType: "ಕಥಾ ನಿರೂಪಣೆ", parentActivity: "ಪರಿಸರ ಸ್ನೇಹಿ ಸಾರಿಗೆ - ಇಂಗ್ಲೀಷ್ ಸಣ್ಣ ಕಥೆಗಳನ್ನು ಓದಲು ಮಕ್ಕಳಿಗೆ ಪ್ರೋತ್ಸಾಹಿಸುವುದು." },
+      { date: "2026-12-23", day: "Wednesday", grade: "7/8", subject: "ಸುತ್ತಮುತ್ತಲಿನ ಜಗತ್ತು", title: "ಪ್ರಾಣಿಗಳು ಮತ್ತು ಅವುಗಳ ಮರಿಗಳು", activity: "ವಿವಿಧ ರೀತಿಯ ಪ್ರಾಣಿಗಳು ಮತ್ತು ಅವುಗಳ ಮರಿಗಳ ಚಾರ್ಟ್ ಬಳಸಿ ಪ್ರದರ್ಶನ ಮಾಡುವುದು.", activityType: "ಪ್ರದರ್ಶನ", parentActivity: "ಪರಿಸರ ಸ್ನೇಹಿ ಸಾರಿಗೆ - ಪ್ರಾಣಿ-ಪಕ್ಷಿಗಳ ರಕ್ಷಣೆ ಮತ್ತು ಪರಿಸರ ಸ್ನೇಹಿ ಜೀವನದ ಮಹತ್ವ ತಿಳಿಸುವುದು." },
+      { date: "2026-12-24", day: "Thursday", grade: "7/8", subject: "ಸುತ್ತಮುತ್ತಲಿನ ಜಗತ್ತು", title: "ಕಾಮನಬಿಲ್ಲನ್ನು ತಿಳಿಯೋಣ", activity: "ಬೆಳಕು ಮತ್ತು ಅದರ ವಕ್ರೀಭವನವನ್ನು ಪಟ್ಟಕ ಬಳಸಿ ಪ್ರದರ್ಶನ ಮಾಡುವುದು. ಪ್ರಯೋಗದ ಮೂಲಕ ಬೆಳಕನ್ನು ವಿವರಿಸುವುದು.", activityType: "ಪ್ರಯೋಗ", parentActivity: "ಪರಿಸರ ಸ್ನೇಹಿ ಸಾರಿಗೆ - ಪ್ರಕೃತಿಯಲ್ಲಿ ಕಾಣುವ ವಿಜ್ಞಾನದ ವಿಸ್ಮಯಗಳ ಬಗ್ಗೆ ಮಕ್ಕಳಲ್ಲಿ ಕುತೂಹಲ ಬೆಳೆಸುವುದು." },
+      { date: "2026-12-25", day: "Friday", grade: "7/8", subject: "ಸುತ್ತಮುತ್ತಲಿನ ಜಗತ್ತು", title: "ಡಿಜಿಟಲ್ ಆಟಗಳ ದುಷ್ಪರಿಣಾಮ", activity: "ಮೊಬೈಲ್ ಮತ್ತು ಡಿಜಿಟಲ್ ಆಟಗಳಿಂದ ಮಕ್ಕಳ ಕಲಿಕೆಯ ಮೇಲೆ ಹೇಗೆ ದುಷ್ಪರಿಣಾಮಗಳು ಬೀರುತ್ತಿವೆ ಎಂದು ತಿಳಿಸುವುದು.", activityType: "ಸಂದರ್ಶನ", parentActivity: "ಪರಿಸರ ಸ್ನೇಹಿ ಸಾರಿಗೆ - ಮೊಬೈಲ್ ಬಳಕೆಯನ್ನು ಮಿತಿಗೊಳಿಸಿ ಹೊರಾಂಗಣ ಆಟ ಮತ್ತು ಸೈಕ್ಲಿಂಗ್ ಪ್ರೋತ್ಸಾಹಿಸುವುದು." },
+      { date: "2026-12-26", day: "Saturday", grade: "7/8", subject: "ಸುತ್ತಮುತ್ತಲಿನ ಜಗತ್ತು", title: "ದೈಹಿಕ ವ್ಯಾಯಾಮ", activity: "ಶಾಲೆಗೆ ಅನುಕೂಲವಾಗುವಂತೆ ಶನಿವಾರ ದೈಹಿಕ ವ್ಯಾಯಾಮವನ್ನು ಎಲ್ಲಾ ಮಕ್ಕಳಿಗೆ ಮಾಡಿಸುವುದು.", activityType: "ಪ್ರದರ್ಶನ", parentActivity: "ಪರಿಸರ ಸ್ನೇಹಿ ಸಾರಿಗೆ - ಕಾಲುನಡಿಗೆ ಮತ್ತು ಸೈಕಲ್ ಬಳಕೆಯ ಆರೋಗ್ಯ ಲಾಭಗಳನ್ನು ತಿಳಿಸುವುದು." },
+
+      { date: "2026-12-28", day: "Monday", grade: "4", subject: "ಪರಿಚಯ", title: "ರಾಷ್ಟ್ರ ನಾಯಕರು", activity: "ರಾಷ್ಟ್ರ ನಾಯಕರ ಛದ್ಮವೇಷ ಧರಿಸಿ, ಅವರ ಕಿರು ಪರಿಚಯ ಮಾಡುವುದು.", activityType: "ಛದ್ಮವೇಷ", parentActivity: "ಪರಿಸರ ಸ್ನೇಹಿ ಸಾರಿಗೆ - ರಾಷ್ಟ್ರ ನಾಯಕರ ಆದರ್ಶಗಳನ್ನು ಮಕ್ಕಳಿಗೆ ತಿಳಿಸುವುದು." },
+      { date: "2026-12-29", day: "Tuesday", grade: "4", subject: "ಪರಿಚಯ", title: "ಮರವೇ ಗುರು", activity: "ಮಕ್ಕಳು ಮರದ ಉಪಯೋಗ ಮತ್ತು ಮಹತ್ವವನ್ನು ವಿವರಿಸುವುದು.", activityType: "ಪ್ರಸ್ತುತಿ", parentActivity: "ಪರಿಸರ ಸ್ನೇಹಿ ಸಾರಿಗೆ - ಮರಗಿಡಗಳನ್ನು ಬೆಳೆಸುವುದು ಮತ್ತು ಪರಿಸರ ಸಂರಕ್ಷಣೆಯ ಅರಿವು ಮೂಡಿಸುವುದು." },
+      { date: "2026-12-30", day: "Wednesday", grade: "4", subject: "ಪರಿಚಯ", title: "ಪ್ರಾಮಾಣಿಕತೆ ಮೌಲ್ಯ", activity: "ಮಕ್ಕಳು ಪಾತ್ರಾಭಿನಯದ ಮೂಲಕ ಪ್ರಾಮಾಣಿಕತೆ ಮೌಲ್ಯವನ್ನು ವಿವರಿಸುವುದು.", activityType: "ಪಾತ್ರಾಭಿನಯ", parentActivity: "ಪರಿಸರ ಸ್ನೇಹಿ ಸಾರಿಗೆ - ನಿತ್ಯ ಜೀವನದಲ್ಲಿ ಸತ್ಯ ಮತ್ತು ಪ್ರಾಮಾಣಿಕತೆಯ ಮಹತ್ವವನ್ನು ತಿಳಿಸುವುದು." },
+      { date: "2026-12-31", day: "Thursday", grade: "4", subject: "ಪರಿಚಯ", title: "ಆರೋಗ್ಯ ಸುರಕ್ಷತೆ ಜಾಗೃತಿ", activity: "ಉತ್ತಮ ಆರೋಗ್ಯಕ್ಕಾಗಿ ಮಕ್ಕಳು ಪಾಲಿಸಬೇಕಾದ ಜೀವನಶೈಲಿ ಕುರಿತು ಜಾಗೃತಿ ಮೂಡಿಸುವುದು.", activityType: "ಜಾಗೃತಿ ಅಭಿಯಾನ", parentActivity: "ಪರಿಸರ ಸ್ನೇಹಿ ಸಾರಿಗೆ - ಸ್ವಚ್ಛತೆ, ಆರೋಗ್ಯ ಮತ್ತು ಪರಿಸರ ಸ್ನೇಹಿ ಸಾರಿಗೆಯ ಬಗ್ಗೆ ತಿಳಿಸುವುದು." },
+
+      // ಜನವರಿ 2027
+      { date: "2027-01-01", day: "Friday", grade: "4", subject: "ಭಾಷೆ ಮತ್ತು ಗಣಿತ", title: "ಅಳತೆಗಳ ಪರಿಚಯ", activity: "ವಿವಿಧ ಅಳತೆ ಮತ್ತು ಮಾಪನ ಸಾಧನಗಳನ್ನು ಪ್ರದರ್ಶಿಸಿ ಅವುಗಳ ಬಳಕೆ ಹಾಗೂ ಮಹತ್ವವನ್ನು ಪ್ರಸ್ತುತಪಡಿಸುವುದು.", activityType: "ಪ್ರಸ್ತುತಿ", parentActivity: "ಸಂತೆ/ಮಾರುಕಟ್ಟೆ ಬಗ್ಗೆ ತಿಳಿಯೋಣ - ಮಾರುಕಟ್ಟೆಯಲ್ಲಿ ಸಿಗುವ ವಸ್ತುಗಳು, ತರಕಾರಿ, ಹಣ್ಣುಗಳ ಹೆಸರು, ಬಣ್ಣ, ಆಕಾರ ಮತ್ತು ಬೆಲೆಗಳ ಬಗ್ಗೆ ಮಕ್ಕಳಿಗೆ ತಿಳಿಸುವುದು." },
+      { date: "2027-01-02", day: "Saturday", grade: "4", subject: "ಭಾಷೆ ಮತ್ತು ಗಣಿತ", title: "ದೈಹಿಕ ವ್ಯಾಯಾಮ", activity: "ಶಾಲೆಗೆ ಅನುಕೂಲವಾಗುವಂತೆ ಶನಿವಾರ ದೈಹಿಕ ವ್ಯಾಯಾಮವನ್ನು ಎಲ್ಲಾ ಮಕ್ಕಳಿಗೆ ಮಾಡಿಸುವುದು.", activityType: "ಪ್ರದರ್ಶನ", parentActivity: "ಸಂತೆ/ಮಾರುಕಟ್ಟೆ ಬಗ್ಗೆ ತಿಳಿಯೋಣ - ಹೊಸ ವರ್ಷದಲ್ಲಿ ಉತ್ತಮ ಆರೋಗ್ಯಕರ ಅಭ್ಯಾಸಗಳನ್ನು ರೂಢಿಸುವುದು." },
+
+      { date: "2027-01-04", day: "Monday", grade: "5", subject: "ಭಾರತದ ವಿಶೇಷತೆ", title: "ಭಾರತದ ಶಿಖರಗಳು", activity: "ಮಕ್ಕಳು ಚಿತ್ರಪಟಗಳನ್ನು ಪ್ರದರ್ಶಿಸುತ್ತಾ ಭಾರತದ ಶಿಖರಗಳ ಬಗ್ಗೆ ವಿವರಿಸುವರು.", activityType: "ಪ್ರಸ್ತುತಿ", parentActivity: "ನನ್ನ ಜಿಲ್ಲೆಯ ವಿಶೇಷತೆ - ಪೋಷಕರು ಮಕ್ಕಳಿಗೆ ಸೇರಿ ತಮ್ಮ ಜಿಲ್ಲೆಯ ಪ್ರಸಿದ್ಧ ಸ್ಥಳಗಳು, ವ್ಯಕ್ತಿಗಳು, ಕಲೆ, ಸಂಸ್ಕೃತಿ ಮತ್ತು ಆಹಾರಗಳ ಕುರಿತು ಮಾಹಿತಿ ಸಂಗ್ರಹಿಸುವುದು." },
+      { date: "2027-01-05", day: "Tuesday", grade: "5", subject: "ಭಾರತದ ವಿಶೇಷತೆ", title: "ಉತ್ತರದ ಮೈದಾನಗಳು", activity: "ಚಿತ್ರಗಳು ಮತ್ತು ನಕ್ಷೆಗಳ ಮೂಲಕ ಉತ್ತರದ ಮೈದಾನಗಳ ಭೌಗೋಳಿಕ ಲಕ್ಷಣಗಳನ್ನು ವಿವರಿಸುವುದು.", activityType: "ಪ್ರಸ್ತುತಿ", parentActivity: "ನನ್ನ ಜಿಲ್ಲೆಯ ವಿಶೇಷತೆ - ಜಿಲ್ಲೆಯ ಪ್ರಮುಖ ಭೌಗೋಳಿಕ ಲಕ್ಷಣಗಳು ಮತ್ತು ಬೆಳೆಗಳ ಬಗ್ಗೆ ತಿಳಿಸುವುದು." },
+      { date: "2027-01-06", day: "Wednesday", grade: "5", subject: "ಭಾರತದ ವಿಶೇಷತೆ", title: "ಭಾರತದ ನೆರೆಹೊರೆಯ ರಾಷ್ಟ್ರಗಳು", activity: "ಭೂಪಟದ ಸಹಾಯದಿಂದ 2 ಅಥವಾ 3 ವಿದ್ಯಾರ್ಥಿಗಳು ನೆರೆಹೊರೆಯ ರಾಷ್ಟ್ರಗಳನ್ನು ವಿವರಿಸುವರು.", activityType: "ಪ್ರಸ್ತುತಿ", parentActivity: "ನನ್ನ ಜಿಲ್ಲೆಯ ವಿಶೇಷತೆ - ನೆರೆಯ ಜಿಲ್ಲೆಗಳು ಹಾಗೂ ರಾಜ್ಯಗಳ ಬಗ್ಗೆ ಮಕ್ಕಳಿಗೆ ಮಾಹಿತಿ ನೀಡುವುದು." },
+      { date: "2027-01-07", day: "Thursday", grade: "5", subject: "ಭಾರತದ ವಿಶೇಷತೆ", title: "ಭಾರತದ ಪ್ರಮುಖ ನದಿಗಳು", activity: "ಮಕ್ಕಳು ಭಾರತದ ಪ್ರಮುಖ ನದಿಗಳ ಉಗಮ, ಹರಿವು ಮತ್ತು ವಿಶೇಷತೆಗಳನ್ನು ಪ್ರಸ್ತುತಪಡಿಸುವುದು.", activityType: "ಪ್ರಸ್ತುತಿ", parentActivity: "ನನ್ನ ಜಿಲ್ಲೆಯ ವಿಶೇಷತೆ - ತಮ್ಮ ಜಿಲ್ಲೆಯಲ್ಲಿ ಹರಿಯುವ ನದಿಗಳು ಹಾಗೂ ಜಲಾಶಯಗಳ ಬಗ್ಗೆ ತಿಳಿಸುವುದು." },
+      { date: "2027-01-08", day: "Friday", grade: "5", subject: "ಭಾರತದ ವಿಶೇಷತೆ", title: "ಚಿತ್ರದ ವಿಶೇಷತೆ", activity: "ಭಾರತದ ಪ್ರಮುಖ ಸ್ಥಳಗಳು ಮತ್ತು ವಿಶೇಷತೆಗಳ ಚಿತ್ರಗಳನ್ನು ನೋಡಿ ಊಹಿಸಿ ಗುರುತಿಸುವ ರಸಪ್ರಶ್ನೆ ನಡೆಸುವುದು.", activityType: "ರಸಪ್ರಶ್ನೆ", parentActivity: "ನನ್ನ ಜಿಲ್ಲೆಯ ವಿಶೇಷತೆ - ಜಿಲ್ಲೆಯ ಪ್ರಸಿದ್ಧ ಸ್ಥಳಗಳ ಚಿತ್ರಗಳನ್ನು ತೋರಿಸಿ ಹೆಸರು ಹೇಳಿಸುವುದು." },
+      { date: "2027-01-09", day: "Saturday", grade: "5", subject: "ಭಾರತದ ವಿಶೇಷತೆ", title: "SDMC/ಸಮುದಾಯ ಸಹಭಾಗಿತ್ವ", activity: "ಸಮುದಾಯ ಅಥವಾ ಎಸ್‌ಡಿಎಂಸಿ ಸದಸ್ಯರು ತಮ್ಮ ಜ್ಞಾನ ಮತ್ತು ವೃತ್ತಿಯ ಅನುಭವಗಳನ್ನು ಹಂಚಿಕೊಳ್ಳುತ್ತಾರೆ.", activityType: "ಪ್ರಸ್ತುತಿ", parentActivity: "ನನ್ನ ಜಿಲ್ಲೆಯ ವಿಶೇಷತೆ - ಸ್ಥಳೀಯ ಸಾಧಕರ ಅನುಭವಗಳನ್ನು ಮಕ್ಕಳೊಂದಿಗೆ ಹಂಚಿಕೊಳ್ಳುವುದು." },
+
+      { date: "2027-01-11", day: "Monday", grade: "6", subject: "ಬಹು ಭಾಷೆ ಕಲಿಯೋಣ", title: "ಹಿಂದಿ ಹೊಸ ಪದಗಳ ಪರಿಚಯ", activity: "ಮಕ್ಕಳು ಹೊಸ ಹಿಂದಿ ಪದಗಳನ್ನು ಕನ್ನಡ ಅರ್ಥಗಳೊಂದಿಗೆ ಪರಿಚಯಿಸಿ ಪದಸಂಪತ್ತನ್ನು ವೃದ್ಧಿಸುವುದು.", activityType: "ಪ್ರಸ್ತುತಿ", parentActivity: "ಇಂಗ್ಲೀಷ್ ಕಲಿಯೋಣ - ಪೋಷಕರು ಮಕ್ಕಳಿಗೆ ತಮ್ಮ ಮನೆಯಲ್ಲಿರುವ 10 ವಸ್ತುಗಳನ್ನು ತೋರಿಸಿ ಅವುಗಳನ್ನು ಇಂಗ್ಲೀಷ್‌ನಲ್ಲಿ ಹೇಳುವಂತೆ ತಿಳಿಸಬೇಕು ಮತ್ತು ಪ್ರಶಂಸಿಸಬೇಕು." },
+      { date: "2027-01-12", day: "Tuesday", grade: "6", subject: "ಬಹು ಭಾಷೆ ಕಲಿಯೋಣ", title: "ವಿವೇಕಾನಂದರ ಮಾತು", activity: "ಸ್ವಾಮಿ ವಿವೇಕಾನಂದರ ಭಾಷಣಗಳು, ವಚನಗಳು ಮತ್ತು ಜೀವನ ಘಟನೆಯನ್ನು ಪಾತ್ರಾಭಿನಯದ ಮೂಲಕ ಪರಿಚಯಿಸುವುದು.", activityType: "ಪಾತ್ರಾಭಿನಯ", parentActivity: "ಇಂಗ್ಲೀಷ್ ಕಲಿಯೋಣ - ಸ್ವಾಮಿ ವಿವೇಕಾನಂದರ ಸ್ಪೂರ್ತಿದಾಯಕ ನುಡಿಗಳನ್ನು ಮಕ್ಕಳಿಗೆ ಹೇಳುವುದು." },
+      { date: "2027-01-13", day: "Wednesday", grade: "6", subject: "ಬಹು ಭಾಷೆ ಕಲಿಯೋಣ", title: "ನುಡಿಗಟ್ಟುಗಳ ಪರಿಚಯ", activity: "ನುಡಿಗಟ್ಟುಗಳ ಅರ್ಥ ಮತ್ತು ಬಳಕೆಯನ್ನು ವಾಕ್ಯಗಳ ಸಹಾಯದಿಂದ ಉದಾಹರಣೆಗಳೊಂದಿಗೆ ಪರಿಚಯಿಸುವುದು.", activityType: "ಪ್ರಸ್ತುತಿ", parentActivity: "ಇಂಗ್ಲೀಷ್ ಕಲಿಯೋಣ - ಕನ್ನಡ ಗಾದೆಮಾತುಗಳು ಮತ್ತು ಇಂಗ್ಲೀಷ್ ಪದಗಳ ಬಳಕೆಗೆ ಪ್ರೋತ್ಸಾಹಿಸುವುದು." },
+      { date: "2027-01-14", day: "Thursday", grade: "6", subject: "ಬಹು ಭಾಷೆ ಕಲಿಯೋಣ", title: "ನಮ್ಮ ಸುತ್ತಲಿನ ಸಂಕ್ರಾಂತಿ", activity: "ಸಂಕ್ರಾಂತಿಯ ಆಚರಣೆಗಳು, ಆಹಾರ, ಆಟಗಳು ಮತ್ತು ಸಂಪ್ರದಾಯಗಳನ್ನು ವಿವಿಧ ಮಾಧ್ಯಮಗಳ ಮೂಲಕ ಪರಿಚಯಿಸುವುದು.", activityType: "ಪ್ರಸ್ತುತಿ", parentActivity: "ಇಂಗ್ಲೀಷ್ ಕಲಿಯೋಣ - ಸಂಕ್ರಾಂತಿ ಹಬ್ಬದ ವಿಶೇಷತೆ ಹಾಗೂ ಎಳ್ಳು-ಬೆಲ್ಲದ ಸೌಹಾರ್ದತೆಯನ್ನು ತಿಳಿಸುವುದು." },
+      { date: "2027-01-15", day: "Friday", grade: "6", subject: "ಬಹು ಭಾಷೆ ಕಲಿಯೋಣ", title: "English poem", activity: "ಇಂಗ್ಲೀಷ್ ಪದ್ಯಗಳನ್ನು ರಾಗಬದ್ಧವಾಗಿ ಹಾಡಿ, ಅದರ ಅರ್ಥ ಮತ್ತು ಭಾವವನ್ನು ಸಹಪಾಠಿಗಳೊಂದಿಗೆ ಹಂಚಿಕೊಳ್ಳುವುದು.", activityType: "ಕಥಾ ನಿರೂಪಣೆ", parentActivity: "ಇಂಗ್ಲೀಷ್ ಕಲಿಯೋಣ - ದಿನಕ್ಕೆ 5 ಹೊಸ ಇಂಗ್ಲೀಷ್ ಪದಗಳನ್ನು ಕಲಿಯಲು ಮಕ್ಕಳಿಗೆ ಸಹಾಯ ಮಾಡುವುದು." },
+      { date: "2027-01-16", day: "Saturday", grade: "6", subject: "ಬಹು ಭಾಷೆ ಕಲಿಯೋಣ", title: "ಸಂಭ್ರಮ ಶನಿವಾರ", activity: "ಸಂಭ್ರಮ ಶನಿವಾರ: ರಸ್ತೆ ಸುರಕ್ಷತೆ.", activityType: "ಚಟುವಟಿಕೆ", parentActivity: "ಇಂಗ್ಲೀಷ್ ಕಲಿಯೋಣ - ರಸ್ತೆ ದಾಟುವಾಗ ಮತ್ತು ಸಂಚರಿಸುವಾಗ ಪಾಲಿಸಬೇಕಾದ ಸುರಕ್ಷತಾ ನಿಯಮ ತಿಳಿಸುವುದು." },
+
+      { date: "2027-01-18", day: "Monday", grade: "7/8", subject: "ಪೌರನೀತಿ ಮತ್ತು ಭೂಗೋಳ ವಿಜ್ಞಾನ", title: "ಆಸ್ಟ್ರೇಲಿಯಾ ಖಂಡ", activity: "ಭೂಪಟದ ಮೂಲಕ ಆಸ್ಟ್ರೇಲಿಯಾ ಖಂಡದ ಭೌಗೋಳಿಕ ಮತ್ತು ಸಾಂಸ್ಕೃತಿಕ ವಿಶೇಷತೆಗಳನ್ನು ಪರಿಚಯಿಸುವುದು.", activityType: "ಪ್ರಸ್ತುತಿ", parentActivity: "ನಕ್ಷೆ ರಚಿಸೋಣ - ಪೋಷಕರು ತಮ್ಮ ಮಕ್ಕಳ ಮೂಲಕ ಗ್ರಾಮದ/ಜಮೀನಿನ/ಶಾಲೆಯ ಕುರಿತಾಗಿ ರಸ್ತೆಯ ನಕ್ಷೆಯನ್ನು ತಯಾರಿಸುವುದು ಮತ್ತು ಆ ರಸ್ತೆಯಲ್ಲಿ ಬರುವ ಕಟ್ಟಡಗಳನ್ನು ಗುರುತಿಸುವುದು." },
+      { date: "2027-01-19", day: "Tuesday", grade: "7/8", subject: "ಪೌರನೀತಿ ಮತ್ತು ಭೂಗೋಳ ವಿಜ್ಞಾನ", title: "ಅಂಟಾರ್ಕ್ಟಿಕಾ", activity: "ಚಾರ್ಟ್ ಅಥವಾ ಭೂಪಟದ ಮೂಲಕ ಅಂಟಾರ್ಕ್ಟಿಕಾ ಖಂಡದ ವೈಶಿಷ್ಟ್ಯಗಳು ಮತ್ತು ಪರಿಸರವನ್ನು ವಿವರಿಸುವುದು.", activityType: "ಪ್ರಸ್ತುತಿ", parentActivity: "ನಕ್ಷೆ ರಚಿಸೋಣ - ಪ್ರಪಂಚದ ಖಂಡಗಳು ಮತ್ತು ಸಾಗರಗಳ ಬಗ್ಗೆ ಭೂಪಟದಲ್ಲಿ ತೋರಿಸುವುದು." },
+      { date: "2027-01-20", day: "Wednesday", grade: "7/8", subject: "ಪೌರನೀತಿ ಮತ್ತು ಭೂಗೋಳ ವಿಜ್ಞಾನ", title: "ವಿಶ್ವ ಸಂಸ್ಥೆ ಮತ್ತು ಭಾರತ", activity: "ವಿವಿಧ ದೇಶಗಳ ಪ್ರತಿನಿಧಿಗಳಾಗಿ ಜಾಗತಿಕ ಸಮಸ್ಯೆಗಳು ಮತ್ತು ಶಾಂತಿ ಕುರಿತು ಪಾತ್ರಾಭಿನಯ ನಡೆಸುವುದು.", activityType: "ಪಾತ್ರಾಭಿನಯ", parentActivity: "ನಕ್ಷೆ ರಚಿಸೋಣ - ವಿಶ್ವ ಶಾಂತಿ ಮತ್ತು ಅಂತರಾಷ್ಟ್ರೀಯ ಸಹಕಾರದ ಮಹತ್ವ ತಿಳಿಸುವುದು." },
+      { date: "2027-01-21", day: "Thursday", grade: "7/8", subject: "ಪೌರನೀತಿ ಮತ್ತು ಭೂಗೋಳ ವಿಜ್ಞಾನ", title: "ನಾನು ನ್ಯಾಯಾಧೀಶನಾದರೆ?", activity: "ಮಕ್ಕಳು ನಾನು ನ್ಯಾಯಾಧೀಶನಾದರೆ ಏನು ಬದಲಾವಣೆ ತರಲು ಬಯಸುತ್ತಾರೆ ಎಂಬುವ ವಿಷಯದ ಬಗ್ಗೆ ಪ್ರಸ್ತುತಿ ಪಡಿಸುತ್ತಾರೆ.", activityType: "ಪ್ರಸ್ತುತಿ", parentActivity: "ನಕ್ಷೆ ರಚಿಸೋಣ - ನ್ಯಾಯ, ನಿಷ್ಠೆ ಮತ್ತು ಜವಾಬ್ದಾರಿಯುತ ನಾಗರಿಕ ಗುಣಗಳ ಬಗ್ಗೆ ಮಾತನಾಡುವುದು." },
+      { date: "2027-01-22", day: "Friday", grade: "7/8", subject: "ಪೌರನೀತಿ ಮತ್ತು ಭೂಗೋಳ ವಿಜ್ಞಾನ", title: "ಭಾರತೀಯ ರೆಡ್ ಕ್ರಾಸ್ ಸಂಸ್ಥೆ", activity: "ಭಾರತೀಯ ರೆಡ್ ಕ್ರಾಸ್ ಸಂಸ್ಥೆಯ ಇತಿಹಾಸ, ಉದ್ದೇಶಗಳು ಮತ್ತು ಸೇವಾ ಕಾರ್ಯಗಳನ್ನು ಪರಿಚಯಿಸುವುದು.", activityType: "ಪ್ರಸ್ತುತಿ", parentActivity: "ನಕ್ಷೆ ರಚಿಸೋಣ - ಪ್ರಥಮ ಚಿಕಿತ್ಸೆ ಮತ್ತು ಸೇವಾ ಮನೋಭಾವದ ಮಹತ್ವ ತಿಳಿಸುವುದು." },
+      { date: "2027-01-23", day: "Saturday", grade: "7/8", subject: "ಪೌರನೀತಿ ಮತ್ತು ಭೂಗೋಳ ವಿಜ್ಞಾನ", title: "ದೈಹಿಕ ವ್ಯಾಯಾಮ", activity: "ಶಾಲೆಗೆ ಅನುಕೂಲವಾಗುವಂತೆ ಶನಿವಾರ ದೈಹಿಕ ವ್ಯಾಯಾಮವನ್ನು ಎಲ್ಲಾ ಮಕ್ಕಳಿಗೆ ಮಾಡಿಸುವುದು.", activityType: "ಪ್ರದರ್ಶನ", parentActivity: "ನಕ್ಷೆ ರಚಿಸೋಣ - ದೈಹಿಕ ಸದೃಢತೆ ಮತ್ತು ಶಿಸ್ತಿನ ಜೀವನಕ್ಕೆ ಪ್ರೇರಣೆ ನೀಡುವುದು." },
+
+      { date: "2027-01-25", day: "Monday", grade: "7/8", subject: "ಪ್ರಾಯೋಗಿಕ ವಿಜ್ಞಾನ", title: "ವಿದ್ಯಾರ್ಥಿಗಳ ಧ್ವನಿ", activity: "ಶಾಲಾ ಸಮಸ್ಯೆಗಳ ಕುರಿತು ಅಭಿಪ್ರಾಯ ಸಂಗ್ರಹಿಸಿ ಚರ್ಚೆ ಮತ್ತು ಭಾಷಣಗಳ ಮೂಲಕ ಪರಿಹಾರಗಳನ್ನು ಮಂಡಿಸುವುದು.", activityType: "ವಾದ-ವಿವಾದ", parentActivity: "ನಕ್ಷೆ ರಚಿಸೋಣ - ಮಕ್ಕಳ ಅಭಿಪ್ರಾಯಗಳಿಗೆ ಮನ್ನಣೆ ನೀಡಿ ತಾರ್ಕಿಕ ಚಿಂತನೆ ಬೆಳೆಸುವುದು." },
+      { date: "2027-01-26", day: "Tuesday", grade: "7/8", subject: "ಪ್ರಾಯೋಗಿಕ ವಿಜ್ಞಾನ", title: "ಗಣರಾಜ್ಯೋತ್ಸವ ಆಚರಣೆ", activity: "ಭಾರತ ದೇಶವು ಸಂವಿಧಾನವನ್ನು ಅಂಗೀಕರಿಸಿದ ದಿನದಂದು ಮಕ್ಕಳು ಸಂವಿಧಾನದ ಮೌಲ್ಯಗಳ ಕುರಿತು ಭಾಷಣ ಮಾಡುವುದು.", activityType: "ಆಚರಣೆ", parentActivity: "ನಕ್ಷೆ ರಚಿಸೋಣ - ಗಣರಾಜ್ಯೋತ್ಸವದ ಮಹತ್ವ ಮತ್ತು ಸಂವಿಧಾನದ ಆಶಯಗಳನ್ನು ಮಕ್ಕಳಿಗೆ ತಿಳಿಸುವುದು." },
+      { date: "2027-01-27", day: "Wednesday", grade: "7/8", subject: "ಪ್ರಾಯೋಗಿಕ ವಿಜ್ಞಾನ", title: "ವಿದ್ಯುತ್ ವಾಹಕ & ಅವಾಹಕಗಳು", activity: "ಸರಳ ಪ್ರಯೋಗಗಳ ಮೂಲಕ ವಿದ್ಯುತ್ ವಾಹಕ ಮತ್ತು ಅವಾಹಕ ವಸ್ತುಗಳನ್ನು ಗುರುತಿಸಿ ವಿವರಿಸುವುದು.", activityType: "ಪ್ರಯೋಗ", parentActivity: "ನಕ್ಷೆ ರಚಿಸೋಣ - ವಿದ್ಯುತ್ ಉಪಕರಣಗಳನ್ನು ಸುರಕ್ಷಿತವಾಗಿ ಬಳಸುವ ವಿಧಾನ ತಿಳಿಸುವುದು." },
+      { date: "2027-01-28", day: "Thursday", grade: "7/8", subject: "ಪ್ರಾಯೋಗಿಕ ವಿಜ್ಞಾನ", title: "ಬಲೂನ್ ಮತ್ತು ರೀಫಿಲ್ ಜಾದು", activity: "ಮಕ್ಕಳು ಪೆನ್ನಿನ ರೀಫಿಲ್ ಅನ್ನು ಪಾಲಿಥೀನ್‌ಗೆ ಉಜ್ಜುವ ಮೂಲಕ ಕಾಗದದ ಚೂರುಗಳು ಆಕರ್ಷಿತವಾಗುವುದನ್ನು ತೋರಿಸುತ್ತಾರೆ.", activityType: "ಪ್ರಯೋಗ", parentActivity: "ನಕ್ಷೆ ರಚಿಸೋಣ - ಮನೆಯಲ್ಲಿ ಸಿಗುವ ಸರಳ ವಸ್ತುಗಳಿಂದ ವಿಜ್ಞಾನ ಪ್ರಯೋಗಗಳನ್ನು ಮಾಡಲು ಪ್ರೋತ್ಸಾಹಿಸುವುದು." },
+      { date: "2027-01-29", day: "Friday", grade: "7/8", subject: "ಪ್ರಾಯೋಗಿಕ ವಿಜ್ಞಾನ", title: "ಭೂಕಂಪ ಸುರಕ್ಷತಾ ನಟನಾ ತಾಲೀಮು", activity: "ಭೂಕಂಪ ಮತ್ತು ಮಿಂಚಿನ ಸಂದರ್ಭಗಳಲ್ಲಿ ಪಾಲಿಸಬೇಕಾದ ಸುರಕ್ಷತಾ ಕ್ರಮಗಳನ್ನು ನಾಟಕದ ಮೂಲಕ ಅಭ್ಯಾಸ ಮಾಡುವುದು.", activityType: "ಪಾತ್ರಾಭಿನಯ", parentActivity: "ನಕ್ಷೆ ರಚಿಸೋಣ - ಪ್ರಾಕೃತಿಕ ವಿಕೋಪಗಳ ಸಮಯದಲ್ಲಿ ಕೈಗೊಳ್ಳಬೇಕಾದ ಸುರಕ್ಷತಾ ಕ್ರಮ ತಿಳಿಸುವುದು." },
+      { date: "2027-01-30", day: "Saturday", grade: "7/8", subject: "ಪ್ರಾಯೋಗಿಕ ವಿಜ್ಞಾನ", title: "ಹುತಾತ್ಮರ ದಿನ", activity: "ದೇಶಕ್ಕಾಗಿ ಪ್ರಾಣ ತ್ಯಾಗ ಮಾಡಿದ ಹುತಾತ್ಮರನ್ನು ಸ್ಮರಿಸಿ ಮಕ್ಕಳು ದೇಶಭಕ್ತಿ ಕವನಗಳನ್ನು ವಾಚಿಸುವುದರ ಮೂಲಕ ಆಚರಿಸುವರು.", activityType: "ಪಾತ್ರಾಭಿನಯ", parentActivity: "ನಕ್ಷೆ ರಚಿಸೋಣ - ಸ್ವಾತಂತ್ರ್ಯ ವೀರರ ತ್ಯಾಗ ಮತ್ತು ದೇಶಭಕ್ತಿಯ ಬಗ್ಗೆ ಮಕ್ಕಳಿಗೆ ತಿಳಿಸುವುದು." },
+
+      // ಫೆಬ್ರವರಿ 2027
+      { date: "2027-02-01", day: "Monday", grade: "4", subject: "ಭೂಮಿ ಮತ್ತು ಜೀವಜಗತ್ತು", title: "ಕೃಷಿ ಉಪಕರಣಗಳು", activity: "ಕೃಷಿಯಲ್ಲಿ ಬಳಸುವ ಉಪಕರಣಗಳ ಚಿತ್ರಗಳನ್ನು ಊಹಿಸಿ ಗುರುತಿಸಿ, ಅವುಗಳ ಉಪಯೋಗ ಮತ್ತು ಮಹತ್ವವನ್ನು ವಿವರಿಸುವುದು.", activityType: "ಊಹಿಸಿ ಗುರುತಿಸಿ", parentActivity: "ಹೊರ ಸಂಚಾರ - ಪೋಷಕರು ತಮ್ಮ ಗ್ರಾಮದ/ಸುತ್ತಮುತ್ತಲಿರುವ ಐತಿಹಾಸಿಕ, ಪುರಾತತ್ವ, ಹೆಸರಾಂತ ಸ್ಥಳಗಳ ಭೇಟಿ ಮಾಡಿಸಿ ಅದರ ಬಗ್ಗೆ ತಿಳಿಸಿಕೊಡುವುದು." },
+      { date: "2027-02-02", day: "Tuesday", grade: "4", subject: "ಭೂಮಿ ಮತ್ತು ಜೀವಜಗತ್ತು", title: "ಮಣ್ಣಿನ ಪರಿಚಯ", activity: "ವಿವಿಧ ಮಣ್ಣಿನ ವಿಧಗಳ ಮಾದರಿ ಅಥವಾ ಚಿತ್ರಗಳನ್ನು ಪ್ರದರ್ಶಿಸಿ ಅವುಗಳ ಲಕ್ಷಣ ಮತ್ತು ಮಹತ್ವವನ್ನು ತಿಳಿಸುವುದು.", activityType: "ಪ್ರದರ್ಶನ", parentActivity: "ಹೊರ ಸಂಚಾರ - ಸುತ್ತಮುತ್ತಲಿನ ಪರಿಸರದಲ್ಲಿ ಕಾಣುವ ವಿವಿಧ ಮಣ್ಣಿನ ಬಣ್ಣ ಮತ್ತು ಗುಣಗಳನ್ನು ತೋರಿಸುವುದು." },
+      { date: "2027-02-03", day: "Wednesday", grade: "4", subject: "ಭೂಮಿ ಮತ್ತು ಜೀವಜಗತ್ತು", title: "ಸುತ್ತಮುತ್ತಲಿನ ಆಕಾರಗಳು", activity: "ಸುತ್ತಮುತ್ತಲಿನ 2D ಮತ್ತು 3D ಆಕಾರಗಳ ಮಾದರಿಗಳನ್ನು ತೋರಿಸಿ ಅವುಗಳ ವೈವಿಧ್ಯತೆಯನ್ನು ಪರಿಚಯಿಸುವುದು.", activityType: "ಪ್ರದರ್ಶನ", parentActivity: "ಹೊರ ಸಂಚಾರ - ಹೊರ ಸಂಚಾರದ ವೇಳೆ ಕಟ್ಟಡಗಳು ಹಾಗೂ ವಸ್ತುಗಳ ಆಕಾರಗಳನ್ನು ಗುರುತಿಸಲು ಹೇಳುವುದು." },
+      { date: "2027-02-04", day: "Thursday", grade: "4", subject: "ಭೂಮಿ ಮತ್ತು ಜೀವಜಗತ್ತು", title: "ಜೀವಿಗಳ ಆವಾಸಸ್ಥಾನ", activity: "ವಿವಿಧ ಜೀವಿಗಳ ಆವಾಸಸ್ಥಾನಗಳ ಚಿತ್ರಗಳನ್ನು ಪ್ರದರ್ಶಿಸಿ ಅವುಗಳ ವಿಶೇಷತೆಗಳನ್ನು ಮಕ್ಕಳು ವಿವರಿಸುವರು.", activityType: "ಪಾತ್ರಾಭಿನಯ", parentActivity: "ಹೊರ ಸಂಚಾರ - ಪ್ರಾಣಿ-ಪಕ್ಷಿಗಳ ಗೂಡು ಮತ್ತು ಆವಾಸಸ್ಥಾನಗಳನ್ನು ವೀಕ್ಷಿಸಲು ಪ್ರೋತ್ಸಾಹಿಸುವುದು." },
+      { date: "2027-02-05", day: "Friday", grade: "4", subject: "ಭೂಮಿ ಮತ್ತು ಜೀವಜಗತ್ತು", title: "ಪ್ರಾಣಿ-ಪಕ್ಷಿಗಳ ಪರಿಚಯ", activity: "ಹಾವಭಾವಗಳ ಮೂಲಕ ವಿವಿಧ ಪ್ರಾಣಿ-ಪಕ್ಷಿಗಳನ್ನು ಪ್ರದರ್ಶಿಸಿ, ಅವುಗಳನ್ನು ಊಹಿಸಿ ಗುರುತಿಸುವ ಆಟ ನಡೆಸುವುದು.", activityType: "ಊಹಿಸಿ ಗುರುತಿಸಿ", parentActivity: "ಹೊರ ಸಂಚಾರ - ಪ್ರಕೃತಿ ವೀಕ್ಷಣೆಯ ಮೂಲಕ ಜೀವಿಗಳ ಬಗ್ಗೆ ಪ್ರೀತಿ ಮೂಡಿಸುವುದು." },
+      { date: "2027-02-06", day: "Saturday", grade: "4", subject: "ಭೂಮಿ ಮತ್ತು ಜೀವಜಗತ್ತು", title: "ದೈಹಿಕ ವ್ಯಾಯಾಮ", activity: "ಶಾಲೆಗೆ ಅನುಕೂಲವಾಗುವಂತೆ ಶನಿವಾರ ದೈಹಿಕ ವ್ಯಾಯಾಮವನ್ನು ಎಲ್ಲಾ ಮಕ್ಕಳಿಗೆ ಮಾಡಿಸುವುದು.", activityType: "ಪ್ರದರ್ಶನ", parentActivity: "ಹೊರ ಸಂಚಾರ - ಕುಟುಂಬ ಸಮೇತ ಬೆಳಗಿನ ನಡಿಗೆ ಮತ್ತು ವ್ಯಾಯಾಮ ಮಾಡುವುದು." },
+
+      { date: "2027-02-08", day: "Monday", grade: "5", subject: "ಗಣಿತ ಸಂಭ್ರಮ", title: "ಮಾನಸಿಕ ಗಣಿತ", activity: "ರಸಪ್ರಶ್ನೆಯ ಮೂಲಕ ತ್ವರಿತ ಗಣಿತ ಪ್ರಶ್ನೆಗಳಿಗೆ ಉತ್ತರಿಸಿ ಮಾನಸಿಕ ಗಣಿತ ಕೌಶಲ್ಯ ಬೆಳೆಸುವುದು.", activityType: "ರಸಪ್ರಶ್ನೆ", parentActivity: "ಮನೆಯ ಗಣಿತ - ಪೋಷಕರು ತಮ್ಮ ಮಕ್ಕಳಿಗೆ ಮನೆಯಲ್ಲಿರುವ ಕುರ್ಚಿಗಳು, ಪುಸ್ತಕಗಳು, ಪಾತ್ರೆಗಳು ಇತ್ಯಾದಿ ವಸ್ತುಗಳನ್ನು ಎಣಿಸಲು ತಿಳಿಸಿ ಅವುಗಳ ಆಕಾರವನ್ನು ಹೇಳಿಸುವುದು." },
+      { date: "2027-02-09", day: "Tuesday", grade: "5", subject: "ಗಣಿತ ಸಂಭ್ರಮ", title: "ದೈನಂದಿನ ಜೀವನದಲ್ಲಿ ವಿನ್ಯಾಸ", activity: "ಚಿತ್ರಗಳು ಮತ್ತು ಸಂಖ್ಯೆಗಳ ಮೂಲಕ ದೈನಂದಿನ ಜೀವನದಲ್ಲಿ ಕಾಣುವ ವಿವಿಧ ವಿನ್ಯಾಸಗಳನ್ನು ಗುರುತಿಸುವುದು.", activityType: "ಊಹಿಸಿ ಗುರುತಿಸಿ", parentActivity: "ಮನೆಯ ಗಣಿತ - ರಂಗೋಲಿ, ಬಟ್ಟೆ ಮತ್ತು ನೆಲದ ಟೈಲ್ಸ್‌ಗಳಲ್ಲಿನ ವಿನ್ಯಾಸಗಳನ್ನು ಗುರುತಿಸುವಂತೆ ಕೇಳುವುದು." },
+      { date: "2027-02-10", day: "Wednesday", grade: "5", subject: "ಗಣಿತ ಸಂಭ್ರಮ", title: "ರೂಪಾಯಿ ಪರಿವರ್ತನೆ", activity: "ಖರೀದಿ ಮತ್ತು ಹಣ ಹಿಂದಿರುಗಿಸುವ ಸಂದರ್ಭಗಳನ್ನು ಪಾತ್ರಾಭಿನಯದ ಮೂಲಕ ಪ್ರದರ್ಶಿಸಿ ಅರಿವು ಮೂಡಿಸುವುದು.", activityType: "ಪಾತ್ರಾಭಿನಯ", parentActivity: "ಮನೆಯ ಗಣಿತ - ನಾಣ್ಯಗಳು ಮತ್ತು ನೋಟುಗಳ ಪರಿವರ್ತನೆ ಹಾಗೂ ಲೆಕ್ಕಾಚಾರ ಕಲಿಸುವುದು." },
+      { date: "2027-02-11", day: "Thursday", grade: "5", subject: "ಗಣಿತ ಸಂಭ್ರಮ", title: "ಸಮಮಿತಿ ತಿಳಿಯೋಣ", activity: "ಕಾಗದ ಮಡಿಸುವ ಚಟುವಟಿಕೆಗಳ ಮೂಲಕ ಸಮಮಿತಿಯ ಆಕಾರಗಳು ಮತ್ತು ಅವುಗಳ ಲಕ್ಷಣಗಳನ್ನು ತಿಳಿಸುವುದು.", activityType: "ಪ್ರದರ್ಶನ", parentActivity: "ಮನೆಯ ಗಣಿತ - ಕಾಗದ ಮಡಿಸಿ ವಿವಿಧ ಸಮಮಿತಿ ಆಕೃತಿಗಳನ್ನು ಮಾಡಲು ಮಕ್ಕಳಿಗೆ ನೆರವಾಗುವುದು." },
+      { date: "2027-02-12", day: "Friday", grade: "5", subject: "ಗಣಿತ ಸಂಭ್ರಮ", title: "ತೂಕ ಮತ್ತು ಗಾತ್ರದ ಮಾನಗಳು", activity: "ದೈನಂದಿನ ಬಳಕೆಯ ವಸ್ತುಗಳ ಮೂಲಕ ವಿವಿಧ ತೂಕ ಮತ್ತು ಗಾತ್ರದ ಮಾನಗಳನ್ನು ಪರಿಚಯಿಸುವುದು.", activityType: "ಪ್ರಸ್ತುತಿ", parentActivity: "ಮನೆಯ ಗಣಿತ - ಲೀಟರ್ ಮತ್ತು ಕಿಲೋಗ್ರಾಂ ಅಳತೆಯ ಪ್ಯಾಕೆಟ್‌ಗಳನ್ನು ತೋರಿಸಿ ಪರಿಚಯಿಸುವುದು." },
+      { date: "2027-02-13", day: "Saturday", grade: "5", subject: "ಗಣಿತ ಸಂಭ್ರಮ", title: "SDMC/ಸಮುದಾಯ ಸಹಭಾಗಿತ್ವ", activity: "ಸಮುದಾಯ ಅಥವಾ ಎಸ್‌ಡಿಎಂಸಿ ಸದಸ್ಯರು ತಮ್ಮ ಜ್ಞಾನ ಮತ್ತು ವೃತ್ತಿಯ ಅನುಭವಗಳನ್ನು ಹಂಚಿಕೊಳ್ಳುತ್ತಾರೆ.", activityType: "ಪ್ರಸ್ತುತಿ", parentActivity: "ಮನೆಯ ಗಣಿತ - ವ್ಯವಹಾರದಲ್ಲಿ ಗಣಿತದ ಬಳಕೆಯ ಕುರಿತು ಅನುಭವ ಹಂಚಿಕೊಳ್ಳುವುದು." },
+
+      { date: "2027-02-15", day: "Monday", grade: "6", subject: "ವಿಶೇಷ ವಿಷಯಗಳ ಪರಿಚಯ", title: "ನಕ್ಷೆಯನ್ನು ಬಳಸೋಣ", activity: "ಮೈಂಡ್ ಮ್ಯಾಪ್ ಸಿದ್ಧಪಡಿಸಿ ಪ್ರಮುಖ ಸ್ಥಳಗಳನ್ನು ಗುರುತಿಸಿ ಅವುಗಳ ಉಪಯೋಗಗಳನ್ನು ಪರಿಚಯಿಸುವುದು.", activityType: "ಪ್ರವಾಸ ಮಾರ್ಗದರ್ಶಕ", parentActivity: "ಸಂಚಾರಿ ನಿಯಮಗಳು - ಪೋಷಕರು ತಮ್ಮ ಮಕ್ಕಳಿಗೆ ಸಂಚಾರಿ ನಿಯಮಗಳ ಕುರಿತು ತಿಳಿಸಿ, ಸಂಚಾರಿ ಚಿಹ್ನೆಗಳ ಬಗ್ಗೆ ವಿವರಿಸುವುದು." },
+      { date: "2027-02-16", day: "Tuesday", grade: "6", subject: "ವಿಶೇಷ ವಿಷಯಗಳ ಪರಿಚಯ", title: "ರೇಖಾಗಣಿತದ ಆಕೃತಿಗಳು", activity: "ಒಗಟುಗಳ ಮೂಲಕ ವಿವಿಧ ರೇಖಾಗಣಿತ ಆಕೃತಿಗಳ ಲಕ್ಷಣಗಳನ್ನು ಗುರುತಿಸಿ ಪರಿಚಯಿಸುವುದು.", activityType: "ಒಗಟು", parentActivity: "ಸಂಚಾರಿ ನಿಯಮಗಳು - ರಸ್ತೆ ಬದಿಯ ಸಂಚಾರಿ ಫಲಕಗಳ ಆಕಾರಗಳನ್ನು ಮಕ್ಕಳಿಗೆ ತೋರಿಸುವುದು." },
+      { date: "2027-02-17", day: "Wednesday", grade: "6", subject: "ವಿಶೇಷ ವಿಷಯಗಳ ಪರಿಚಯ", title: "ಭಾರತದ ರಾಜವಂಶಸ್ಥರ ಪರಿಚಯ", activity: "ಚಿತ್ರಗಳು ಮತ್ತು ಕಾಲಾವಧಿಗಳ ಆಧಾರದ ಮೇಲೆ ವಿವಿಧ ರಾಜವಂಶಗಳನ್ನು ಮಕ್ಕಳು ಪರಿಚಯಿಸುವುದು.", activityType: "ಅನುಕ್ರಮ ಸವಾಲು", parentActivity: "ಸಂಚಾರಿ ನಿಯಮಗಳು - ಐತಿಹಾಸಿಕ ರಾಜವಂಶಗಳ ಬಗ್ಗೆ ಮಕ್ಕಳೊಂದಿಗೆ ಕಥೆಗಳ ರೂಪದಲ್ಲಿ ಮಾತನಾಡುವುದು." },
+      { date: "2027-02-18", day: "Thursday", grade: "6", subject: "ವಿಶೇಷ ವಿಷಯಗಳ ಪರಿಚಯ", title: "ರಾಷ್ಟ್ರೀಯ ಚಿಹ್ನೆಗಳ ಪರಿಚಯ", activity: "ರಾಷ್ಟ್ರೀಯ ಚಿಹ್ನೆಗಳನ್ನು ಚಿತ್ರಗಳ ಮೂಲಕ ಪರಿಚಯಿಸಿ, ಅವುಗಳನ್ನು ಊಹಿಸಿ ಗುರುತಿಸುವ ಚಟುವಟಿಕೆ ನಡೆಸುವುದು.", activityType: "ಊಹಿಸಿ ಗುರುತಿಸಿ", parentActivity: "ಸಂಚಾರಿ ನಿಯಮಗಳು - ರಾಷ್ಟ್ರೀಯ ಚಿಹ್ನೆಗಳು ಮತ್ತು ಸಂಚಾರಿ ಚಿಹ್ನೆಗಳ ಮಹತ್ವ ತಿಳಿಸುವುದು." },
+      { date: "2027-02-19", day: "Friday", grade: "6", subject: "ವಿಶೇಷ ವಿಷಯಗಳ ಪರಿಚಯ", title: "English contracted forms", activity: "ಚಾರ್ಟ್‌ಗಳ ಮೂಲಕ ಇಂಗ್ಲೀಷ್ contracted forms ಹಾಗೂ ಅವುಗಳ ಬಳಕೆಯನ್ನು ಪರಿಚಯಿಸುವುದು.", activityType: "ಪ್ರದರ್ಶನ", parentActivity: "ಸಂಚಾರಿ ನಿಯಮಗಳು - ರಸ್ತೆ ಸುರಕ್ಷತಾ ಘೋಷಣೆಗಳನ್ನು ಇಂಗ್ಲೀಷ್ ಮತ್ತು ಕನ್ನಡದಲ್ಲಿ ಓದಿಸುವುದು." },
+      { date: "2027-02-20", day: "Saturday", grade: "6", subject: "ವಿಶೇಷ ವಿಷಯಗಳ ಪರಿಚಯ", title: "ಸಂಭ್ರಮ ಶನಿವಾರ", activity: "ಸಂಭ್ರಮ ಶನಿವಾರ: ಹಿಂಸೆ, ಅಪರಾಧ, ಅಪಘಾತಗಳ ಸಂದರ್ಭದಲ್ಲಿ ರಕ್ಷಣೆ ಹಾಗೂ ಭದ್ರತೆ.", activityType: "ಚಟುವಟಿಕೆ", parentActivity: "ಸಂಚಾರಿ ನಿಯಮಗಳು - ತುರ್ತು ಸಹಾಯವಾಣಿ ಸಂಖ್ಯೆಗಳು ಮತ್ತು ಸುರಕ್ಷತಾ ಕ್ರಮಗಳನ್ನು ತಿಳಿಸುವುದು." },
+
+      { date: "2027-02-22", day: "Monday", grade: "7/8", subject: "ವಿಜ್ಞಾನದ ವಿಸ್ಮಯ", title: "ಗಿಡ ಮೂಲಿಕೆಗಳ ಪ್ರಾಮುಖ್ಯತೆ", activity: "ಔಷಧೀಯ ಗಿಡಗಳು ಮತ್ತು ಕೈತೋಟದ ವಿಶೇಷತೆಗಳನ್ನು ಚಿತ್ರ ಹಾಗೂ ಪ್ರಾತ್ಯಕ್ಷಿಕೆಗಳ ಮೂಲಕ ಪರಿಚಯಿಸುವುದು.", activityType: "ಪ್ರದರ್ಶನ", parentActivity: "ಸರಳ ಪ್ರಯೋಗ - ಪೋಷಕರು ಮಕ್ಕಳೊಡನೆ ಗಾಜಿನ/ಪಾರದರ್ಶಕ ಲೋಟವನ್ನು ಬಳಸಿ ನೀರಿನಲ್ಲಿ ತೇಲುವ, ಮುಳುಗುವ ಮತ್ತು ಕರಗುವ ವಸ್ತುಗಳ ಬಗ್ಗೆ ಪ್ರಯೋಗದ ಮೂಲಕ ತಿಳಿಸಿಕೊಡುವುದು." },
+      { date: "2027-02-23", day: "Tuesday", grade: "7/8", subject: "ವಿಜ್ಞಾನದ ವಿಸ್ಮಯ", title: "ವಿವಿಧ ಕಾಡುಗಳ ವಿಶ್ಲೇಷಣೆ", activity: "ಒಗಟುಗಳ ಮೂಲಕ ವಿವಿಧ ಕಾಡುಗಳ ವೈಶಿಷ್ಟ್ಯಗಳು ಮತ್ತು ಪರಿಸರ ಮಹತ್ವವನ್ನು ಪರಿಚಯಿಸುವುದು.", activityType: "ಒಗಟು", parentActivity: "ಸರಳ ಪ್ರಯೋಗ - ಮನೆಯಲ್ಲಿನ ವಸ್ತುಗಳೊಂದಿಗೆ ಚಿಕ್ಕ ವಿಜ್ಞಾನ ಚಟುವಟಿಕೆಗಳನ್ನು ಮಾಡುವುದು." },
+      { date: "2027-02-24", day: "Wednesday", grade: "7/8", subject: "ವಿಜ್ಞಾನದ ವಿಸ್ಮಯ", title: "ವಸ್ತುಗಳ ಬೇರ್ಪಡಿಸುವಿಕೆ", activity: "ವಿವಿಧ ಮಿಶ್ರಣಗಳಿಂದ ವಸ್ತುಗಳನ್ನು ಬೇರ್ಪಡಿಸುವ ಸರಳ ವಿಧಾನಗಳನ್ನು ಮಕ್ಕಳು ಪ್ರಯೋಗದ ಮೂಲಕ ಪ್ರದರ್ಶಿಸುವರು.", activityType: "ಕಥಾ ನಿರೂಪಣೆ", parentActivity: "ಸರಳ ಪ್ರಯೋಗ - ಅಡುಗೆ ಮನೆಯಲ್ಲಿ ಜರಡಿ ಹಿಡಿಯುವುದು, ಶೋಧಿಸುವುದು ಮುಂತಾದ ವಿಧಾನಗಳನ್ನು ತೋರಿಸುವುದು." },
+      { date: "2027-02-25", day: "Thursday", grade: "7/8", subject: "ವಿಜ್ಞಾನದ ವಿಸ್ಮಯ", title: "ತ್ಯಾಜ್ಯ ನೀರಿನ ಹಾನಿಗಳು", activity: "ತ್ಯಾಜ್ಯ ನೀರಿನಿಂದಾಗುವ ಅನಾರೋಗ್ಯ ಮತ್ತು ಪರಿಸರದ ಮೇಲಿನ ಪರಿಣಾಮಗಳ ಕುರಿತು ಸೃಜನಾತ್ಮಕವಾಗಿ ಅಭಿಪ್ರಾಯ ಹಂಚಿಕೊಳ್ಳುವುದು.", activityType: "ಭಾಷಣ", parentActivity: "ಸರಳ ಪ್ರಯೋಗ - ಮನೆಯಲ್ಲಿ ನೀರನ್ನು ಶುದ್ಧವಾಗಿ ಮತ್ತು ಮಿತವಾಗಿ ಬಳಸುವ ವಿಧಾನ ತಿಳಿಸುವುದು." },
+      { date: "2027-02-26", day: "Friday", grade: "7/8", subject: "ವಿಜ್ಞಾನದ ವಿಸ್ಮಯ", title: "ತ್ಯಾಜ್ಯ ನೀರಿನ ಮರುಬಳಕೆ", activity: "ನೀರು ಶುದ್ಧೀಕರಣ ಪ್ರಯೋಗದ ಮೂಲಕ ತ್ಯಾಜ್ಯ ನೀರಿನ ಮರುಬಳಕೆಯ ಸರಳ ವಿಧಾನವನ್ನು ಪ್ರದರ್ಶಿಸುವುದು.", activityType: "ಪ್ರಯೋಗ", parentActivity: "ಸರಳ ಪ್ರಯೋಗ - ಮಳೆ ನೀರು ಮತ್ತು ತ್ಯಾಜ್ಯ ನೀರನ್ನು ಗಿಡಗಳಿಗೆ ಮರುಬಳಕೆ ಮಾಡುವ ವಿಧಾನ ತೋರಿಸುವುದು." },
+      { date: "2027-02-27", day: "Saturday", grade: "7/8", subject: "ವಿಜ್ಞಾನದ ವಿಸ್ಮಯ", title: "ದೈಹಿಕ ವ್ಯಾಯಾಮ", activity: "ಶಾಲೆಗೆ ಅನುಕೂಲವಾಗುವಂತೆ ಶನಿವಾರ ದೈಹಿಕ ವ್ಯಾಯಾಮವನ್ನು ಎಲ್ಲಾ ಮಕ್ಕಳಿಗೆ ಮಾಡಿಸುವುದು.", activityType: "ಪ್ರದರ್ಶನ", parentActivity: "ಸರಳ ಪ್ರಯೋಗ - ಪ್ರತಿದಿನ ದೈಹಿಕ ವ್ಯಾಯಾಮ ಮತ್ತು ಶುದ್ಧ ನೀರು ಕುಡಿಯುವ ಅಭ್ಯಾಸ." },
+
+      // ಮಾರ್ಚ್ 2027
+      { date: "2027-03-01", day: "Monday", grade: "7/8", subject: "ಪರೀಕ್ಷಾ ಪ್ರಶ್ನೋತ್ತರ", title: "ಕನ್ನಡ ಪ್ರಶ್ನೋತ್ತರ", activity: "ವಿದ್ಯಾರ್ಥಿಗಳು ಕನ್ನಡ ವಿಷಯಕ್ಕೆ ಸಂಬಂಧಿಸಿದ ಪ್ರಶ್ನೋತ್ತರ ಚಟುವಟಿಕೆ ಮಾಡುವುದು.", activityType: "ಪ್ರಶ್ನೋತ್ತರ ಚಟುವಟಿಕೆ", parentActivity: "ಅಧ್ಯಯನ ವೇಳಾ ಪಟ್ಟಿ ರಚನೆ - ಪೋಷಕರು ಮಕ್ಕಳಿಗೆ ನಿತ್ಯದ ಅಧ್ಯಯನ ವೇಳಾಪಟ್ಟಿಯನ್ನು ಸರಳವಾಗಿ ರಚಿಸಲು ಸಹಾಯ ಮಾಡುವುದು. ಶಾಲೆಯ ಸಮಯ, ಆಟ, ಓದು, ಊಟ ಮತ್ತು ವಿಶ್ರಾಂತಿ ಸಮಯ ನಿಗದಿಪಡಿಸುವುದು." },
+      { date: "2027-03-02", day: "Tuesday", grade: "7/8", subject: "ಪರೀಕ್ಷಾ ಪ್ರಶ್ನೋತ್ತರ", title: "ವಿಜ್ಞಾನ ಪ್ರಶ್ನೋತ್ತರ", activity: "ವಿದ್ಯಾರ್ಥಿಗಳು ವಿಜ್ಞಾನ ವಿಷಯದಲ್ಲಿ ಕೇಳಬಹುದಾದ ವಿವಿಧ ಮಾದರಿಯ ಪ್ರಶ್ನೆಗಳ ಬಗ್ಗೆ ತಿಳಿಸುವುದು ಮತ್ತು ಉತ್ತರಗಳನ್ನು ಕೇಳುವುದು.", activityType: "ಪ್ರಶ್ನೋತ್ತರ ಚಟುವಟಿಕೆ", parentActivity: "ಅಧ್ಯಯನ ವೇಳಾ ಪಟ್ಟಿ ರಚನೆ - ವಿಜ್ಞಾನ ವಿಷಯದ ಪುನರಾವರ್ತನೆಗೆ ವೇಳಾಪಟ್ಟಿಯಲ್ಲಿ ಸಮಯ ನಿಗದಿಪಡಿಸುವುದು." },
+      { date: "2027-03-03", day: "Wednesday", grade: "7/8", subject: "ಪರೀಕ್ಷಾ ಪ್ರಶ್ನೋತ್ತರ", title: "ಸಮಾಜ ವಿಜ್ಞಾನ ಪ್ರಶ್ನೋತ್ತರ", activity: "ವಿದ್ಯಾರ್ಥಿಗಳು ಸಮಾಜ ವಿಜ್ಞಾನ ವಿಷಯದಲ್ಲಿ ಕೇಳಬಹುದಾದ ವಿವಿಧ ಮಾದರಿಯ ಪ್ರಶ್ನೆಗಳ ಬಗ್ಗೆ ತಿಳಿಸುವುದು ಮತ್ತು ಉತ್ತರಗಳನ್ನು ಕೇಳುವುದು.", activityType: "ಪ್ರಶ್ನೋತ್ತರ ಚಟುವಟಿಕೆ", parentActivity: "ಅಧ್ಯಯನ ವೇಳಾ ಪಟ್ಟಿ ರಚನೆ - ಭಯವಿಲ್ಲದೆ ಆತ್ಮವಿಶ್ವಾಸದಿಂದ ಓದಲು ಮಕ್ಕಳಿಗೆ ಬೆಂಬಲ ನೀಡುವುದು." },
+      { date: "2027-03-04", day: "Thursday", grade: "7/8", subject: "ಪರೀಕ್ಷಾ ಪ್ರಶ್ನೋತ್ತರ", title: "ಹಿಂದಿ ಪ್ರಶ್ನೋತ್ತರ", activity: "ವಿದ್ಯಾರ್ಥಿಗಳು ಹಿಂದಿ ವಿಷಯಕ್ಕೆ ಸಂಬಂಧಿಸಿದ ಪ್ರಶ್ನೋತ್ತರ ಚಟುವಟಿಕೆ ಮಾಡುತ್ತಾರೆ.", activityType: "ಪ್ರಶ್ನೋತ್ತರ ಚಟುವಟಿಕೆ", parentActivity: "ಅಧ್ಯಯನ ವೇಳಾ ಪಟ್ಟಿ ರಚನೆ - ಎಲ್ಲಾ ಭಾಷಾ ವಿಷಯಗಳ ಬರವಣಿಗೆ ಮತ್ತು ಓದಿನ ಅಭ್ಯಾಸಕ್ಕೆ ಪ್ರೋತ್ಸಾಹಿಸುವುದು." },
+      { date: "2027-03-05", day: "Friday", grade: "7/8", subject: "ಪರೀಕ್ಷಾ ಪ್ರಶ್ನೋತ್ತರ", title: "ಇಂಗ್ಲೀಷ್ ಪ್ರಶ್ನೋತ್ತರ", activity: "ವಿದ್ಯಾರ್ಥಿಗಳು ಇಂಗ್ಲೀಷ್ ವಿಷಯಕ್ಕೆ ಸಂಬಂಧಿಸಿದ ಪ್ರಶ್ನೋತ್ತರ ಚಟುವಟಿಕೆ ಮಾಡುತ್ತಾರೆ.", activityType: "ಪ್ರಶ್ನೋತ್ತರ ಚಟುವಟಿಕೆ", parentActivity: "ಅಧ್ಯಯನ ವೇಳಾ ಪಟ್ಟಿ ರಚನೆ - ಪರೀಕ್ಷೆಗೆ ಮುನ್ನ ಪ್ರಮುಖ ಅಂಶಗಳನ್ನು ಪುನರಾವರ್ತನೆ ಮಾಡಲು ಸಹಕರಿಸುವುದು." },
+      { date: "2027-03-06", day: "Saturday", grade: "7/8", subject: "ಪರೀಕ್ಷಾ ಪ್ರಶ್ನೋತ್ತರ", title: "ಮಹಾ ಶಿವರಾತ್ರಿ", activity: "ಮಹಾ ಶಿವರಾತ್ರಿ ಹಬ್ಬದ ಆಚರಣೆ ಹಾಗೂ ಸಾಂಸ್ಕೃತಿಕ ಮಹತ್ವದ ಕುರಿತು ಹಂಚಿಕೊಳ್ಳುವುದು.", activityType: "ಆಚರಣೆ", parentActivity: "ಅಧ್ಯಯನ ವೇಳಾ ಪಟ್ಟಿ ರಚನೆ - ಹಬ್ಬದ ದಿನದಂದು ಕುಟುಂಬದೊಂದಿಗೆ ಸಂತೋಷದಿಂದ ಪಾಲ್ಗೊಳ್ಳುವುದು." },
+
+      { date: "2027-03-08", day: "Monday", grade: "4", subject: "ಅನುಭವ", title: "ಅಂತರಾಷ್ಟ್ರೀಯ ಮಹಿಳಾ ದಿನ", activity: "ವಿವಿಧ ಕ್ಷೇತ್ರಗಳಲ್ಲಿ ಮಹಿಳೆಯರ ಸಾಧನೆ ಮತ್ತು ಕೊಡುಗೆಗಳ ಬಗ್ಗೆ ವಿದ್ಯಾರ್ಥಿಗಳು ಸಂಕ್ಷಿಪ್ತವಾಗಿ ಮಾತನಾಡುತ್ತಾರೆ ಮತ್ತು ಮಹಿಳೆಯರಿಗೆ ಗೌರವ ಸಲ್ಲಿಸುತ್ತಾರೆ.", activityType: "ಆಚರಣೆ", parentActivity: "ಮಣ್ಣಿನ ಕಲಾಕೃತಿ - ಪೋಷಕರು ಮಕ್ಕಳಿಗೆ ಮಣ್ಣನ್ನು ಬಳಸಿ ಅವರ ಸ್ವಂತ ಆಲೋಚನೆಯಿಂದ ಹೊಸ ಆಕಾರಗಳನ್ನು ಮಾಡಲು ಅವಕಾಶ ನೀಡುವುದು ಮತ್ತು ಪ್ರಶಂಸಿಸುವುದು." },
+      { date: "2027-03-09", day: "Tuesday", grade: "4", subject: "ಅನುಭವ", title: "ಸಮತೋಲನ ಆಹಾರ", activity: "ವಿದ್ಯಾರ್ಥಿಗಳನ್ನು 4 ರಿಂದ 5 ಗುಂಪುಗಳಾಗಿ ವಿಂಗಡಿಸಿ ಸಮತೋಲನ ಆಹಾರ ಬಗ್ಗೆ ಪ್ರಸ್ತುತಪಡಿಸುವುದು.", activityType: "ಗುಂಪು ಚರ್ಚೆ", parentActivity: "ಮಣ್ಣಿನ ಕಲಾಕೃತಿ - ಮಕ್ಕಳಿಗೆ ಪೌಷ್ಟಿಕ ಮತ್ತು ಸಮತೋಲನ ಆಹಾರದ ಮಹತ್ವವನ್ನು ತಿಳಿಸುವುದು." },
+      { date: "2027-03-10", day: "Wednesday", grade: "4", subject: "ಅನುಭವ", title: "ರಂಜಾನ್", activity: "ರಂಜಾನ್ ಹಬ್ಬದ ಆಚರಣೆ, ದಾನಧರ್ಮ ಮತ್ತು ಸೌಹಾರ್ದತೆಯ ಸಂದೇಶದ ಕುರಿತು ತಿಳಿಸುವುದು.", activityType: "ಹಬ್ಬ", parentActivity: "ಮಣ್ಣಿನ ಕಲಾಕೃತಿ - ಎಲ್ಲಾ ಧರ್ಮದ ಹಬ್ಬಗಳನ್ನು ಗೌರವಿಸುವ ಮತ್ತು ಸೌಹಾರ್ದತೆಯ ಮೌಲ್ಯ ಕಲಿಸುವುದು." },
+      { date: "2027-03-11", day: "Thursday", grade: "4", subject: "ಅನುಭವ", title: "ಕ್ರೀಡಾ ಮಹತ್ವ", activity: "ವಿದ್ಯಾರ್ಥಿಗಳನ್ನು ಗುಂಪುಗಳಾಗಿ ವಿಂಗಡಿಸಿ ಕ್ರೀಡಾ ಮಹತ್ವ ವಿಷಯಗಳ ಕುರಿತು ಚರ್ಚಿಸಲು ಅವಕಾಶ ನೀಡುವುದು.", activityType: "ಗುಂಪು ಚರ್ಚೆ", parentActivity: "ಮಣ್ಣಿನ ಕಲಾಕೃತಿ - ಓದಿನ ಜೊತೆಗೆ ಆಟೋಟಗಳಲ್ಲೂ ಭಾಗವಹಿಸಲು ಪ್ರೋತ್ಸಾಹಿಸುವುದು." },
+      { date: "2027-03-12", day: "Friday", grade: "4", subject: "ಅನುಭವ", title: "ಕನಸು ಮತ್ತು ಸಾಧನೆ", activity: "ವಿದ್ಯಾರ್ಥಿಗಳನ್ನು ಗುಂಪುಗಳಾಗಿ ವಿಂಗಡಿಸಿ ಕನಸು ಮತ್ತು ಸಾಧನೆ ವಿಷಯದ ಬಗ್ಗೆ ಚರ್ಚಿಸಲು ಅವಕಾಶ ನೀಡುವುದು.", activityType: "ಸನ್ನಿವೇಶ ವಿಶ್ಲೇಷಣೆ", parentActivity: "ಮಣ್ಣಿನ ಕಲಾಕೃತಿ - ಮಕ್ಕಳ ಕನಸುಗಳಿಗೆ ರೆಕ್ಕೆ ನೀಡಿ ಅವರ ಸೃಜನಶೀಲತೆಯನ್ನು ಮೆಚ್ಚಿಕೊಳ್ಳುವುದು." },
+      { date: "2027-03-13", day: "Saturday", grade: "4", subject: "ಅನುಭವ", title: "SDMC/ಸಮುದಾಯ ಸಹಭಾಗಿತ್ವ", activity: "ಸಮುದಾಯ ಅಥವಾ ಎಸ್‌ಡಿಎಂಸಿ ಸದಸ್ಯರು ತಮ್ಮ ಜ್ಞಾನ ಮತ್ತು ವೃತ್ತಿಯ ಅನುಭವಗಳನ್ನು ಹಂಚಿಕೊಳ್ಳುತ್ತಾರೆ.", activityType: "ಪ್ರಸ್ತುತಿ", parentActivity: "ಮಣ್ಣಿನ ಕಲಾಕೃತಿ - ಸಮುದಾಯದ ಸದಸ್ಯರ ಮಾರ್ಗದರ್ಶನದಿಂದ ಮಕ್ಕಳಿಗೆ ಪ್ರೇರಣೆ ನೀಡುವುದು." },
+
+      { date: "2027-03-15", day: "Monday", grade: "5", subject: "ಪರೀಕ್ಷೆ ಸಿದ್ಧತೆ ಹಾಗೂ ಪ್ರಾಮಾಣಿಕತೆ", title: "ಸತ್ಯ ಮತ್ತು ಪ್ರಾಮಾಣಿಕತೆ", activity: "ಸತ್ಯ, ನಿಷ್ಠೆ, ಪ್ರಾಮಾಣಿಕತೆ ಅರ್ಥ ಮಾಡಿಕೊಂಡು ನಿತ್ಯ ಜೀವನದ ಸಂದರ್ಭಗಳಿಗೆ ಸಂಬಂಧಿಸಿದಂತೆ ಪ್ರಹಸನ ಮಾಡುವುದು.", activityType: "ಪಾತ್ರಾಭಿನಯ", parentActivity: "ಪ್ರಶ್ನೋತ್ತರ ಆಟ - ಪೋಷಕರು ಪಠ್ಯ ವಿಷಯಗಳಿಗೆ ಸಂಬಂಧಿಸಿದ ಸರಳ ಪ್ರಶ್ನೆಗಳನ್ನು ರಚಿಸಲು ಮಕ್ಕಳಿಗೆ ಸಹಕಾರ ಮಾಡುವುದು ಹಾಗೂ ಸರಿಯಾದ ಉತ್ತರಕ್ಕೆ ಪ್ರಶಂಸೆ ಮಾಡುವುದು." },
+      { date: "2027-03-16", day: "Tuesday", grade: "5", subject: "ಪರೀಕ್ಷೆ ಸಿದ್ಧತೆ ಹಾಗೂ ಪ್ರಾಮಾಣಿಕತೆ", title: "ಪರೀಕ್ಷಾ ಸಂಕಲ್ಪ", activity: "ನಾನು ಪ್ರತಿ ದಿನ ಓದುತ್ತೇನೆ, ಸಮಯ ಪಾಲಿಸುತ್ತೇನೆ, ಆತ್ಮವಿಶ್ವಾಸದಿಂದ ಪರೀಕ್ಷೆ ಬರೆಯುತ್ತೇನೆ ಎಂಬ ಸಂಕಲ್ಪ ಪ್ರದರ್ಶನ.", activityType: "ಪ್ರದರ್ಶನ", parentActivity: "ಪ್ರಶ್ನೋತ್ತರ ಆಟ - ಪರೀಕ್ಷೆ ಸಮಯದಲ್ಲಿ ಮಕ್ಕಳಲ್ಲಿ ಆತ್ಮವಿಶ್ವಾಸ ತುಂಬುವುದು." },
+      { date: "2027-03-17", day: "Wednesday", grade: "5", subject: "ಪರೀಕ್ಷೆ ಸಿದ್ಧತೆ ಹಾಗೂ ಪ್ರಾಮಾಣಿಕತೆ", title: "ಪರೀಕ್ಷಾ ವೇಳಾ ಪಟ್ಟಿ ತಯಾರಿಕೆ", activity: "ಪರೀಕ್ಷೆಯ ತಯಾರಿಗೆ ವೇಳಾಪಟ್ಟಿಯನ್ನು ತಯಾರಿಸುವ ವಿಧಾನವನ್ನು ಚರ್ಚಿಸುವುದು.", activityType: "ಗುಂಪು ಚರ್ಚೆ", parentActivity: "ಪ್ರಶ್ನೋತ್ತರ ಆಟ - ಮಗುವಿನ ಪರೀಕ್ಷಾ ವೇಳಾಪಟ್ಟಿಗೆ ಅನುಗುಣವಾಗಿ ಮನೆಯಲ್ಲಿ ಶಾಂತ ವಾತಾವರಣ ಕಲ್ಪಿಸುವುದು." },
+      { date: "2027-03-18", day: "Thursday", grade: "5", subject: "ಪರೀಕ್ಷೆ ಸಿದ್ಧತೆ ಹಾಗೂ ಪ್ರಾಮಾಣಿಕತೆ", title: "ಪ್ರಶ್ನೆ ಕೇಳೋಣ ಉತ್ತರ ಹುಡುಕೋಣ", activity: "ತರಗತಿವಾರು ಕಲಿಕಾ ಫಲಗಳ ಆಧಾರಿತವಾಗಿ ಪ್ರಶ್ನೆಗಳನ್ನು ರಚಿಸಿ ಅದರ ಉತ್ತರಗಳನ್ನು ಇತರೆ ಮಕ್ಕಳಿಂದ ಪಡೆಯುವುದು.", activityType: "ರಸಪ್ರಶ್ನೆ", parentActivity: "ಪ್ರಶ್ನೋತ್ತರ ಆಟ - ಪಠ್ಯದ ಕುರಿತು ಮಕ್ಕಳೊಂದಿಗೆ ರಸಪ್ರಶ್ನೆ ಆಟವಾಡಿ ಪುನರಾವರ್ತನೆ ಮಾಡಿಸುವುದು." },
+      { date: "2027-03-19", day: "Friday", grade: "5", subject: "ಪರೀಕ್ಷೆ ಸಿದ್ಧತೆ ಹಾಗೂ ಪ್ರಾಮಾಣಿಕತೆ", title: "ಮೊಬೈಲ್ ಬಿಡಿ ಪುಸ್ತಕ ಹಿಡಿ", activity: "ಕಲಿಕೆಯ ಸಮಯದಲ್ಲಿ ಮೊಬೈಲ್ ಬಳಕೆಯನ್ನು ತ್ಯಜಿಸಿ, ಪರೀಕ್ಷೆಯ ತಯಾರಿಗೆ ಗಮನ ಹರಿಸುವ ಕುರಿತು ಚರ್ಚೆ ಮಾಡುವುದು.", activityType: "ಗುಂಪು ಚರ್ಚೆ", parentActivity: "ಪ್ರಶ್ನೋತ್ತರ ಆಟ - ಅಧ್ಯಯನದ ವೇಳೆ ಟಿವಿ ಮತ್ತು ಮೊಬೈಲ್‌ನಿಂದ ದೂರವಿರಲು ಮಾರ್ಗದರ್ಶನ ನೀಡುವುದು." },
+      { date: "2027-03-20", day: "Saturday", grade: "5", subject: "ಪರೀಕ್ಷೆ ಸಿದ್ಧತೆ ಹಾಗೂ ಪ್ರಾಮಾಣಿಕತೆ", title: "ಸಂಭ್ರಮ ಶನಿವಾರ", activity: "ಸಂಭ್ರಮ ಶನಿವಾರ: ಲಿಂಗ ಸಮಾನತೆಗೆ ಪ್ರೋತ್ಸಾಹ.", activityType: "ಚಟುವಟಿಕೆ", parentActivity: "ಪ್ರಶ್ನೋತ್ತರ ಆಟ - ಗಂಡು-ಹೆಣ್ಣು ಸಮಾನರು ಎಂಬ ಮೌಲ್ಯವನ್ನು ಮನೆಯಲ್ಲಿ ಪಾಲಿಸುವುದು." },
+
+      { date: "2027-03-22", day: "Monday", grade: "6", subject: "ನನ್ನ ಸಮಯ", title: "ಸಮಯದ ಮೌಲ್ಯದ ಬಗ್ಗೆ ಭಾಷಣ", activity: "ಇಬ್ಬರು ವಿದ್ಯಾರ್ಥಿಗಳು ಸಮಯದ ಮೌಲ್ಯದ ಬಗ್ಗೆ ಪರಸ್ಪರ ಸಂಭಾಷಣೆ ಮತ್ತು ಚರ್ಚೆ ಮಾಡುವರು.", activityType: "ಸಂಭಾಷಣೆ", parentActivity: "ಶಿಕ್ಷಕರಿಗೆ ಕೃತಜ್ಞತೆ - ಪೋಷಕರು ಮಕ್ಕಳೊಂದಿಗೆ ಸೇರಿ ಶಿಕ್ಷಕರಿಗಾಗಿ ಸರಳ ಗ್ರೀಟಿಂಗ್ ಕಾರ್ಡ್ ತಯಾರಿಸುವ ಚಟುವಟಿಕೆ ಮಾಡಿಸುವುದು ಮತ್ತು ಮಕ್ಕಳ ಕಲಿಕೆಗೆ ಶ್ರಮಿಸಿದ ಶಿಕ್ಷಕರಿಗೆ ಕೃತಜ್ಞತೆ ತಿಳಿಸುವುದು." },
+      { date: "2027-03-23", day: "Tuesday", grade: "6", subject: "ನನ್ನ ಸಮಯ", title: "ಸಮಯದ ಸದ್ಬಳಕೆ", activity: "ಸಮಯ ವ್ಯರ್ಥ ಮಾಡುವುದರ ಹಾಗೂ ಸಮಯವನ್ನು ಸಮರ್ಪಕವಾಗಿ ಬಳಸುವುದರ ಕುರಿತು ಪಾತ್ರಾಭಿನಯ ಪ್ರದರ್ಶಿಸುವುದು.", activityType: "ಪಾತ್ರಾಭಿನಯ", parentActivity: "ಶಿಕ್ಷಕರಿಗೆ ಕೃತಜ್ಞತೆ - ಸಮಯದ ಸದ್ಬಳಕೆಯ ಕುರಿತು ಮಕ್ಕಳಿಗೆ ಮಾರ್ಗದರ್ಶನ ನೀಡುವುದು." },
+      { date: "2027-03-24", day: "Wednesday", grade: "6", subject: "ನನ್ನ ಸಮಯ", title: "ಪರೀಕ್ಷಾ ತಯಾರಿ ಸ್ವಯಂ ವೇಳಾಪಟ್ಟಿ", activity: "ವಿದ್ಯಾರ್ಥಿಗಳು ಪರೀಕ್ಷಾ ತಯಾರಿಗಾಗಿ ಸ್ವಯಂ ವೇಳಾಪಟ್ಟಿಯನ್ನು ರೂಪಿಸುವುದು ಮತ್ತು ಹಂಚಿಕೊಳ್ಳುವುದು.", activityType: "ಪ್ರದರ್ಶನ", parentActivity: "ಶಿಕ್ಷಕರಿಗೆ ಕೃತಜ್ಞತೆ - ಮಕ್ಕಳ ಸ್ವಯಂ ವೇಳಾಪಟ್ಟಿಯನ್ನು ಪ್ರೋತ್ಸಾಹಿಸಿ ಬೆಂಬಲಿಸುವುದು." },
+      { date: "2027-03-25", day: "Thursday", grade: "6", subject: "ನನ್ನ ಸಮಯ", title: "ಪರೀಕ್ಷಾ ತಯಾರಿಯ ಸಲಹೆಗಳು", activity: "ವಿದ್ಯಾರ್ಥಿಗಳು ಪರೀಕ್ಷೆ ತಯಾರಿಗಾಗಿ ಸಮಯ ನಿರ್ವಹಣೆ, ಪುನರಾವರ್ತನೆ, ಮುಖ್ಯ ಅಂಶಗಳ ಬಗ್ಗೆ ಹಂಚಿಕೊಳ್ಳುವುದು.", activityType: "ಪ್ರದರ್ಶನ", parentActivity: "ಶಿಕ್ಷಕರಿಗೆ ಕೃತಜ್ಞತೆ - ಪರೀಕ್ಷೆಗೆ ಆರೋಗ್ಯಕರ ನಿದ್ರೆ ಮತ್ತು ಆಹಾರದ ಬಗ್ಗೆ ಗಮನ ಹರಿಸುವುದು." },
+      { date: "2027-03-26", day: "Friday", grade: "6", subject: "ನನ್ನ ಸಮಯ", title: "ಗುಡ್ ಫ್ರೈಡೇ", activity: "ಗುಡ್ ಫ್ರೈಡೇ ಆಚರಣೆ ಹಾಗೂ ಕ್ಷಮೆ, ಶಾಂತಿ ಮತ್ತು ಪ್ರೀತಿಯ ಸಂದೇಶ ಹಂಚಿಕೊಳ್ಳುವುದು.", activityType: "ಆಚರಣೆ", parentActivity: "ಶಿಕ್ಷಕರಿಗೆ ಕೃತಜ್ಞತೆ - ಪರಸ್ಪರ ಕ್ಷಮೆ, ಶಾಂತಿ ಮತ್ತು ಸೌಹಾರ್ದತೆಯ ಮಹತ್ವ ತಿಳಿಸುವುದು." },
+      { date: "2027-03-27", day: "Saturday", grade: "6", subject: "ನನ್ನ ಸಮಯ", title: "ದೈಹಿಕ ವ್ಯಾಯಾಮ", activity: "ಶಾಲೆಗೆ ಅನುಕೂಲವಾಗುವಂತೆ ಶನಿವಾರ ದೈಹಿಕ ವ್ಯಾಯಾಮವನ್ನು ಎಲ್ಲಾ ಮಕ್ಕಳಿಗೆ ಮಾಡಿಸುವುದು.", activityType: "ಪ್ರದರ್ಶನ", parentActivity: "ಶಿಕ್ಷಕರಿಗೆ ಕೃತಜ್ಞತೆ - ಶಿಕ್ಷಕರಿಗೆ ಕೃತಜ್ಞತಾ ಕಾರ್ಡ್ ತಯಾರಿಸಿ ನೀಡುವುದು." },
+
+      { date: "2027-03-29", day: "Monday", grade: "7/8", subject: "ಪರೀಕ್ಷಾ ತಯಾರಿ", title: "ಪರೀಕ್ಷಾ ತಯಾರಿಯಲ್ಲಿ ನನ್ನ ಕುಟುಂಬದ ಪಾತ್ರ", activity: "ನನ್ನ ಕುಟುಂಬ ನನಗೆ ಪರೀಕ್ಷಾ ತಯಾರಿಯಲ್ಲಿ ಹೇಗೆ ಸಹಾಯ ಮಾಡುತ್ತದೆ ಎಂದು ಪರಸ್ಪರ ಹಂಚಿಕೊಳ್ಳುವುದು.", activityType: "ಪ್ರಸ್ತುತಿ", parentActivity: "ಶಿಕ್ಷಕರಿಗೆ ಕೃತಜ್ಞತೆ - ಪರೀಕ್ಷಾ ಸಮಯದಲ್ಲಿ ಮಕ್ಕಳಿಗೆ ಮಾನಸಿಕ ಧೈರ್ಯ ಮತ್ತು ಕುಟುಂಬದ ಬೆಂಬಲ ನೀಡುವುದು." },
+      { date: "2027-03-30", day: "Tuesday", grade: "7/8", subject: "ಪರೀಕ್ಷಾ ತಯಾರಿ", title: "ಮಾತೇ ಮತ್ತು ಮಾತು", activity: "ವಿದ್ಯಾರ್ಥಿಗಳು ಪರೀಕ್ಷಾ ತಯಾರಿ ಕುರಿತು ಯಾವುದಾದರೂ 2-3 ಮಾತೆಯರ ಸಂದರ್ಶನ ಮಾಡಿ ಸಲಹೆಗಳನ್ನು ಪಡೆಯುವುದು.", activityType: "ಸಂದರ್ಶನ", parentActivity: "ಶಿಕ್ಷಕರಿಗೆ ಕೃತಜ್ಞತೆ - ತಾಯಂದಿರ ಹಾಗೂ ಪೋಷಕರ ಅನುಭವದ ಮಾತುಗಳನ್ನು ಮಕ್ಕಳೊಂದಿಗೆ ಹಂಚಿಕೊಳ್ಳುವುದು." },
+      { date: "2027-03-31", day: "Wednesday", grade: "7/8", subject: "ಪರೀಕ್ಷಾ ತಯಾರಿ", title: "ರಜಾವಧಿಗೆ ಯೋಜನೆ", activity: "ವಿದ್ಯಾರ್ಥಿಗಳು ಪರೀಕ್ಷಾ ತಯಾರಿ ಹಾಗೂ ರಜಾವಧಿ ಕುರಿತು 2-3 ಹಿರಿಯ ವಿದ್ಯಾರ್ಥಿಗಳೊಂದಿಗೆ ಸಲಹೆಗಳನ್ನು ಪಡೆಯುವುದು.", activityType: "ಸಂಭಾಷಣೆ", parentActivity: "ಶಿಕ್ಷಕರಿಗೆ ಕೃತಜ್ಞತೆ - ಬೇಸಿಗೆ ರಜೆಯಲ್ಲಿ ಓದು, ಕಲೆ ಮತ್ತು ಉಪಯುಕ್ತ ಹವ್ಯಾಸಗಳ ಯೋಜನೆ ರೂಪಿಸುವುದು." }
+    ];
+
+    const assemblyData = [...assemblyDataPart1, ...assemblyDataPart2];
+
+    const kannadaDays = {
+      Monday: "ಸೋಮವಾರ",
+      Tuesday: "ಮಂಗಳವಾರ",
+      Wednesday: "ಬುಧವಾರ",
+      Thursday: "ಗುರುವಾರ",
+      Friday: "ಶುಕ್ರವಾರ",
+      Saturday: "ಶನಿವಾರ",
+      Sunday: "ಭಾನುವಾರ"
+    };
+
+    const kannadaMonths = {
+      "01": "ಜನವರಿ",
+      "02": "ಫೆಬ್ರವರಿ",
+      "03": "ಮಾರ್ಚ್",
+      "04": "ಏಪ್ರಿಲ್",
+      "05": "ಮೇ",
+      "06": "ಜೂನ್",
+      "07": "ಜುಲೈ",
+      "08": "ಆಗಸ್ಟ್",
+      "09": "ಸೆಪ್ಟೆಂಬರ್",
+      "10": "ಅಕ್ಟೋಬರ್",
+      "11": "ನವೆಂಬರ್",
+      "12": "ಡಿಸೆಂಬರ್"
+    };
+
+    const alternativeActivities = [
+      "ಮಳೆ ನೀರು ಕೊಯ್ಲು", "ಕಥೆ ಓದಿ ಪ್ರಶ್ನೆ ಕೇಳು", "ಹಾನಿಕಾರಕ ಸೂಕ್ಷ್ಮಜೀವಿಗಳು",
+      "ಘರ್ಷಣೆಯ ಉಪಯೋಗಗಳು", "ನಿತ್ಯ ಜೀವನದಲ್ಲಿ ಗಣಿತ", "ಅನುಕ್ರಮ ಸವಾಲು",
+      "ಮರಗಳ ಮಹತ್ವ", "ಸರಿಯಾದ ಗ್ರಾಫ್ – ತಪ್ಪು ಗ್ರಾಫ್", "ಖರೀದಿ ಅಥವಾ ಮಾರಾಟ",
+      "ಲೀಟರ್ ಅಳತೆ", "ಜಾನಪದ ಸಂರಕ್ಷಣೆ", "ನಮ್ಮ ಊರಿನ ಭೂರೂಪಗಳು",
+      "ನೆರೆ ರಾಜ್ಯಗಳ ಮಾತೃಭಾಷೆ", "ಸಮಾನಾರ್ಥಕ ಪದಗಳು", "ಹಿಂದಿ ಅಂಕೆಗಳ ಪರಿಚಯ",
+      "ಪರಿಣಾಮಕಾರಿ ಓದುವಿಕೆ"
+    ];
+
+    const RATINGS_KEY = "sachetana_ma_ratings_2026_27";
+    let localRatings = {};
+    try {
+      localRatings = JSON.parse(localStorage.getItem(RATINGS_KEY) || "{}");
+    } catch (e) {
+      localRatings = {};
+    }
+
+    let gradeChartInstance = null;
+    let typeChartInstance = null;
+
+    function getLocalTodayISO() {
+      const now = new Date();
+      const y = now.getFullYear();
+      const m = String(now.getMonth() + 1).padStart(2, "0");
+      const d = String(now.getDate()).padStart(2, "0");
+      return `${y}-${m}-${d}`;
+    }
+
+    function formatKannadaDate(isoDate) {
+      const [y, m, d] = isoDate.split("-");
+      return `${parseInt(d, 10)} ${kannadaMonths[m] || m} ${y}`;
+    }
+
+    function getDayNameFromISO(isoDate) {
+      const [y, m, d] = isoDate.split("-").map(Number);
+      const dt = new Date(y, m - 1, d);
+      const names = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+      return kannadaDays[names[dt.getDay()]] || "";
+    }
+
+    function getPrepTips(item) {
+      const base = [
+        "ಒಂದು ವಾರ ಮುಂಚಿತವಾಗಿ ಶಿಕ್ಷಕರು ಮತ್ತು ವಿದ್ಯಾರ್ಥಿ ನಾಯಕರು ಸೇರಿ ಚಟುವಟಿಕೆಯ ಯೋಜನೆ ರೂಪಿಸಿ.",
+        "ಪ್ರತಿ ದಿನದ ಚಟುವಟಿಕೆಯಲ್ಲಿ ಕನಿಷ್ಠ 3 ರಿಂದ 10 ವಿದ್ಯಾರ್ಥಿಗಳು ಸಕ್ರಿಯವಾಗಿ ಭಾಗವಹಿಸುವಂತೆ ನೋಡಿಕೊಳ್ಳಿ.",
+        "ಶಾಲೆಯಲ್ಲಿ ಲಭ್ಯವಿರುವ ಸರಳ ಹಾಗೂ ಸ್ಥಳೀಯ ಸಾಮಗ್ರಿಗಳನ್ನು ಬಳಸಿ, 5 ನಿಮಿಷಗಳಲ್ಲಿ ಚಟುವಟಿಕೆ ಪೂರ್ಣಗೊಳಿಸಿ."
+      ];
+      const typeTips = {
+        "ಪ್ರಯೋಗ": "ಪ್ರಯೋಗಕ್ಕೆ ಬೇಕಾದ ಸರಳ ಸಾಮಗ್ರಿಗಳನ್ನು ಮುಂಚಿತವಾಗಿಯೇ ಪರೀಕ್ಷಿಸಿ, ಸುರಕ್ಷತಾ ಕ್ರಮಗಳೊಂದಿಗೆ ಪ್ರದರ್ಶಿಸಿ.",
+        "ಪಾತ್ರಾಭಿನಯ": "ಪಾತ್ರಗಳಿಗೆ ತಕ್ಕಂತೆ ಚಿಕ್ಕ ಸಂಭಾಷಣೆಗಳನ್ನು ಸಿದ್ಧಪಡಿಸಿ, ಧ್ವನಿ ಏರಿಳಿತ ಮತ್ತು ಹಾವಭಾವ ಅಭ್ಯಾಸ ಮಾಡಿ.",
+        "ಛದ್ಮವೇಷ": "ಲಭ್ಯವಿರುವ ಸರಳ ವೇಷಭೂಷಣ ಅಥವಾ ಕಾರ್ಡ್‌ಬೋರ್ಡ್ ಗುರುತುಪಟ್ಟಿ ಬಳಸಿ ಪಾತ್ರದ ಮುಖ್ಯ ಸಂದೇಶ ಸಿದ್ಧಪಡಿಸಿ.",
+        "ರಸಪ್ರಶ್ನೆ": "ತರಗತಿವಾರು 5 ರಿಂದ 8 ಸರಳ ಮತ್ತು ಆಸಕ್ತಿದಾಯಕ ಪ್ರಶ್ನೆಗಳನ್ನು ಮುಂಚಿತವಾಗಿ ಬರೆದಿಟ್ಟುಕೊಳ್ಳಿ.",
+        "ಊಹಿಸಿ ಗುರುತಿಸಿ": "ಸುಳಿವು ಕಾರ್ಡ್‌ಗಳು ಅಥವಾ ಚಿತ್ರಗಳನ್ನು ತಯಾರಿಸಿ, ಎಲ್ಲಾ ಮಕ್ಕಳಿಗೆ ಊಹಿಸಲು ಅವಕಾಶ ನೀಡಿ.",
+        "ಗುಂಪು ಚರ್ಚೆ": "ಚರ್ಚೆಯ ಪ್ರಮುಖ 3 ಅಂಶಗಳನ್ನು ಮೊದಲೇ ಪಟ್ಟಿ ಮಾಡಿ, ಕೊನೆಯಲ್ಲಿ ಸಾರಾಂಶವನ್ನು ಪ್ರಸ್ತುತಪಡಿಸಿ.",
+        "ಅಭಿನಯ ಗೀತೆ": "ಹಾಡಿನ ಸಾಹಿತ್ಯ ಮತ್ತು ಲಯವನ್ನು ಗುಂಪಿನಲ್ಲಿ ಅಭ್ಯಾಸ ಮಾಡಿ, ಸಂದೇಶವನ್ನು ಕೊನೆಯಲ್ಲಿ ತಿಳಿಸಿ.",
+        "ಸಮೂಹ ಗಾಯನ": "ಎಲ್ಲಾ ವಿದ್ಯಾರ್ಥಿಗಳು ಒಂದೇ ಲಯದಲ್ಲಿ ಹಾಡಲು ಪೂರ್ವಾಭ್ಯಾಸ ನಡೆಸಿ."
+      };
+      const extra = typeTips[item.activityType] || "ಚಟುವಟಿಕೆಯ ಕೊನೆಯಲ್ಲಿ ಮುಖ್ಯ ಕಲಿಕೆ ಮತ್ತು ಸಂದೇಶವನ್ನು ಸಂಕ್ಷಿಪ್ತವಾಗಿ ಮಕ್ಕಳಿಗೆ ತಿಳಿಸಿ.";
+      return [extra, ...base];
+    }
+
+    function findHeroActivity(todayISO) {
+      const exact = assemblyData.find(x => x.date === todayISO);
+      if (exact) return { item: exact, mode: "exact" };
+
+      const upcoming = assemblyData.find(x => x.date >= todayISO);
+      if (upcoming) return { item: upcoming, mode: "upcoming" };
+
+      return { item: assemblyData[0], mode: "fallback" };
+    }
+
+    function renderHero() {
+      const todayISO = getLocalTodayISO();
+      const { item, mode } = findHeroActivity(todayISO);
+
+      const heroDateBadge = document.getElementById("heroDateBadge");
+      const heroGradeBadge = document.getElementById("heroGradeBadge");
+      const heroTypeBadge = document.getElementById("heroTypeBadge");
+      const heroTitle = document.getElementById("heroTitle");
+      const heroDesc = document.getElementById("heroDesc");
+      const heroParentText = document.getElementById("heroParentText");
+      const heroClockPill = document.getElementById("heroClockPill");
+      const heroDetailBtn = document.getElementById("heroDetailBtn");
+
+      const todayFormatted = `${formatKannadaDate(todayISO)} • ${getDayNameFromISO(todayISO)}`;
+      heroClockPill.textContent = `ಇಂದಿನ ದಿನಾಂಕ: ${todayFormatted}`;
+
+      if (mode === "exact") {
+        heroDateBadge.textContent = `📅 ಇಂದಿನ ದಿನಾಂಕ: ${formatKannadaDate(item.date)} (${kannadaDays[item.day]})`;
+      } else if (mode === "upcoming") {
+        heroDateBadge.textContent = `📅 ಇಂದು ರಜೆ/ಭಾನುವಾರ • ಮುಂದಿನ ಚಟುವಟಿಕೆ: ${formatKannadaDate(item.date)} (${kannadaDays[item.day]})`;
+      } else {
+        heroDateBadge.textContent = `📅 ಕ್ಯಾಲೆಂಡರ್ ಮಾದರಿ: ${formatKannadaDate(item.date)} (${kannadaDays[item.day]})`;
+      }
+
+      heroGradeBadge.textContent = `🎓 ${item.grade}ನೇ ತರಗತಿ`;
+      heroTypeBadge.textContent = `🏷️ ${item.activityType}`;
+      heroTitle.textContent = `${item.subject} — ${item.title}`;
+      heroDesc.textContent = item.activity;
+      heroParentText.textContent = item.parentActivity;
+
+      heroDetailBtn.onclick = () => openDetailModal(item.date);
+    }
+
+    function populateTypeFilter() {
+      const select = document.getElementById("filterType");
+      const types = Array.from(new Set(assemblyData.map(x => x.activityType))).sort((a, b) => a.localeCompare(b, "kn"));
+      types.forEach(t => {
+        const opt = document.createElement("option");
+        opt.value = t;
+        opt.textContent = t;
+        select.appendChild(opt);
+      });
+    }
+
+    function getFilteredData() {
+      const dateVal = document.getElementById("filterDate").value;
+      const monthVal = document.getElementById("filterMonth").value;
+      const gradeVal = document.getElementById("filterGrade").value;
+      const typeVal = document.getElementById("filterType").value;
+      const keyword = document.getElementById("filterKeyword").value.trim().toLowerCase();
+
+      return assemblyData.filter(item => {
+        if (dateVal && item.date !== dateVal) return false;
+        if (monthVal && !item.date.startsWith(monthVal)) return false;
+        if (gradeVal && item.grade !== gradeVal) return false;
+        if (typeVal && item.activityType !== typeVal) return false;
+        if (keyword) {
+          const hay = `${item.subject} ${item.title} ${item.activity} ${item.parentActivity} ${item.activityType}`.toLowerCase();
+          if (!hay.includes(keyword)) return false;
+        }
+        return true;
+      });
+    }
+
+    function renderCardsWithAnimation() {
+      const grid = document.getElementById("cardsGrid");
+      grid.classList.add("fading");
+      setTimeout(() => {
+        const filtered = getFilteredData();
+        renderCards(filtered);
+        updateCharts(filtered);
+        updateSummaryText(filtered);
+        grid.classList.remove("fading");
+      }, 180);
+    }
+
+    function updateSummaryText(filtered) {
+      document.getElementById("resultCountChip").textContent = `ಒಟ್ಟು ಚಟುವಟಿಕೆಗಳು: ${filtered.length}`;
+      const mVal = document.getElementById("filterMonth").value;
+      const gVal = document.getElementById("filterGrade").value;
+      const parts = [];
+      if (mVal) {
+        const [y, m] = mVal.split("-");
+        parts.push(`${kannadaMonths[m]} ${y}`);
+      }
+      if (gVal) parts.push(`${gVal}ನೇ ತರಗತಿ`);
+      document.getElementById("activeFilterSummary").textContent = parts.length
+        ? `ಆಯ್ಕೆ: ${parts.join(" • ")}`
+        : "2026-27 ಶೈಕ್ಷಣಿಕ ವರ್ಷದ ಎಲ್ಲಾ ಚಟುವಟಿಕೆಗಳು";
+    }
+
+    function renderCards(items) {
+      const grid = document.getElementById("cardsGrid");
+      const todayISO = getLocalTodayISO();
+      grid.innerHTML = "";
+
+      if (items.length === 0) {
+        grid.innerHTML = `
+          <div class="empty-state">
+            <h3>📭 ಯಾವುದೇ ಚಟುವಟಿಕೆಗಳು ಕಂಡುಬಂದಿಲ್ಲ</h3>
+            <p>ದಯವಿಟ್ಟು ಬೇರೆ ದಿನಾಂಕ, ತರಗತಿ ಅಥವಾ ತಿಂಗಳನ್ನು ಆಯ್ಕೆ ಮಾಡಿ ನೋಡಿ (ಭಾನುವಾರದಂದು ಶಾಲಾ ರಜೆ ಇರುತ್ತದೆ).</p>
+            <button class="btn-primary-yellow" onclick="resetFilters()">🔄 ಎಲ್ಲಾ ಚಟುವಟಿಕೆಗಳನ್ನು ತೋರಿಸಿ</button>
+          </div>`;
+        return;
+      }
+
+      const frag = document.createDocumentFragment();
+      items.forEach((item, idx) => {
+        const card = document.createElement("article");
+        const isToday = item.date === todayISO;
+        const isHoliday = item.activityType === "ರಜೆ";
+        card.className = `activity-card${isToday ? " is-today" : ""}${isHoliday ? " is-holiday" : ""}`;
+        card.id = `card-${item.date}`;
+        card.style.animationDelay = `${Math.min(idx * 25, 300)}ms`;
+
+        const savedRating = localRatings[item.date] || 0;
+        const tips = getPrepTips(item);
+
+        let starsHtml = "";
+        for (let s = 1; s <= 5; s++) {
+          starsHtml += `<button class="star-btn ${s <= savedRating ? "active" : ""}" data-date="${item.date}" data-star="${s}" title="${s} ನಕ್ಷತ್ರ" onclick="setRating('${item.date}', ${s})">★</button>`;
+        }
+
+        card.innerHTML = `
+          <div>
+            <div class="card-top">
+              <span class="date-badge">📅 ${formatKannadaDate(item.date)} • ${kannadaDays[item.day] || item.day}</span>
+              <span class="grade-tag">🎓 ${item.grade}ನೇ ತರಗತಿ</span>
+            </div>
+            <div class="card-meta-row" style="margin-top:10px;">
+              <span class="subject-label">📘 ${item.subject}</span>
+              <span class="type-pill">${item.activityType}</span>
+            </div>
+            <h3 class="card-title" style="margin-top:10px;">${isToday ? "🌟 " : ""}${item.title}</h3>
+            <p class="card-desc" style="margin-top:6px;">${item.activity}</p>
+          </div>
+
+          <div>
+            <div class="accordion" id="acc-${item.date}">
+              <button type="button" class="accordion-trigger" onclick="toggleAccordion('${item.date}')">
+                <span>💡 ಹೇಗೆ ತಯಾರಿ ಮಾಡುವುದು?</span>
+                <span class="accordion-chevron">▼</span>
+              </button>
+              <div class="accordion-content">
+                <ul class="prep-list">
+                  ${tips.map(t => `<li>${t}</li>`).join("")}
+                </ul>
+                <p style="margin-top:8px; color:var(--teal-800); font-weight:600;">🏡 ಪೋಷಕರ ಚಟುವಟಿಕೆ: <span style="font-weight:400; color:var(--slate-700);">${item.parentActivity}</span></p>
+              </div>
+            </div>
+
+            <div class="card-footer" style="margin-top:10px;">
+              <div class="star-rating" aria-label="ಶಿಕ್ಷಕರ ರೇಟಿಂಗ್">
+                ${starsHtml}
+                <span class="rating-text" id="rtext-${item.date}">${savedRating > 0 ? `${savedRating}/5` : "ರೇಟ್ ಮಾಡಿ"}</span>
+              </div>
+              <button type="button" class="detail-link-btn" onclick="openDetailModal('${item.date}')">ಪೂರ್ಣ ವಿವರ →</button>
+            </div>
+          </div>
+        `;
+        frag.appendChild(card);
+      });
+
+      grid.appendChild(frag);
+    }
+
+    function toggleAccordion(dateStr) {
+      const el = document.getElementById(`acc-${dateStr}`);
+      if (el) el.classList.toggle("open");
+    }
+
+    function setRating(dateStr, stars) {
+      localRatings[dateStr] = stars;
+      try {
+        localStorage.setItem(RATINGS_KEY, JSON.stringify(localRatings));
+      } catch (e) {}
+
+      const card = document.getElementById(`card-${dateStr}`);
+      if (card) {
+        card.querySelectorAll(".star-btn").forEach(btn => {
+          const val = Number(btn.getAttribute("data-star"));
+          btn.classList.toggle("active", val <= stars);
+        });
+        const rtext = document.getElementById(`rtext-${dateStr}`);
+        if (rtext) rtext.textContent = `${stars}/5 ✓`;
+      }
+    }
+
+    function openDetailModal(dateStr) {
+      const item = assemblyData.find(x => x.date === dateStr);
+      if (!item) return;
+      const tips = getPrepTips(item);
+
+      document.getElementById("detailModalContent").innerHTML = `
+        <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:10px; padding-right:36px;">
+          <span class="date-badge">📅 ${formatKannadaDate(item.date)} (${kannadaDays[item.day]})</span>
+          <span class="grade-tag">🎓 ${item.grade}ನೇ ತರಗತಿ</span>
+          <span class="type-pill">${item.activityType}</span>
+        </div>
+        <h3 style="font-size:1.35rem; color:var(--teal-900); margin-bottom:4px;">${item.title}</h3>
+        <p style="font-size:0.9rem; font-weight:700; color:var(--blue-600); margin-bottom:10px;">ವಿಷಯ / ಕ್ಷೇತ್ರ: ${item.subject}</p>
+        <p style="font-size:0.98rem; color:var(--slate-700);">${item.activity}</p>
+
+        <div class="modal-section yellow">
+          <h4>💡 ಹೇಗೆ ತಯಾರಿ ಮಾಡುವುದು? (ಶಿಕ್ಷಕರಿಗೆ ಸಲಹೆ)</h4>
+          <ul class="prep-list" style="font-size:0.88rem;">
+            ${tips.map(t => `<li>${t}</li>`).join("")}
+          </ul>
+        </div>
+
+        <div class="modal-section blue">
+          <h4>🏡 ಪೋಷಕರ ಚಟುವಟಿಕೆ (ಮನೆಯಲ್ಲಿ ಪೋಷಕರು ಮಾಡಿಸುವುದು)</h4>
+          <p style="font-size:0.9rem; color:var(--slate-700);">${item.parentActivity}</p>
+        </div>
+
+        <div class="modal-section">
+          <h4>🌱 ಜೀವನ ಕೌಶಲ್ಯಗಳ 4 ಹಂತಗಳು</h4>
+          <div class="life-steps">
+            <div class="life-step">1️⃣ ಯೋಜನೆ<br><span style="font-weight:400; color:var(--slate-600);">ತಂಡದ ಚರ್ಚೆ & ಜವಾಬ್ದಾರಿ</span></div>
+            <div class="life-step">2️⃣ ಸಿದ್ಧತೆ<br><span style="font-weight:400; color:var(--slate-600);">ಸಾಮಗ್ರಿ ಸಂಗ್ರಹ & ಅಭ್ಯಾಸ</span></div>
+            <div class="life-step">3️⃣ ಅನುಷ್ಠಾನ<br><span style="font-weight:400; color:var(--slate-600);">ಆತ್ಮವಿಶ್ವಾಸದ ಪ್ರಸ್ತುತಿ</span></div>
+            <div class="life-step">4️⃣ ಸ್ವ-ಅವಲೋಕನ<br><span style="font-weight:400; color:var(--slate-600);">ಕಲಿಕೆ & ಸುಧಾರಣೆ</span></div>
+          </div>
+        </div>
+      `;
+      openModal("detailModal");
+    }
+
+    function openInfoModal(kind) {
+      const box = document.getElementById("infoModalContent");
+      if (kind === "guide") {
+        box.innerHTML = `
+          <h3 style="color:var(--teal-900); font-size:1.28rem; margin-bottom:8px; padding-right:32px;">📘 ಕ್ಯಾಲೆಂಡರ್ ಬಳಕೆಯ ಮಾರ್ಗದರ್ಶಿ & ಜೀವನ ಕೌಶಲ್ಯಗಳು</h3>
+          <p style="font-size:0.9rem; color:var(--slate-600);">ಬೆಳಗಿನ ಪ್ರಾರ್ಥನಾ ಅವಧಿ ಚಟುವಟಿಕೆಗಳು ಮಕ್ಕಳಲ್ಲಿ ಆತ್ಮವಿಶ್ವಾಸ, ಶಿಸ್ತು, ಭಾಷಾ ಕೌಶಲ್ಯ, ನೈತಿಕ ಮೌಲ್ಯಗಳು ಹಾಗೂ ನಾಯಕತ್ವ ಗುಣಗಳನ್ನು ಬೆಳೆಸುವ ವೇದಿಕೆಯಾಗಿದೆ.</p>
+          <div class="modal-section yellow">
+            <h4>📌 ಗಮನಿಸಬೇಕಾದ ಪ್ರಮುಖ ಅಂಶಗಳು</h4>
+            <ul class="prep-list" style="font-size:0.88rem;">
+              <li>ಮಕ್ಕಳು ಪ್ರಸ್ತುತಿಪಡಿಸುವ ಚಟುವಟಿಕೆಗಳನ್ನು <strong>ಒಂದು ವಾರ ಮುಂಚಿತವಾಗಿ</strong> ಶಿಕ್ಷಕರು ಮಾರ್ಗದರ್ಶನ ನೀಡುವುದು.</li>
+              <li>ಪ್ರತಿದಿನದ ಚಟುವಟಿಕೆಯಲ್ಲಿ ಕನಿಷ್ಠ <strong>3 ರಿಂದ 5 (ಅಥವಾ 10) ವಿದ್ಯಾರ್ಥಿಗಳು</strong> ಭಾಗವಹಿಸುವಂತೆ ಎಲ್ಲರಿಗೂ ಸಮಾನ ಅವಕಾಶ ನೀಡುವುದು.</li>
+              <li>ಚಟುವಟಿಕೆಗಳನ್ನು <strong>5 ನಿಮಿಷಗಳ ಒಳಗೆ</strong> ಪೂರ್ಣಗೊಳಿಸುವಂತೆ ಯೋಜಿಸುವುದು.</li>
+              <li>ಪ್ರತಿ ಎರಡನೇ ಶನಿವಾರ <strong>ಸಮುದಾಯ / SDMC ದಿನ</strong>ವನ್ನಾಗಿ ಆಚರಿಸಿ ಸ್ಥಳೀಯ ಸಾಧಕರನ್ನು ಆಹ್ವಾನಿಸುವುದು.</li>
+              <li>ಶಾಲೆಯಲ್ಲಿ ಲಭ್ಯವಿರುವ ಸರಳ ಹಾಗೂ ಸ್ಥಳೀಯ ಸಾಮಗ್ರಿಗಳನ್ನೇ ಬಳಸುವುದು.</li>
+            </ul>
+          </div>
+          <div class="modal-section blue">
+            <h4>🌟 ಅಭಿವೃದ್ಧಿಯಾಗುವ 6 ಪ್ರಮುಖ ಜೀವನ ಕೌಶಲ್ಯಗಳು</h4>
+            <p style="font-size:0.88rem; color:var(--slate-700);">ಜವಾಬ್ದಾರಿ • ಸಂವಹನ • ಸೃಜನಾತ್ಮಕ ಚಿಂತನೆ • ವಿಮರ್ಶಾತ್ಮಕ ಚಿಂತನೆ • ಸಹಯೋಗ • ಆತ್ಮವಿಶ್ವಾಸ</p>
+          </div>
+        `;
+      } else {
+        box.innerHTML = `
+          <h3 style="color:var(--teal-900); font-size:1.28rem; margin-bottom:8px; padding-right:32px;">✨ ಪರ್ಯಾಯ ಪ್ರಾರ್ಥನಾ ಅವಧಿ ಚಟುವಟಿಕೆಗಳು</h3>
+          <p style="font-size:0.9rem; color:var(--slate-600); margin-bottom:12px;">ಶಾಲೆಯ ಅನುಕೂಲಕ್ಕೆ ತಕ್ಕಂತೆ ಶಿಕ್ಷಕರು ಈ ಕೆಳಗಿನ 16 ಪರ್ಯಾಯ ಚಟುವಟಿಕೆಗಳನ್ನೂ ಬಳಸಿಕೊಳ್ಳಬಹುದು:</p>
+          <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(175px, 1fr)); gap:10px;">
+            ${alternativeActivities.map((act, i) => `
+              <div style="background:var(--teal-50); border:1.5px solid var(--teal-100); border-radius:12px; padding:10px 12px; font-weight:700; font-size:0.86rem; color:var(--teal-900);">
+                ${i + 1}. ${act}
+              </div>
+            `).join("")}
+          </div>
+        `;
+      }
+      openModal("infoModal");
+    }
+
+    function openModal(id) {
+      document.getElementById(id).classList.add("open");
+    }
+
+    function closeModal(id) {
+      document.getElementById(id).classList.remove("open");
+    }
+
+    function openFeedbackModal() {
+      openModal("feedbackModal");
+    }
+
+    function submitOverallFeedback(e) {
+      e.preventDefault();
+      document.getElementById("feedbackFormWrap").style.display = "none";
+      document.getElementById("feedbackThankYou").classList.add("show");
+    }
+
+    function resetFeedbackModal() {
+      document.getElementById("overallFeedbackForm").reset();
+      document.getElementById("feedbackThankYou").classList.remove("show");
+      document.getElementById("feedbackFormWrap").style.display = "block";
+    }
+
+    function resetFilters() {
+      document.getElementById("filterDate").value = "";
+      document.getElementById("filterMonth").value = "";
+      document.getElementById("filterGrade").value = "";
+      document.getElementById("filterType").value = "";
+      document.getElementById("filterKeyword").value = "";
+      renderCardsWithAnimation();
+    }
+
+    function focusTodayMonth() {
+      const todayISO = getLocalTodayISO();
+      const monthPrefix = todayISO.slice(0, 7);
+      const monthSelect = document.getElementById("filterMonth");
+      if ([...monthSelect.options].some(o => o.value === monthPrefix)) {
+        monthSelect.value = monthPrefix;
+      } else {
+        monthSelect.value = "2026-06";
+      }
+      document.getElementById("filterDate").value = "";
+      renderCardsWithAnimation();
+    }
+
+    function jumpToTodayInGrid() {
+      const todayISO = getLocalTodayISO();
+      const { item } = findHeroActivity(todayISO);
+      resetFilters();
+      setTimeout(() => {
+        const el = document.getElementById(`card-${item.date}`);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "center" });
+          el.style.boxShadow = "0 0 0 4px #facc15";
+          setTimeout(() => { el.style.boxShadow = ""; }, 2200);
+        }
+      }, 260);
+    }
+
+    function toggleCharts() {
+      const body = document.getElementById("chartBody");
+      body.classList.toggle("collapsed");
+    }
+
+    function updateCharts(items) {
+      if (typeof Chart === "undefined") return;
+
+      const gradeCounts = { "4": 0, "5": 0, "6": 0, "7/8": 0 };
+      const typeCounts = {};
+
+      items.forEach(x => {
+        if (gradeCounts[x.grade] !== undefined) gradeCounts[x.grade]++;
+        typeCounts[x.activityType] = (typeCounts[x.activityType] || 0) + 1;
+      });
+
+      const topTypes = Object.entries(typeCounts)
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 6);
+
+      const gCtx = document.getElementById("gradeChart").getContext("2d");
+      if (gradeChartInstance) gradeChartInstance.destroy();
+      gradeChartInstance = new Chart(gCtx, {
+        type: "bar",
+        data: {
+          labels: ["4ನೇ ತರಗತಿ", "5ನೇ ತರಗತಿ", "6ನೇ ತರಗತಿ", "7/8ನೇ ತರಗತಿ"],
+          datasets: [{
+            label: "ಚಟುವಟಿಕೆಗಳ ಸಂಖ್ಯೆ",
+            data: [gradeCounts["4"], gradeCounts["5"], gradeCounts["6"], gradeCounts["7/8"]],
+            backgroundColor: ["#0d9488", "#0284c7", "#eab308", "#14b8a6"],
+            borderRadius: 8
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false },
+            title: { display: true, text: "ತರಗತಿವಾರು ಚಟುವಟಿಕೆಗಳು", font: { family: "Noto Sans Kannada", size: 13, weight: "bold" } }
+          },
+          scales: {
+            y: { beginAtZero: true, ticks: { precision: 0 } }
+          }
+        }
+      });
+
+      const tCtx = document.getElementById("typeChart").getContext("2d");
+      if (typeChartInstance) typeChartInstance.destroy();
+      typeChartInstance = new Chart(tCtx, {
+        type: "doughnut",
+        data: {
+          labels: topTypes.map(x => x[0]),
+          datasets: [{
+            data: topTypes.map(x => x[1]),
+            backgroundColor: ["#0f766e", "#0284c7", "#facc15", "#14b8a6", "#38bdf8", "#f59e0b"],
+            borderWidth: 2,
+            borderColor: "#ffffff"
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { position: "right", labels: { boxWidth: 12, font: { family: "Noto Sans Kannada", size: 11 } } },
+            title: { display: true, text: "ಪ್ರಮುಖ ಚಟುವಟಿಕೆ ಪ್ರಕಾರಗಳು", font: { family: "Noto Sans Kannada", size: 13, weight: "bold" } }
+          }
+        }
+      });
+    }
+
+    // Close modals on backdrop click or Escape key
+    document.querySelectorAll(".modal-backdrop").forEach(bd => {
+      bd.addEventListener("click", (e) => {
+        if (e.target === bd) bd.classList.remove("open");
+      });
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        document.querySelectorAll(".modal-backdrop.open").forEach(m => m.classList.remove("open"));
+      }
+    });
+
+    // Attach filter listeners
+    ["filterDate", "filterMonth", "filterGrade", "filterType"].forEach(id => {
+      document.getElementById(id).addEventListener("change", () => {
+        if (id === "filterDate" && document.getElementById("filterDate").value) {
+          document.getElementById("filterMonth").value = "";
+        }
+        renderCardsWithAnimation();
+      });
+    });
+
+    document.getElementById("filterKeyword").addEventListener("input", renderCardsWithAnimation);
+
+    // Initialize app
+    (function init() {
+      populateTypeFilter();
+      renderHero();
+      // Default to current month if within 2026-06..2027-03 so mobile users see a fast focused view, or all!
+      // Let's show current month by default if today is in range, or all if not, while filter remains easy to clear.
+      const todayISO = getLocalTodayISO();
+      const mPrefix = todayISO.slice(0, 7);
+      const mSelect = document.getElementById("filterMonth");
+      if ([...mSelect.options].some(o => o.value === mPrefix)) {
+        mSelect.value = mPrefix;
+      }
+      const initialItems = getFilteredData();
+      renderCards(initialItems);
+      updateCharts(initialItems);
+      updateSummaryText(initialItems);
+    })();
+  </script>
+</body>
+</html>
